@@ -1,0 +1,63 @@
+@import '../../styles/globals.scss';
+
+.process{
+    background-color: $primary;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.process-container{
+    h2{
+        font-size: $fs-700;
+        color: $light-bg;
+        text-transform: uppercase;
+        margin-bottom: 48px;
+    }
+}
+
+.process-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+
+    .process-btn{
+        display: flex;
+        gap: 50px;
+    }
+
+    .process-text{
+        color: $light-bg;
+        text-align: center;
+
+        h4{
+            font-size: $fs-600;
+            margin-bottom: 10px;
+        }
+
+        p{
+            font-size: $fs-200;
+        }
+    }
+}
+
+@media (min-width: 1024px){
+    .process-details{
+        flex-direction: row;
+        align-items: center;
+        gap: 120px;
+    
+        .process-text{
+            color: $light-bg;
+            text-align: center;
+    
+            h4{
+                font-size: $fs-600;
+            }
+    
+            p{
+                font-size: $fs-200;
+            }
+        }
+    }
+}
