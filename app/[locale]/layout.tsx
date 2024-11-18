@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import ThemeProvider from '../components/ThemeProvider/ThemeProvider';
+import ThemeProvider from '@/src/components/ThemeProvider/ThemeProvider';
 import '../styles/globals.scss';
 
 export default function LocaleLayout({
