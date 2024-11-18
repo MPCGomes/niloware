@@ -1,9 +1,10 @@
-// Colors
-$primary: #347BDB;
-$text: #29282D;
-$dark-bg: #111111;
-$light-bg: #FAFAFA;
-$border: #CBCBCB;
+// SCSS Variables
+$primary-color: #347BDB;
+$secondary-color: #29282D;
+$text-color: #29282D;
+$light-bg-color: #FAFAFA;
+$dark-bg-color: #111111;
+$border-color: #CBCBCB;
 
 // Typography
 $fs-200: 1rem; // 16px
@@ -17,4 +18,5 @@ $fs-800: 3.43rem; // 55px
 
 $ff-primary: 'Dinnextw1g',
 sans-serif;
-$ff-secondary: 'Tungsten';
+$ff-secondary: 'Tungsten',
+sans-serif;

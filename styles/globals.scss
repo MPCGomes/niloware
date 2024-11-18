@@ -1,7 +1,10 @@
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
-@import './variables';
-@import './mixins';
+// Internal Styles
+@use './variables'as vars;
+@use './mixins'as mixins;
+
+// External Styles
+@import '../node_modules/slick-carousel/slick/slick-theme.css';
+@import '../node_modules/slick-carousel/slick/slick-theme.css';
 
 // Fonts
 @font-face {
@@ -41,41 +44,64 @@
     font-style: normal;
 }
 
-// Global Styles
-html {
-    font-family: $ff-primary;
+// CSS Variables
+:root {
+    --primary-color: #347BDB;
+    --secondary-color: #29282D;
+    --text-color: #29282D;
+    --background-color: #FAFAFA;
+    --subtitle-color: #29282D;
+    --border-color: #CBCBCB;
 }
 
+[data-theme='dark'] {
+    --text-color: #FAFAFA;
+    --background-color: #111111;
+    --subtitle-color: #FAFAFA;
+}
+
+// Global Styles
 body {
     margin: 0;
     padding: 0;
-    background-color: #1b1d29; //mudar a cor
+    background-color: var(--background-color);
     color: var(--text-color);
+    font-family: vars.$ff-primary;
 }
 
-// Typography Utility Classes
+// Container 
+.container {
+    @include mixins.container();
+}
+
+// Subtitle 
+.subtitle {
+    @include mixins.subtitle();
+}
+
+// Light/Dark Mode
+.light-mode {
+    --text-color: vars.$text-color;
+    --background-color: vars.$light-bg-color;
+}
+
+.dark-mode {
+    --text-color: vars.$light-bg-color;
+    --background-color: vars.$dark-bg-color;
+}
+
+// Typography
 .ff-secondary {
-    font-family: $ff-secondary;
+    font-family: vars.$ff-secondary;
 }
 
-// Color Utility Classes
+// Global
 .dark {
-    color: $text;
+    color: vars.$text-color;
 }
 
 .light {
-    color: $light-bg;
-}
-
-// Theme Variables
-.light {
-    --background-color: $light-bg;
-    --text-color: $text;
-}
-
-.dark {
-    --background-color: $dark-bg;
-    --text-color: $light-bg;
+    color: vars.$light-bg-color;
 }
 
 // Slick Carousel
@@ -113,18 +139,18 @@ body {
     height: 13px;
 }
 
-//Scroll Bar
+// Scroll Bar
 ::-webkit-scrollbar {
     width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: $light-bg;
+    background-color: vars.$light-bg-color;
 }
 
-/* Handle */
+// Handle
 ::-webkit-scrollbar-thumb {
-    background: $primary;
+    background: vars.$ff-primary;
 }
 
 ::-webkit-scrollbar-thumb:hover {
