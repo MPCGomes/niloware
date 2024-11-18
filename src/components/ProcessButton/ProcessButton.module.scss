@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@use '../../../styles/variables' as vars;
 
 .processButton{
     display: flex;
@@ -12,13 +12,13 @@
     }
 
     .title{
-        font-size: $fs-600;
+        font-size: vars.$fs-600;
         font-weight: bold;
         text-align: center; 
     }
 
     .description{
-        font-size: $fs-300;
+        font-size: vars.$fs-300;
         text-align: center; 
     }
 }

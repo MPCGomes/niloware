@@ -1,15 +1,15 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
+@use '../../../styles/variables'as vars;
+@use '../../../styles/mixins'as mixins;
 
 .clients {
-    background: $light-bg;
+    background: vars.$light-bg-color;
     padding: 80px 0;
     max-width: 1920px;
     margin: auto;
 }
 
 .container {
-    @include container;
+    @include mixins.container();
 }
 
 .text {
@@ -20,20 +20,20 @@
     margin-bottom: 48px;
 
     h2 {
-        @include subtitle;
+        @include mixins.subtitle();
         margin-bottom: 0;
-        color: $text;
+        color: vars.$text-color;
     }
 
     a {
-        color: $text;
+        color: vars.$text-color;
         text-transform: uppercase;
-        font-size: $fs-200;
+        font-size: vars.$fs-200;
         display: flex;
         align-items: center;
     }
 
-    a span{
+    a span {
         margin-top: 2px;
         padding-left: 5px;
     }

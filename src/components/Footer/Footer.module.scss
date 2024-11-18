@@ -1,88 +1,76 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
+@use '../../../styles/variables'as vars;
+@use '../../../styles/mixins'as mixins;
 
 .footer {
-    background-color: $dark-bg;
-    padding: 60px 0;
-}
+    background-color: vars.$dark-bg-color;
+    color: vars.$light-bg-color;
+    padding: 40px 0;
 
-.container {
-    @include container;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.leftContainer {
-    color: grey;
-
-    h3 {
-        font-size: $fs-800;
-        text-transform: uppercase;
-        margin-bottom: 30px;
-    }
-
-    .socials {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        font-size: 1.5rem;
-        margin-bottom: 30px;
-    }
-
-    .socials {
-        a {
-            color: grey;
-        }
-    }
-}
-
-.links {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-
-    a {
-        color: $light-bg;
-    }
-}
-
-.copyright {
-    p {
-        color: gray;
-    }
-}
-
-@media (min-width: 768px) {
     .container {
+        @include mixins.container();
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
     }
 
-    .leftContainer {
-        h3 {
-            margin-bottom: 0;
-        }
+    .logo {
+        font-size: vars.$fs-700;
+        text-transform: uppercase;
 
-        .socials {
-            justify-content: start;
-            margin-bottom: 0px;
+        span {
+            color: vars.$primary-color;
+        }
+    }
+
+    .socialMedia {
+        display: flex;
+        gap: 15px;
+
+        a {
+            color: vars.$light-bg-color;
+            font-size: vars.$fs-400;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: vars.$primary-color;
+            }
         }
     }
 
     .links {
-        flex-direction: row;
-        gap: 10px;
-        margin-bottom: 10px;
-        justify-content: flex-end;
+        display: flex;
+        gap: 15px;
+
+        a {
+            color: vars.$light-bg-color;
+            font-size: vars.$fs-200;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     .copyright {
-        p {
-            text-align: end;
+        font-size: vars.$fs-200;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+        .container {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        .logo {
+            margin-bottom: 0;
         }
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from './Faq.module.scss'
-import CustomAccordion from '@/app/components/CustomAccordion/CustomAccordion';
+import CustomAccordion from '@/src/components/CustomAccordion/CustomAccordion';
 import { useTranslation } from '../../../hooks/useTranslation';
+import styles from './Faq.module.scss'
 
 const Faq: React.FC = () => {
   const { faq } = useTranslation();

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import styles from './Contact.module.scss';
-import Button from '@/app/components/Button/Button';
-import { useParams } from 'next/navigation';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useParams } from 'next/navigation';
 import { useTranslation } from '../../../hooks/useTranslation';
+import Button from '@/src/components/Button/Button';
+import styles from './Contact.module.scss';
 
 const Contact: React.FC = () => {
   const { contact } = useTranslation();

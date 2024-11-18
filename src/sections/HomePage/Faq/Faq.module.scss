@@ -1,17 +1,17 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
+@use '../../../../styles/variables'as vars;
+@use '../../../../styles/mixins'as mixins;
 
 .faq {
-    background-color: $primary;
+    background-color: vars.$primary-color;
     padding: 80px 0;
     max-width: 1920px;
     margin: auto;
 }
 
 .container {
-    @include container;
+    @include mixins.container();
 
     h2 {
-        @include subtitle;
+        @include mixins.subtitle(#FFFFFF);
     }
 }

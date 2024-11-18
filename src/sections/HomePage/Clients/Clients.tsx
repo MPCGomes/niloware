@@ -1,47 +1,35 @@
-import React, { useEffect, useState } from 'react'
-import styles from './Clients.module.scss'
-import CardCarousel from '../../../components/CardCarousel/CardCarousel';
-import { HiOutlineExternalLink } from "react-icons/hi";
-import cardsData from '../../../data/clientCards.json';
-import { useTranslation } from '../../../hooks/useTranslation';
+import React, { useEffect, useState } from 'react';
+import CardCarousel from '@/src/components/CardCarousel/CardCarousel';
+import { useParams } from 'next/navigation';
 
-interface Card {
-    title: string;
-    image: string;
-    mainTag: string;
-    tag: string[];
+interface ClientCard {
+    id: number;
+    clientName: string;
+    websiteUrl: string;
+    imageUrl: string;
+    tags: string[];
 }
 
 const Clients: React.FC = () => {
-    const [clientCards, setClientCards] = useState<Card[]>([]);
-    const { clients } = useTranslation();
+    const params = useParams();
+    const locale = params.locale || 'en-us';
+
+    const [clientCards, setClientCards] = useState<ClientCard[]>([]);
 
     useEffect(() => {
-        setClientCards(cardsData.slice(0, 6));
-    }, []);
-
-    if (!clients) return null;
+        const fetchClientCards = async () => {
+            const response = await fetch(`/api/client-cards?locale=${locale}`);
+            const data = await response.json();
+            setClientCards(data);
+        };
+        fetchClientCards();
+    }, [locale]);
 
     return (
-        <section className={styles.clients}>
-            <div className={styles.container}>
-                <div className={styles.text}>
-                    <h2>
-                        {clients?.title}
-                    </h2>
-                    <a
-                        href=""
-                    >
-                        {clients?.viewAll}
-                        <span>
-                            <HiOutlineExternalLink />
-                        </span>
-                    </a>
-                </div>
-                <CardCarousel cards={clientCards} />
-            </div>
+        <section>
+            <CardCarousel cards={clientCards} />
         </section>
-    )
-}
+    );
+};
 
-export default Clients
+export default Clients;

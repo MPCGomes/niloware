@@ -1,9 +1,9 @@
-@import '../../styles/variables';
+@use '../../../styles/variables'as vars;
 
 .container {
     padding: 40px;
-    background-color: $light-bg;
-    color: $text;
+    background-color: vars.$light-bg-color;
+    color: vars.$text-color;
     max-width: 700px;
     width: 100%;
     border-radius: 10px;
@@ -11,28 +11,28 @@
 
 .title {
     padding-bottom: 20px;
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid vars.$border-color;
 }
 
 .plan {
-    font-size: $fs-700;
+    font-size: vars.$fs-700;
     text-transform: uppercase;
     font-weight: bold;
 }
 
 .description {
-    font-size: $fs-200;
+    font-size: vars.$fs-200;
     text-transform: uppercase;
     margin-bottom: 30px;
     letter-spacing: 1px;
 }
 
 .price {
-    font-size: $fs-200;
+    font-size: vars.$fs-200;
     margin-bottom: 30px;
 
     span {
-        font-size: $fs-650;
+        font-size: vars.$fs-650;
     }
 }
 
@@ -47,7 +47,7 @@
     div p {
         text-transform: uppercase;
         padding-bottom: 15px;
-        font-size: $fs-300;
+        font-size: vars.$fs-300;
         font-weight: bold;
     }
 
@@ -58,13 +58,13 @@
 
         li {
             display: flex;
-            font-size: $fs-200;
+            font-size: vars.$fs-200;
             gap: 10px;
             align-items: center;
         }
-        
-        li span{
-            font-size: $fs-500;
+
+        li span {
+            font-size: vars.$fs-500;
             margin-top: 6px;
         }
     }

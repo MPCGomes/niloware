@@ -1,9 +1,11 @@
-import React from 'react'
-import styles from './Resource.module.scss'
-import classNames from 'classnames';
-import ResourceCard from '@/app/components/ResourceCard/ResourceCard';
+import React from 'react';
 import { FaPencilRuler } from 'react-icons/fa';
+import classNames from 'classnames';
+
 import { useTranslation } from '../../../hooks/useTranslation';
+import ResourceCard from '@/src/components/ResourceCard/ResourceCard';
+
+import styles from './Resource.module.scss';
 
 const Resource: React.FC = () => {
   const { resource } = useTranslation();

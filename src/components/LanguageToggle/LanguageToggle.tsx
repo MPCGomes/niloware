@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { usePathname, useRouter, useParams } from 'next/navigation';
 import { LuGlobe, LuCheck } from "react-icons/lu";
-import styles from './LanguaToggle.module.scss'
+import styles from './LanguageToggle.module.scss'
 import classNames from 'classnames';
 
 const languages = [

@@ -1,16 +1,17 @@
 'use client';
 
-import Navbar from '@/app/components/Navbar/Navbar';
-import PrivacyPolicy from '@/app/sections/PrivacyPolicy/PrivacyPolicy';
-import './page.scss'
 import React from 'react';
-import Footer from '@/app/components/Footer/Footer';
+import Footer from '@/src/components/Footer/Footer';
+import Navbar from '@/src/components/Navbar/Navbar';
+import PrivacyPolicy from '@/src/sections/PrivacyPage/PrivacyPolicy';
+import './page.scss'
+
 
 const Tos: React.FC = () => {
     return (
         <div>
-            <Navbar />
-            <PrivacyPolicy/>
+            <Navbar link={''} ref={''} />
+            <PrivacyPolicy />
             <Footer />
         </div>
     );

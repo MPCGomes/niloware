@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
+import { HiOutlineExternalLink } from 'react-icons/hi';
 import styles from './CardCarousel.module.scss';
-import { HiOutlineExternalLink } from "react-icons/hi";
 
 interface Card {
-  image: string;
-  mainTag: string;
-  tag: string[];
-  title: string;
+  id: number;
+  clientName: string;
+  websiteUrl: string;
+  imageUrl: string;
+  tags: string[];
 }
 
 interface CardCarouselProps {
@@ -46,34 +47,35 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
 
   return (
     <Slider {...settings} className={styles.carousel}>
-      {cards.map((card, index) => (
-        <div key={index} className={styles.cardCarousel}>
+      {cards.map((card) => (
+        <div key={card.id} className={styles.cardCarousel}>
           <div className={styles.card}>
-            <Image
-              src={card.image}
-              alt={`Card ${index}`}
-              className={styles.image}
-              width={500}
-              height={300}
-            />
-            <HiOutlineExternalLink className={styles.icon} />
+            <a href={card.websiteUrl} target="_blank" rel="noopener noreferrer">
+              <Image
+                src={card.imageUrl}
+                alt={card.clientName}
+                className={styles.image}
+                width={500}
+                height={300}
+              />
+              <HiOutlineExternalLink className={styles.icon} />
+            </a>
           </div>
           <div className={styles.text}>
             <div className={styles.tagContainer}>
-              <p className={styles.mainTag}>
-                {card.mainTag}
-              </p>
-              {card.tag.map((subTag, subIndex) => (
+              {card.tags.map((tag, index) => (
                 <p
-                  key={subIndex}
-                  className={styles.tag}
+                  key={index}
+                  className={
+                    index === 0 ? styles.mainTag : styles.tag
+                  }
                 >
-                  {subTag}
+                  {tag}
                 </p>
               ))}
             </div>
             <p className={styles.title}>
-              {card.title}
+              {card.clientName}
             </p>
           </div>
         </div>

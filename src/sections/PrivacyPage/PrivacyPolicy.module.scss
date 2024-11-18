@@ -1,9 +1,9 @@
-@import '../../styles/variables';
+@use '../../../styles/variables'as vars;
 
 .privacyPolicy {
   p {
-    font-size: $fs-300;
-    color: $text;
+    font-size: vars.$fs-300;
+    color: vars.$text-color;
     margin: auto;
     margin-bottom: 80px;
     max-width: 370px;

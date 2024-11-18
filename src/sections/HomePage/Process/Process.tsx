@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
-import styles from './Process.module.scss';
-import ProcessButton from '@/app/components/ProcessButton/ProcessButton';
+import React from 'react';
 import { FaPencilRuler } from 'react-icons/fa';
-import Arrow from '../../../public/assets/arrow.png';
-import { useTranslation } from '../../../src/hooks/useTranslation';
+import Image from 'next/image';
+
+import { useTranslation } from '@/src/hooks/useTranslation';
+import ProcessButton from '@/src/components/ProcessButton/ProcessButton';
+import Arrow from '../../../../public/assets/arrow.png';
+
+import styles from './Process.module.scss';
 
 const Process: React.FC = () => {
     const { process } = useTranslation();

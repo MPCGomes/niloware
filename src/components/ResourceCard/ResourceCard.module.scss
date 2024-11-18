@@ -1,8 +1,8 @@
-@import '../../styles/variables';
+@use '../../../styles/variables'as vars;
 
 .resourceCard {
-    border: 1px solid $border;
-    background-color: $light-bg;
+    border: 1px solid vars.$border-color;
+    background-color: vars.$light-bg-color;
     width: 100%;
     padding: 20px;
     display: flex;
@@ -12,23 +12,23 @@
     gap: 20px;
 
     &:hover {
-        background-color: $primary;
+        background-color: vars.$primary-color;
         transform: translateY(-7px);
 
         .iconContainer {
-            background-color: $light-bg;
-            color: $primary;
+            background-color: vars.$light-bg-color;
+            color: vars.$primary-color;
         }
 
         .text {
-            color: $light-bg;
+            color: vars.$light-bg-color;
         }
     }
 }
 
 .iconContainer {
-    background-color: $primary;
-    color: $light-bg;
+    background-color: vars.$primary-color;
+    color: vars.$light-bg-color;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -44,16 +44,16 @@
 
 .text {
     text-align: center;
-    color: $text;
+    color: vars.$text-color;
 
     .title {
-        font-size: $fs-600;
+        font-size: vars.$fs-600;
         font-weight: 600;
         margin-left: -7px;
         margin-top: -7px;
     }
 
     .description {
-        font-size: $fs-300;
+        font-size: vars.$fs-300;
     }
 }

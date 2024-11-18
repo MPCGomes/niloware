@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './ProcessButton.module.scss';
-import classNames from 'classnames';
 
 interface ProcessButtonProps {
   icon: React.ElementType;

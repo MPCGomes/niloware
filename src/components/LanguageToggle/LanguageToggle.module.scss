@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@use '../../../styles/variables'as vars;
 
 .toggleButton {
   background-color: transparent;
@@ -12,7 +12,7 @@
   height: 40px;
   border-radius: 50%;
   padding: 0;
-  color: $light-bg;
+  color: vars.$light-bg-color;
 
   svg {
     width: 25px;
@@ -21,8 +21,8 @@
   }
 
   &:hover {
-    background-color: #ffffff0e;
-    transition: all .3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.06);
+    transition: all 0.3s ease-in-out;
 
     svg {
       color: var(--icon-hover-color);
@@ -35,20 +35,20 @@
   flex-direction: column;
   position: absolute;
   border-radius: 10px;
-  background-color: $light-bg;
+  background-color: vars.$light-bg-color;
   width: 150px;
   align-items: flex-start;
-  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, .2);
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 10px;
   margin-top: 7px;
 
   a {
     color: rgb(158, 158, 158);
-    font-size: $fs-200;
+    font-size: vars.$fs-200;
     width: 100%;
 
     &:hover {
-      color: $text;
+      color: vars.$text-color;
       transition: all 0.3s ease-in-out;
     }
   }
@@ -75,7 +75,7 @@
 
   &.active {
     font-weight: bold;
-    color: $primary;
+    color: vars.$primary-color;
   }
 }
 

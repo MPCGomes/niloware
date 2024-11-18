@@ -1,22 +1,22 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
+@use '../../../styles/variables'as vars;
+@use '../../../styles/mixins'as mixins;
 
 .navbar {
-    background-color: $dark-bg;
+    background-color: vars.$dark-bg-color;
     padding: 15px 0;
 
     h3 {
-        font-size: $fs-700;
+        font-size: vars.$fs-700;
         text-transform: uppercase;
-        color: $light-bg;
+        color: vars.$light-bg-color;
 
         span {
-            color: $primary;
+            color: vars.$primary-color;
         }
     }
 }
 
-.rightSide{
+.rightSide {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -26,21 +26,21 @@
     display: none;
     border-radius: 10px;
     padding: 10px 20px;
-    border: 1px solid $primary;
+    border: 1px solid vars.$primary-color;
     background-color: transparent;
-    font-size: $fs-400;
-    color: $primary;
+    font-size: vars.$fs-400;
+    color: vars.$primary-color;
     cursor: pointer;
     letter-spacing: 1px;
 
-    &:hover{
-        background-color: $primary;
-        color: $light-bg;
+    &:hover {
+        background-color: vars.$primary-color;
+        color: vars.$light-bg-color;
     }
 }
 
 .container {
-    @include container;
+    @include mixins.container();
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,15 +52,15 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: $dark-bg;
+    background-color: vars.$dark-bg-color;
     width: 100%;
     padding: 3rem;
     gap: 20px;
     height: 100dvh;
 
     a {
-        color: $light-bg;
-        font-size: $fs-300;
+        color: vars.$light-bg-color;
+        font-size: vars.$fs-300;
     }
 
     &.open {
@@ -72,8 +72,8 @@
     z-index: 1;
     background: none;
     border: none;
-    font-size: $fs-700;
-    color: $light-bg;
+    font-size: vars.$fs-700;
+    color: vars.$light-bg-color;
     cursor: pointer;
 }
 
@@ -84,7 +84,7 @@
 }
 
 @media (min-width: 1024px) {
-    .leftSide{
+    .leftSide {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -109,7 +109,7 @@
                 width: 0px;
                 height: 2px;
                 display: block;
-                background: $light-bg;
+                background: vars.$light-bg-color;
                 transition: 300ms;
             }
 

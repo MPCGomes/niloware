@@ -1,16 +1,16 @@
 'use client';
 
 import React from 'react';
+import Footer from '@/src/components/Footer/Footer';
+import Navbar from '@/src/components/Navbar/Navbar';
+import Clients from '@/src/sections/HomePage/Clients/Clients';
+import Contact from '@/src/sections/HomePage/Contact/Contact';
+import Faq from '@/src/sections/HomePage/Faq/Faq';
+import Hero from '@/src/sections/HomePage/Hero/Hero';
+import Process from '@/src/sections/HomePage/Process/Process';
+import Resource from '@/src/sections/HomePage/Resource/Resource';
+import Services from '@/src/sections/HomePage/Services/Services';
 import './page.scss'
-import Navbar from '../../components/Navbar/Navbar'
-import Hero from '../../sections/Hero/Hero'
-import Clients from '../../sections/Clients/Clients';
-import Faq from '../../sections/Faq/Faq';
-import Contact from '@/app/sections/Contact/Contact';
-import Services from '@/app/sections/Services/Services';
-import Footer from '@/app/components/Footer/Footer';
-import Resource from '@/app/sections/Resource/Resource';
-import Process from '@/app/sections/Process/Process';
 
 const HomePage: React.FC = () => {
     return (
