@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Services.module.scss';
-import ServiceCard from '../../components/ServiceCard/ServiceCard';
-import { useTranslation } from '../../hooks/useTranslation';
+import ServiceCard from '../../../components/ServiceCard/ServiceCard';
+import { useTranslation } from '../../../hooks/useTranslation';
 import { IoCheckmarkCircle } from 'react-icons/io5';
 
 const Services: React.FC = () => {

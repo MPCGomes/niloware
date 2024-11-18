@@ -4,7 +4,7 @@ import Button from '@/app/components/Button/Button';
 import { useParams } from 'next/navigation';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { useTranslation } from '../../hooks/useTranslation';
+import { useTranslation } from '../../../hooks/useTranslation';
 
 const Contact: React.FC = () => {
   const { contact } = useTranslation();

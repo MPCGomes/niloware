@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Hero.module.scss'
 import Button from '../../components/Button/Button'
-import { useTranslation } from '../../hooks/useTranslation';
+import { useTranslation } from '../../../src/hooks/useTranslation';
 
 const Hero: React.FC = () => {
   const { hero } = useTranslation();

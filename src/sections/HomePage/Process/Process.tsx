@@ -4,7 +4,7 @@ import styles from './Process.module.scss';
 import ProcessButton from '@/app/components/ProcessButton/ProcessButton';
 import { FaPencilRuler } from 'react-icons/fa';
 import Arrow from '../../../public/assets/arrow.png';
-import { useTranslation } from '../../hooks/useTranslation';
+import { useTranslation } from '../../../src/hooks/useTranslation';
 
 const Process: React.FC = () => {
     const { process } = useTranslation();

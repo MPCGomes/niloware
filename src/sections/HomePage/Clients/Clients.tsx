@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Clients.module.scss'
-import CardCarousel from '../../components/CardCarousel/CardCarousel';
+import CardCarousel from '../../../components/CardCarousel/CardCarousel';
 import { HiOutlineExternalLink } from "react-icons/hi";
 import cardsData from '../../../data/clientCards.json';
-import { useTranslation } from '../../hooks/useTranslation';
+import { useTranslation } from '../../../hooks/useTranslation';
 
 interface Card {
     title: string;

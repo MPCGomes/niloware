@@ -4,7 +4,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import styles from './Footer.module.scss'
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { useTranslation } from '../../hooks/useTranslation';
+import { useTranslation } from '../../../src/hooks/useTranslation';
 
 const Footer = () => {
     const params = useParams();
