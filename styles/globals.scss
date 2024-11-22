@@ -3,7 +3,7 @@
 @use './mixins'as mixins;
 
 // External Styles
-@import '../node_modules/slick-carousel/slick/slick-theme.css';
+@import '../node_modules/slick-carousel/slick/slick.css';
 @import '../node_modules/slick-carousel/slick/slick-theme.css';
 
 // Fonts
@@ -44,20 +44,15 @@
     font-style: normal;
 }
 
-// CSS Variables
+//Theme Styles
 :root {
-    --primary-color: #347BDB;
-    --secondary-color: #29282D;
-    --text-color: #29282D;
-    --background-color: #FAFAFA;
-    --subtitle-color: #29282D;
-    --border-color: #CBCBCB;
+    --background-color: #ffffff;
+    --text-color: #000000;
 }
 
 [data-theme='dark'] {
-    --text-color: #FAFAFA;
-    --background-color: #111111;
-    --subtitle-color: #FAFAFA;
+    --background-color: #000000;
+    --text-color: #ffffff;
 }
 
 // Global Styles
@@ -79,29 +74,9 @@ body {
     @include mixins.subtitle();
 }
 
-// Light/Dark Mode
-.light-mode {
-    --text-color: vars.$text-color;
-    --background-color: vars.$light-bg-color;
-}
-
-.dark-mode {
-    --text-color: vars.$light-bg-color;
-    --background-color: vars.$dark-bg-color;
-}
-
 // Typography
 .ff-secondary {
     font-family: vars.$ff-secondary;
-}
-
-// Global
-.dark {
-    color: vars.$text-color;
-}
-
-.light {
-    color: vars.$light-bg-color;
 }
 
 // Slick Carousel
