@@ -10,8 +10,9 @@ const ThemeToggle: React.FC = () => {
         <button
             className={styles.toggleButton}
             onClick={toggleTheme}
-            aria-label="Toggle Theme">
-            {theme === 'light' ? <IoMoon /> : <IoSunny />}
+            aria-label="Toggle Theme"
+        >
+            {theme === 'light' ? <IoSunny /> : <IoMoon />}
         </button>
     );
 };
