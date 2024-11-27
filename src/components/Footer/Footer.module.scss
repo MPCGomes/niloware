@@ -1,5 +1,5 @@
-@use '../../../styles/variables'as vars;
-@use '../../../styles/mixins'as mixins;
+@use '../../../styles/variables' as vars;
+@use '../../../styles/mixins' as mixins;
 
 .footer {
     background-color: vars.$dark-bg-color;
@@ -24,12 +24,12 @@
         }
     }
 
-    .socialMedia {
+    .socials {
         display: flex;
         gap: 15px;
 
-        a {
-            color: var(--light-container-color);
+        .social {
+            color: vars.$light-text;
             font-size: vars.$fs-400;
             transition: color 0.3s ease-in-out;
 
@@ -42,9 +42,10 @@
     .links {
         display: flex;
         gap: 15px;
+        justify-content: flex-end;
 
         a {
-            color: var(--light-container-color);
+            color: vars.$light-text;
             font-size: vars.$fs-200;
             text-decoration: none;
 
@@ -56,6 +57,7 @@
 
     .copyright {
         font-size: vars.$fs-200;
+        color: vars.$light-text;
         margin-top: 10px;
     }
 }
