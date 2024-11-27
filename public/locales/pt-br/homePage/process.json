@@ -1,0 +1,21 @@
+{
+  "title": "Texto",
+  "steps": [
+    {
+      "title": "Etapa 1",
+      "description": "Descrição da Etapa 1"
+    },
+    {
+      "title": "Etapa 2",
+      "description": "Descrição da Etapa 2"
+    },
+    {
+      "title": "Etapa 3",
+      "description": "Descrição da Etapa 3"
+    },
+    {
+      "title": "Etapa 4",
+      "description": "Descrição da Etapa 4"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Fale conosco",
+  "placeholders": {
+    "name": "Nome",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "message": "Escreva sua mensagem"
+  },
+  "errors": {
+    "name": "Nome deve ter pelo menos 3 caracteres.",
+    "email": "Por favor, insira um endereço de e-mail válido.",
+    "phone": "Telefone deve ter pelo menos 10 dígitos.",
+    "message": "A mensagem deve ter pelo menos 10 caracteres.",
+    "captcha": "Por favor, complete o CAPTCHA.",
+    "general": "Falha ao enviar a mensagem. Tente novamente mais tarde."
+  },
+  "messages": {
+    "success": "Mensagem enviada com sucesso!",
+    "sending": "Enviando...",
+    "send": "Enviar"
+  }
+}
