@@ -8,10 +8,10 @@ import LanguageToggle from '../LanguageToggle/LanguageToggle';
 
 interface NavbarProps {
   link: string;
-  ref: string;
+  customRef: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ link, ref }) => {
+const Navbar: React.FC<NavbarProps> = ({ link, customRef }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -34,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ link, ref }) => {
             styles.links,
             { [styles.open]: isOpen })
           }>
-            <a href={ref}>
+            <a href={customRef}>
               {link}
             </a>
           </div>
