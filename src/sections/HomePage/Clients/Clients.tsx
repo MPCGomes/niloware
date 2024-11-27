@@ -18,7 +18,7 @@ const Clients: React.FC = () => {
 
     useEffect(() => {
         const fetchClientCards = async () => {
-            const response = await fetch(`/api/client-cards?locale=${locale}`);
+            const response = await fetch(`/api/portfolio?locale=${locale}`);
             const data = await response.json();
             setClientCards(data);
         };
