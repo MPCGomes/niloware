@@ -10,7 +10,7 @@ import './page.scss'
 const Tos: React.FC = () => {
     return (
         <div>
-            <Navbar link={''} ref={''} />
+            <Navbar link={''} customRef={''} />
             <PrivacyPolicy />
             <Footer />
         </div>

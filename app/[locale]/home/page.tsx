@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
         <div>
             <Navbar
                 link={'Recursos'}
-                ref={''}
+                customRef={''}
             />
             <Hero />
             <Resource />
