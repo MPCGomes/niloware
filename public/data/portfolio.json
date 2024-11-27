@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Card 1",
+    "image": "/clientCards/placeholder.png",
+    "mainTag": "Tag 1",
+    "tag": [
+      "SubTag 1",
+      "SubTag 2"
+    ]
+  },
+  {
+    "title": "Card 2",
+    "image": "/clientCards/placeholder.png",
+    "mainTag": "Tag 2",
+    "tag": [
+      "SubTag 3",
+      "SubTag 4"
+    ]
+  },
+  {
+    "title": "Card 3",
+    "image": "/clientCards/placeholder.png",
+    "mainTag": "Tag 3",
+    "tag": [
+      "SubTag 5",
+      "SubTag 6"
+    ]
+  },
+  {
+    "title": "Card 4",
+    "image": "/clientCards/placeholder.png",
+    "mainTag": "Tag 4",
+    "tag": [
+      "SubTag 7",
+      "SubTag 8"
+    ]
+  },
+  {
+    "title": "Card 5",
+    "image": "/clientCards/placeholder.png",
+    "mainTag": "Tag 5",
+    "tag": [
+      "SubTag 9",
+      "SubTag 10"
+    ]
+  },
+  {
+    "title": "Card 6",
+    "image": "/clientCards/placeholder.png",
+    "mainTag": "Tag 6",
+    "tag": [
+      "SubTag 11",
+      "SubTag 12"
+    ]
+  },
+  {
+    "title": "Card 7",
+    "image": "/clientCards/placeholder.png",
+    "mainTag": "Tag 7",
+    "tag": [
+      "SubTag 13",
+      "SubTag 14"
+    ]
+  }
+]
