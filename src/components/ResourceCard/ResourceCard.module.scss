@@ -43,18 +43,23 @@
     flex-shrink: 0;
 }
 
-.text {
+.iconTitleContainer {
     text-align: center;
     color: vars.$text-color;
 
     .title {
-        font-size: vars.$fs-600;
+        font-size: vars.$fs-500;
+        color: var(--text-color);
+        line-height: 33px;
         font-weight: 600;
-        margin-left: -7px;
-        margin-top: -7px;
+        margin-left: 0px;
+        margin-top: 0px;
     }
+}
 
-    .description {
-        font-size: vars.$fs-300;
-    }
+.description {
+    font-size: vars.$fs-300;
+    margin-left: 50px;
+    margin-top: 5px;
+
 }
