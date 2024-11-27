@@ -1,5 +1,5 @@
-@use '../../../../styles/variables'as vars;
-@use '../../../../styles/mixins'as mixins;
+@use '../../../../styles/variables' as vars;
+@use '../../../../styles/mixins' as mixins;
 
 .hero {
     background-color: vars.$primary-color;
@@ -30,6 +30,16 @@
         font-size: vars.$fs-500;
         font-weight: 400;
         margin-bottom: 20px;
+    }
+
+    .button {
+        background-color: vars.$secondary-color;
+        color: vars.$light-text !important;
+
+        &:hover{
+            background-color: #1d1c20;
+            transition: all .3s ease-in-out;
+        }
     }
 }
 

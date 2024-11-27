@@ -16,6 +16,7 @@ const Hero: React.FC = () => {
           {hero?.subtitle}
         </h3>
         <Button
+        className={styles.button}
           link='#'
           text={hero?.cta}
         />
