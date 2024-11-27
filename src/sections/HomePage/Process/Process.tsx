@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { useTranslation } from '@/src/hooks/useTranslation';
 import ProcessButton from '@/src/components/ProcessButton/ProcessButton';
-import Arrow from '../../../../public/assets/arrow.png';
+import Arrow from '@/public/assets/homePage/arrow.png';
 
 import styles from './Process.module.scss';
 
