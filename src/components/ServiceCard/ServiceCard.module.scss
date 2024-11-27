@@ -3,6 +3,7 @@
 .container {
     padding: 40px;
     background-color: var(--light-container-color);
+    border: 1px solid $border-color;
     color: var(--text-color);
     max-width: 700px;
     width: 100%;
