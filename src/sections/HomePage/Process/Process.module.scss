@@ -1,0 +1,48 @@
+@use '../../../../styles/variables'as vars;
+@use '../../../../styles/mixins'as mixins;
+
+.process {
+    background-color: vars.$primary-color;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    max-width: 1920px;
+    margin: auto;
+}
+
+.container {
+    @include mixins.container();
+
+    h2 {
+        @include mixins.subtitle(#FFFFFF);
+    }
+}
+
+.arrow {
+    width: 90px;
+    height: auto;
+    transform: rotate(90deg);
+}
+
+.processContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    color: vars.$light-bg-color;
+}
+
+@media (min-width: 1024px) {
+    .processContainer {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .arrow {
+        width: 110px;
+        height: auto;
+        transform: rotate(0deg);
+        margin-top: 110px;
+    }
+}

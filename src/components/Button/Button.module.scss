@@ -1,0 +1,20 @@
+@use 'sass:color';
+@use '../../../styles/variables'as vars;
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: vars.$primary-color;
+    color: vars.$light-bg-color;
+    text-transform: uppercase;
+    font-size: vars.$fs-300;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        background-color: color.adjust(vars.$primary-color, $lightness: -10%);
+    }
+}

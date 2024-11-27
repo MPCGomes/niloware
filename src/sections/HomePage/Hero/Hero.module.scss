@@ -1,0 +1,40 @@
+@use '../../../../styles/variables'as vars;
+@use '../../../../styles/mixins'as mixins;
+
+.hero {
+    background-color: vars.$primary-color;
+    padding: 80px 0;
+    max-width: 1920px;
+    margin: auto;
+
+    div img {
+        max-width: 600px;
+        height: auto;
+        width: 100%;
+    }
+}
+
+.container {
+    @include mixins.container();
+    color: vars.$light-bg-color;
+
+    h1 {
+        @include mixins.subtitle(#FFFFFF);
+        font-size: vars.$fs-800;
+        line-height: 3.75rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        font-size: vars.$fs-500;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding-right: 25%;
+    }
+}

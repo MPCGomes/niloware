@@ -1,0 +1,33 @@
+@use '../../../styles/variables'as vars;
+
+.toggleButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    color: vars.$light-bg-color;
+
+    svg {
+        width: 25px;
+        height: 25px;
+        color: var(--icon-color);
+    }
+
+    &:hover {
+        background-color: #ffffff0e;
+        transition: all .3s ease-in-out;
+
+        svg {
+            color: vars.$primary-color;
+        }
+    }
+
+
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Perguntas Frequentes",
+  "items": [
+    {
+      "title": "Item 1",
+      "content": "Descrição do Item 1."
+    },
+    {
+      "title": "Item 2",
+      "content": "Descrição do Item 2."
+    },
+    {
+      "title": "Item 3",
+      "content": "Descrição do Item 3."
+    },
+    {
+      "title": "Item 4",
+      "content": "Descrição do Item 4."
+    },
+    {
+      "title": "Item 5",
+      "content": "Descrição do Item 5."
+    },
+    {
+      "title": "Item 6",
+      "content": "Descrição do Item 6."
+    }
+  ]
+}

@@ -1,23 +1,23 @@
-'use client';
-
 import { ReactNode } from 'react';
-import ThemeProvider from '../components/ThemeProvider/ThemeProvider';
-import '../styles/globals.scss';
+import { ThemeProvider } from '@/src/context/ThemeContext';
+import '../../styles/globals.scss';
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
     children,
     params,
 }: {
     children: ReactNode;
     params: { locale: string };
 }) {
+    const { locale } = await params;
+
     return (
-        <ThemeProvider>
-            <html lang={params.locale}>
-                <body>
+        <html lang={locale}>
+            <body>
+                <ThemeProvider>
                     {children}
-                </body>
-            </html>
-        </ThemeProvider>
+                </ThemeProvider>
+            </body>
+        </html>
     );
 }

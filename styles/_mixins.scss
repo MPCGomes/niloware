@@ -1,0 +1,16 @@
+@use 'variables'as vars;
+
+@mixin container($padding: 20px) {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+@mixin subtitle($color: var(--subtitle-color)) {
+  font-size: vars.$fs-700;
+  color: $color;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+}

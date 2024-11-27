@@ -1,0 +1,16 @@
+@use '../../../../styles/variables'as vars;
+@use '../../../../styles/mixins'as mixins;
+
+.faq {
+    padding: 80px 0;
+    max-width: 1920px;
+    margin: auto;
+}
+
+.container {
+    @include mixins.container();
+
+    h2 {
+        @include mixins.subtitle(#FFFFFF);
+    }
+}

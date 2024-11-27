@@ -1,0 +1,81 @@
+@use '../../../styles/variables'as vars;
+
+.container {
+    padding: 40px;
+    background-color: vars.$light-bg-color;
+    color: vars.$text-color;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.title {
+    padding-bottom: 20px;
+    border-bottom: 1px solid vars.$border-color;
+}
+
+.plan {
+    font-size: vars.$fs-700;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.description {
+    font-size: vars.$fs-200;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.price {
+    font-size: vars.$fs-200;
+    margin-bottom: 30px;
+
+    span {
+        font-size: vars.$fs-650;
+    }
+}
+
+.extraPrice {
+    font-size: $fs-200;
+    text-transform: uppercase;
+    margin-bottom: 30px;  
+}
+
+.customWidth {
+    width: 100%;
+}
+
+.list {
+    padding-top: 15px;
+    font-weight: bold;
+
+    div p {
+        text-transform: uppercase;
+        padding-bottom: 15px;
+        font-size: vars.$fs-300;
+        font-weight: bold;
+    }
+
+    div ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        li {
+            display: flex;
+            font-size: vars.$fs-200;
+            gap: 10px;
+            align-items: center;
+        }
+
+        li span {
+            font-size: vars.$fs-500;
+            margin-top: 6px;
+        }
+    }
+}
+
+.site {
+    padding-bottom: 20px;
+}

@@ -1,0 +1,133 @@
+// Internal Styles
+@use './variables'as vars;
+@use './mixins'as mixins;
+
+// External Styles
+@import '../node_modules/slick-carousel/slick/slick.css';
+@import '../node_modules/slick-carousel/slick/slick-theme.css';
+
+// Fonts
+@font-face {
+    font-family: 'Dinnextw1g';
+    src: url('/fonts/dinnextw1g-bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dinnextw1g';
+    src: url('/fonts/dinnextw1g-medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dinnextw1g';
+    src: url('/fonts/dinnextw1g-regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tungsten';
+    src: url('/fonts/tungsten-light.woff2') format('woff2'),
+        url('/fonts/tungsten-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tungsten';
+    src: url('/fonts/tungsten-semibold.woff2') format('woff2'),
+        url('/fonts/tungsten-semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+//Theme Styles
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+}
+
+[data-theme='dark'] {
+    --background-color: #000000;
+    --text-color: #ffffff;
+}
+
+// Global Styles
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: vars.$ff-primary;
+}
+
+// Container 
+.container {
+    @include mixins.container();
+}
+
+// Subtitle 
+.subtitle {
+    @include mixins.subtitle();
+}
+
+// Typography
+.ff-secondary {
+    font-family: vars.$ff-secondary;
+}
+
+// Slick Carousel
+.slick-list {
+    margin: 0 -10px;
+}
+
+.slick-slide {
+    padding: 0 10px 30px;
+}
+
+.slick-slide:focus {
+    outline: none;
+}
+
+.slick-active:focus {
+    outline: none;
+}
+
+.slick-dots li button:before {
+    width: 13px;
+    height: 13px;
+    content: '';
+    border-radius: 50%;
+    background-color: rgb(122, 122, 122);
+}
+
+.slick-dots li button:hover:before {
+    background-color: rgb(163, 196, 228);
+}
+
+.slick-dots .slick-active button:before {
+    background-color: rgb(0, 80, 185);
+    width: 13px;
+    height: 13px;
+}
+
+// Scroll Bar
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: vars.$light-bg-color;
+}
+
+// Handle
+::-webkit-scrollbar-thumb {
+    background: vars.$ff-primary;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(12, 100, 216);
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Serviços",
+  "plans": [
+    {
+      "plan": "Expresso",
+      "description": "Descrição do Serviço Expresso",
+      "textPrice": "A PARTIR DE ",
+      "price": "R$599,90",
+      "siteItems": [
+        "Item 1",
+        "Item 2",
+        "Item 3"
+      ],
+      "buttonText": "Solicitar Orçamento"
+    },
+    {
+      "plan": "Sob Medida",
+      "description": "Descrição do Serviço Sob Medida",
+      "textPrice": "",
+      "price": "SOB ORÇAMENTO",
+      "siteItems": [
+        "Item 1",
+        "Item 2"
+      ],
+      "buttonText": "Solicitar Orçamento"
+    }
+  ]
+}

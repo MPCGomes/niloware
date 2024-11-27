@@ -1,0 +1,138 @@
+@use '../../../styles/variables'as vars;
+@use '../../../styles/mixins'as mixins;
+
+.navbar {
+    background-color: vars.$dark-bg-color;
+    padding: 15px 0;
+
+    h3 {
+        font-size: vars.$fs-700;
+        text-transform: uppercase;
+        color: vars.$light-bg-color;
+
+        span {
+            color: vars.$primary-color;
+        }
+    }
+}
+
+.rightSide {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.button {
+    display: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 1px solid vars.$primary-color;
+    background-color: transparent;
+    font-size: vars.$fs-400;
+    color: vars.$primary-color;
+    cursor: pointer;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: vars.$primary-color;
+        color: vars.$light-bg-color;
+    }
+}
+
+.container {
+    @include mixins.container();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: vars.$dark-bg-color;
+    width: 100%;
+    padding: 3rem;
+    gap: 20px;
+    height: 100dvh;
+
+    a {
+        color: vars.$light-bg-color;
+        font-size: vars.$fs-300;
+    }
+
+    &.open {
+        display: flex;
+    }
+}
+
+.menu {
+    z-index: 1;
+    background: none;
+    border: none;
+    font-size: vars.$fs-700;
+    color: vars.$light-bg-color;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .links {
+        width: 365px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .leftSide {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        padding: 0;
+        gap: 20px;
+        width: 600px;
+        height: 100%;
+
+        a {
+            display: inline-block;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                width: 0px;
+                height: 2px;
+                display: block;
+                background: vars.$light-bg-color;
+                transition: 300ms;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+        }
+    }
+
+    .links a:nth-child(5) {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .button {
+        display: block;
+
+        &:hover {
+            box-shadow: 0px 0px 15px 3px #347cdb80;
+            transition: all .3s ease-in-out;
+        }
+    }
+}

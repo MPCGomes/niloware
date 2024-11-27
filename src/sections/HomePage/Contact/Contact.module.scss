@@ -1,0 +1,79 @@
+@use '../../../../styles/variables'as vars;
+@use '../../../../styles/mixins'as mixins;
+
+.contact {
+    background-color: vars.$primary-color;
+    padding: 80px 0;
+    max-width: 1920px;
+    margin: auto;
+}
+
+.container {
+    @include mixins.container;
+
+    h2 {
+        @include mixins.subtitle;
+        color: vars.$text-color;
+    }
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input,
+    textarea,
+    button {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid vars.$border-color;
+        border-radius: 10px;
+        font-size: vars.$fs-300;
+        font-family: vars.$ff-primary;
+    }
+
+    input:focus,
+    textarea:focus {
+        outline: 0;
+        border: 1px solid vars.$dark-bg-color;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: vars.$border-color;
+    }
+
+    textarea {
+        height: 120px;
+        resize: none;
+    }
+
+    button {
+        margin-top: 28px;
+        font-size: vars.$fs-400;
+    }
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .inputs {
+        textarea {
+            height: 160px;
+        }
+    }
+
+    .contacts {
+        flex-direction: row;
+        gap: 10px;
+    }
+}
+
+.captcha {
+    margin: auto;
+}

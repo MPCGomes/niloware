@@ -1,0 +1,24 @@
+@use '../../../styles/variables' as vars;
+
+.processButton{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    .icon{
+        width: 55px;
+        height: 55px;
+    }
+
+    .title{
+        font-size: vars.$fs-600;
+        font-weight: bold;
+        text-align: center; 
+    }
+
+    .description{
+        font-size: vars.$fs-300;
+        text-align: center; 
+    }
+}

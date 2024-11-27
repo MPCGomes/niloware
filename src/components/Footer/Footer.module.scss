@@ -1,0 +1,76 @@
+@use '../../../styles/variables'as vars;
+@use '../../../styles/mixins'as mixins;
+
+.footer {
+    background-color: vars.$dark-bg-color;
+    color: vars.$light-bg-color;
+    padding: 40px 0;
+
+    .container {
+        @include mixins.container();
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .logo {
+        font-size: vars.$fs-700;
+        text-transform: uppercase;
+
+        span {
+            color: vars.$primary-color;
+        }
+    }
+
+    .socialMedia {
+        display: flex;
+        gap: 15px;
+
+        a {
+            color: vars.$light-bg-color;
+            font-size: vars.$fs-400;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: vars.$primary-color;
+            }
+        }
+    }
+
+    .links {
+        display: flex;
+        gap: 15px;
+
+        a {
+            color: vars.$light-bg-color;
+            font-size: vars.$fs-200;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .copyright {
+        font-size: vars.$fs-200;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+        .container {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        .logo {
+            margin-bottom: 0;
+        }
+    }
+}

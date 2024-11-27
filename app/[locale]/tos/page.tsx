@@ -1,17 +1,18 @@
 'use client';
 
-import Navbar from '@/app/components/Navbar/Navbar';
-import TermsService from '@/app/sections/TermsService/TermsService';
+import Footer from '@/src/components/Footer/Footer';
+import Navbar from '@/src/components/Navbar/Navbar';
+import TermsService from '@/src/sections/TosPage/TermsService';
 import './page.scss'
 import React from 'react';
-import Footer from '@/app/components/Footer/Footer';
+
 
 const Tos: React.FC = () => {
     return (
         <div>
-            <Navbar/>
-            <TermsService/>
-            <Footer/>
+            <Navbar link={''} customRef={''} />
+            <TermsService />
+            <Footer />
         </div>
     );
 };

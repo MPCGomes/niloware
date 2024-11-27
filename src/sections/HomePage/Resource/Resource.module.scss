@@ -1,0 +1,31 @@
+@use '../../../../styles/variables'as vars;
+@use '../../../../styles/mixins'as mixins;
+
+.resources {
+    padding: 80px 0;
+    max-width: 1920px;
+    margin: auto;
+}
+
+.container {
+    @include mixins.container();
+}
+
+.subtitle {
+    @include mixins.subtitle();
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
