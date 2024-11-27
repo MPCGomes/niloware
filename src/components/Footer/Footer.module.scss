@@ -3,7 +3,7 @@
 
 .footer {
     background-color: vars.$dark-bg-color;
-    color: vars.$light-bg-color;
+    color: var(--light-container-color);
     padding: 40px 0;
 
     .container {
@@ -29,7 +29,7 @@
         gap: 15px;
 
         a {
-            color: vars.$light-bg-color;
+            color: var(--light-container-color);
             font-size: vars.$fs-400;
             transition: color 0.3s ease-in-out;
 
@@ -44,7 +44,7 @@
         gap: 15px;
 
         a {
-            color: vars.$light-bg-color;
+            color: var(--light-container-color);
             font-size: vars.$fs-200;
             text-decoration: none;
 

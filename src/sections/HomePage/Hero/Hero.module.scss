@@ -16,7 +16,7 @@
 
 .container {
     @include mixins.container();
-    color: vars.$light-bg-color;
+    color: vars.$light-text;
 
     h1 {
         @include mixins.subtitle(#FFFFFF);

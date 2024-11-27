@@ -1,11 +1,11 @@
 @use 'sass:color';
-@use '../../../styles/variables'as vars;
+@use '../../../styles/variables' as vars;
 
 .button {
     display: inline-block;
     padding: 15px 30px;
     background-color: vars.$primary-color;
-    color: vars.$light-bg-color;
+    color: var(--light-container-color);
     text-transform: uppercase;
     font-size: vars.$fs-300;
     font-weight: bold;

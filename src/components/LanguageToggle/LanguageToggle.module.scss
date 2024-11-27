@@ -12,7 +12,7 @@
   height: 40px;
   border-radius: 50%;
   padding: 0;
-  color: vars.$light-bg-color;
+  color: vars.$light-text;
 
   svg {
     width: 25px;
@@ -25,7 +25,7 @@
     transition: all 0.3s ease-in-out;
 
     svg {
-      color: var(--icon-hover-color);
+      color: vars.$primary-color;
     }
   }
 }
@@ -35,7 +35,7 @@
   flex-direction: column;
   position: absolute;
   border-radius: 10px;
-  background-color: vars.$light-bg-color;
+  background-color: var(--light-container-color);
   width: 150px;
   align-items: flex-start;
   box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);

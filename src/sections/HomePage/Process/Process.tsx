@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './Process.module.scss';
 import { FaPhoneAlt, FaClipboardList, FaCheckCircle, FaShareSquare } from 'react-icons/fa';
-import Arrow from '../../../public/assets/arrow.png';
+import Arrow from '../../../../public/assets/homePage/arrow.png'
 import { useTranslation } from '@/src/hooks/useTranslation';
 import ProcessButton from '@/src/components/ProcessButton/ProcessButton';
 
