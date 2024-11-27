@@ -44,6 +44,7 @@ type ServiceTranslation = {
     price: string;
     siteItems: string[];
     buttonText: string;
+    extraPrice: string;
 };
 
 type CardTranslation = {

@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './ServiceCard.module.scss'
-import { IoCheckmarkCircle } from "react-icons/io5";
 import Button from '../Button/Button';
 
 interface ClientCardProps {
@@ -10,9 +9,10 @@ interface ClientCardProps {
     siteItem: React.ReactNode;
     textPrice: string;
     buttonText: string;
+    extraPrice: string;
 }
 
-const ServiceCard: React.FC<ClientCardProps> = ({ plan, description, price, siteItem, textPrice, buttonText }) => {
+const ServiceCard: React.FC<ClientCardProps> = ({ plan, description, price, siteItem, textPrice, buttonText, extraPrice }) => {
     return (
         <div className={styles.container}>
             <div className={styles.title}>
@@ -27,6 +27,9 @@ const ServiceCard: React.FC<ClientCardProps> = ({ plan, description, price, site
                     <span>
                         {price}
                     </span>
+                </p>
+                <p className={styles.extraPrice}>
+                    {extraPrice}
                 </p>
                 <Button
                     text={buttonText}

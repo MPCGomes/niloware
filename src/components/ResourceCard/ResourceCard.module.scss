@@ -6,10 +6,9 @@
     width: 100%;
     padding: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     transition: .4s all ease-in-out;
     border-radius: 10px;
-    gap: 20px;
 
     &:hover {
         background-color: vars.$primary-color;
@@ -26,6 +25,12 @@
     }
 }
 
+.iconTitleContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .iconContainer {
     background-color: vars.$primary-color;
     color: vars.$light-bg-color;
@@ -35,11 +40,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    .icon {
-        width: 70%;
-        height: 50%;
-    }
+    flex-shrink: 0;
 }
 
 .text {

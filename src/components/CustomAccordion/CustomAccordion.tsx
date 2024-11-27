@@ -37,7 +37,7 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({ items }) => {
             borderRadius: '10px',
             boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
             overflow: 'hidden',
-            border: '1px solid transparent',
+            border: 'none',
             '&:first-of-type': {
               borderTopLeftRadius: '10px',
               borderTopRightRadius: '10px',
@@ -57,8 +57,8 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({ items }) => {
               {item.title}
             </Typography>
           </AccordionSummary>
-          <AccordionDetails className={styles.description}>
-            <Typography>
+          <AccordionDetails>
+            <Typography className={styles.content}>
               {item.content}
             </Typography>
           </AccordionDetails>

@@ -10,17 +10,17 @@ interface ResourceCardProps {
 const ResourceCard: React.FC<ResourceCardProps> = ({ icon: Icon, title, description }) => {
   return (
     <div className={styles.resourceCard}>
-      <div className={styles.iconContainer}>
-        <Icon className={styles.icon} />
-      </div>
-      <div className={styles.text}>
+      <div className={styles.iconTitleContainer}>
+        <div className={styles.iconContainer}>
+          <Icon className={styles.icon} />
+        </div>
         <p className={styles.title}>
           {title}
         </p>
-        <p className={styles.description}>
-          {description}
-        </p>
       </div>
+      <p className={styles.description}>
+        {description}
+      </p>
     </div>
   )
 }

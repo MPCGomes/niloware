@@ -32,6 +32,7 @@ const Services: React.FC = () => {
                                 </ul>
                             )}
                             buttonText={plan.buttonText}
+                            extraPrice={plan.extraPrice}
                         />
                     ))}
                 </div>

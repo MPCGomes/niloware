@@ -34,7 +34,7 @@
 @media (min-width: 1024px) {
     .processContainer {
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
         gap: 20px;
         justify-content: space-between;
     }
@@ -43,5 +43,6 @@
         width: 110px;
         height: auto;
         transform: rotate(0deg);
+        margin-top: 110px;
     }
 }
