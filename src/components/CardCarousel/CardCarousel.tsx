@@ -4,20 +4,17 @@ import Image from 'next/image';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 import styles from './CardCarousel.module.scss';
 
-interface Card {
-  id: number;
-  clientName: string;
-  websiteUrl: string;
-  imageUrl: string;
-  tags: string[];
-}
-
 interface CardCarouselProps {
-  cards: Card[];
+  cards: Array<{
+    id: number;
+    client: string;
+    tags: Array<string>;
+    image: string;
+    url: string;
+  }>;
 }
 
 const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
-
   const settings = {
     dots: true,
     infinite: true,
@@ -47,13 +44,13 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
 
   return (
     <Slider {...settings} className={styles.carousel}>
-      {cards.map((card) => (
+      {cards.map(card => (
         <div key={card.id} className={styles.cardCarousel}>
           <div className={styles.card}>
-            <a href={card.websiteUrl} target="_blank" rel="noopener noreferrer">
+            <a href={card.url} target="_blank" rel="noopener noreferrer">
               <Image
-                src={card.imageUrl}
-                alt={card.clientName}
+                src={card.image}
+                alt={card.client}
                 className={styles.image}
                 width={500}
                 height={300}
@@ -64,19 +61,12 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
           <div className={styles.text}>
             <div className={styles.tagContainer}>
               {card.tags.map((tag, index) => (
-                <p
-                  key={index}
-                  className={
-                    index === 0 ? styles.mainTag : styles.tag
-                  }
-                >
+                <p key={index} className={index === 0 ? styles.mainTag : styles.tag}>
                   {tag}
                 </p>
               ))}
             </div>
-            <p className={styles.title}>
-              {card.clientName}
-            </p>
+            <p className={styles.title}>{card.client}</p>
           </div>
         </div>
       ))}
