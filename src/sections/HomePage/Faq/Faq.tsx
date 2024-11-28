@@ -1,23 +1,33 @@
-import React from 'react'
+import React from 'react';
 import CustomAccordion from '@/src/components/CustomAccordion/CustomAccordion';
 import { useTranslation } from '../../../hooks/useTranslation';
-import styles from './Faq.module.scss'
+import styles from './Faq.module.scss';
+
+interface FaqItem {
+  title: string;
+  content: string;
+}
+
+interface FaqTranslations {
+  title: string;
+  items: FaqItem[];
+}
 
 const Faq: React.FC = () => {
-  const { faq } = useTranslation();
+  const { t } = useTranslation<FaqTranslations>('homePage', 'faq');
 
   return (
     <section className={styles.faq}>
       <div className={styles.container}>
         <h2>
-          {faq?.title}
+          {t.title}
         </h2>
         <div>
-          <CustomAccordion items={faq?.items || []} />
+          <CustomAccordion items={t.items || []} />
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Faq
+export default Faq;

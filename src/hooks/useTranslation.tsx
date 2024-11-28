@@ -22,5 +22,5 @@ export const useTranslation = <T extends Record<string, any>>(page: string, sect
         loadTranslations();
     }, [locale, page, section]);
 
-    return { locale, ...translations };
+    return { t: translations, locale };
 };

@@ -20,7 +20,7 @@ interface ClientsTranslations {
 
 const Clients: React.FC = () => {
     const [clientCards, setClientCards] = useState<ClientCard[]>([]);
-    const { locale, title, viewAll } = useTranslation<ClientsTranslations>('homePage', 'clients');
+    const { t, locale } = useTranslation<ClientsTranslations>('homePage', 'clients');
 
     useEffect(() => {
         const fetchClientCards = async () => {
@@ -35,7 +35,7 @@ const Clients: React.FC = () => {
     }, []);
 
     const getTranslatedTags = (tags: ClientCard['tags']) => {
-        return tags.map(tag => {
+        return tags.map((tag) => {
             if (typeof tag === 'string') return tag;
             if (tag[locale]) return tag[locale];
             console.warn(`Missing translation for tag: ${JSON.stringify(tag)} in locale: ${locale}`);
@@ -43,7 +43,7 @@ const Clients: React.FC = () => {
         });
     };
 
-    const translatedCards = clientCards.map(card => ({
+    const translatedCards = clientCards.map((card) => ({
         ...card,
         tags: getTranslatedTags(card.tags),
     }));
@@ -52,9 +52,14 @@ const Clients: React.FC = () => {
         <section className={styles.clients}>
             <div className={styles.container}>
                 <div className={styles.text}>
-                    <h2>{title}</h2>
-                    <a href="/portfolio" className={styles.viewAllLink}>
-                        {viewAll}
+                    <h2>
+                        {t.title}
+                    </h2>
+                    <a
+                        href="/portfolio"
+                        className={styles.viewAllLink}
+                    >
+                        {t.viewAll}
                         <span>
                             <HiOutlineExternalLink />
                         </span>

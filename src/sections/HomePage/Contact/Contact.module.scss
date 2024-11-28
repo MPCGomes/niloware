@@ -2,7 +2,6 @@
 @use '../../../../styles/mixins'as mixins;
 
 .contact {
-    background-color: vars.$primary-color;
     padding: 80px 0;
     max-width: 1920px;
     margin: auto;
@@ -59,6 +58,20 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        gap: 10px;
+
+        .contactField {
+            flex: 1;
+        }
+    }
+
+}
+
+.contactField {
+    width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -76,4 +89,10 @@
 
 .captcha {
     margin: auto;
+}
+
+.error {
+    color: red;
+    font-size: vars.$fs-200;
+    margin-top: 5px;
 }

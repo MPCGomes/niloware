@@ -11,30 +11,36 @@ interface Step {
     description: string;
 }
 
-interface Process {
+interface ProcessTranslations {
     title: string;
     steps: Step[];
 }
 
 const ProcessComponent: React.FC = () => {
-    const { title, steps } = useTranslation<Process>('homePage', 'process');
+    const { t } = useTranslation<ProcessTranslations>('homePage', 'process');
 
     const icons = [FaPhoneAlt, FaClipboardList, FaCheckCircle, FaShareSquare];
 
     return (
         <section className={styles.process}>
             <div className={styles.container}>
-                <h2>{title}</h2>
+                <h2>
+                    {t.title}
+                </h2>
                 <div className={styles.processContainer}>
-                    {steps?.map((step, index) => (
+                    {t.steps?.map((step, index) => (
                         <React.Fragment key={index}>
                             <ProcessButton
                                 icon={icons[index]}
                                 title={step.title}
                                 description={step.description}
                             />
-                            {index < steps.length - 1 && (
-                                <Image className={styles.arrow} src={Arrow} alt="arrow" />
+                            {index < t.steps.length - 1 && (
+                                <Image
+                                    className={styles.arrow}
+                                    src={Arrow}
+                                    alt="arrow"
+                                />
                             )}
                         </React.Fragment>
                     ))}
