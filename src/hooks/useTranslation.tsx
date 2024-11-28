@@ -1,115 +1,26 @@
-'use client';
-
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+import axios from 'axios';
 
-type FooterTranslations = {
-    tos: string;
-    privacy: string;
-    copyright: string;
-};
-
-type ContactTranslations = {
-    title: string;
-    placeholders: {
-        name: string;
-        email: string;
-        phone: string;
-        message: string;
-    };
-    errors: {
-        name: string;
-        email: string;
-        phone: string;
-        message: string;
-        captcha: string;
-        general: string;
-    };
-    messages: {
-        success: string;
-        sending: string;
-        send: string;
-    };
-};
-
-type FaqItem = {
-    title: string;
-    content: string;
-};
-
-type ServiceTranslation = {
-    plan: string;
-    description: string;
-    textPrice: string;
-    price: string;
-    siteItems: string[];
-    buttonText: string;
-    extraPrice: string;
-};
-
-type CardTranslation = {
-    title: string;
-    description: string;
-};
-
-type StepTranslation = {
-    title: string;
-    description: string;
-};
-
-type Translations = {
-    clients?: {
-        title: string;
-        viewAll: string;
-    };
-    hero?: {
-        title: string;
-        subtitle: string;
-        cta: string;
-    };
-    resource?: {
-        title: string;
-        cards: CardTranslation[];
-    };
-    process?: {
-        title: string;
-        steps: StepTranslation[];
-    };
-    services?: {
-        title: string;
-        plans: ServiceTranslation[];
-    };
-    faq?: {
-        title: string;
-        items: FaqItem[];
-    };
-    contact?: ContactTranslations;
-    footer?: FooterTranslations;
-};
-
-export const useTranslation = () => {
-    const [translations, setTranslations] = useState<Translations>({});
+export const useTranslation = <T extends Record<string, any>>(page: string, section: string) => {
+    const [translations, setTranslations] = useState<T>({} as T);
     const params = useParams();
-    const localeParam = params?.locale;
 
-    const locale = Array.isArray(localeParam) ? localeParam[0] : localeParam || 'en-us';
+    const localeParam = params.locale;
+    const locale = Array.isArray(localeParam) ? localeParam[0] : localeParam || 'pt-br';
 
     useEffect(() => {
         const loadTranslations = async () => {
             try {
-                const res = await fetch(`/locales/${locale}/translation.json`);
-                if (!res.ok) {
-                    throw new Error('Translation file not found');
-                }
-                const data = await res.json();
-                setTranslations(data);
+                const res = await axios.get<T>(`/locales/${locale}/${page}/${section}.json`);
+                setTranslations(res.data);
             } catch (error) {
-                console.error(error);
+                console.error('Error loading translations:', error);
             }
         };
 
         loadTranslations();
-    }, [locale]);
+    }, [locale, page, section]);
 
-    return translations;
+    return { locale, ...translations };
 };
