@@ -8,7 +8,7 @@
     h3 {
         font-size: vars.$fs-700;
         text-transform: uppercase;
-        color: vars.$light-bg-color;
+        color: vars.$light-text;
 
         span {
             color: vars.$primary-color;
@@ -35,7 +35,7 @@
 
     &:hover {
         background-color: vars.$primary-color;
-        color: vars.$light-bg-color;
+        color: var(--light-container-color);
     }
 }
 
@@ -59,7 +59,7 @@
     height: 100dvh;
 
     a {
-        color: vars.$light-bg-color;
+        color: vars.$light-text;
         font-size: vars.$fs-300;
     }
 
@@ -73,7 +73,8 @@
     background: none;
     border: none;
     font-size: vars.$fs-700;
-    color: vars.$light-bg-color;
+    color: vars.$light-text;
+
     cursor: pointer;
 }
 
@@ -109,7 +110,7 @@
                 width: 0px;
                 height: 2px;
                 display: block;
-                background: vars.$light-bg-color;
+                background: vars.$light-text;
                 transition: 300ms;
             }
 

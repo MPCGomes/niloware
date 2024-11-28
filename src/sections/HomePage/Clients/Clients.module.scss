@@ -2,7 +2,7 @@
 @use '../../../../styles/mixins'as mixins;
 
 .clients {
-    background: vars.$light-bg-color;
+    background: var(--light-container-color);
     padding: 80px 0;
     max-width: 1920px;
     margin: auto;

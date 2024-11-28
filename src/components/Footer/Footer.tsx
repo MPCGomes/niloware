@@ -15,17 +15,27 @@ const Footer = () => {
         <footer className={styles.footer}>
             <div className={styles.container}>
                 <div className={styles.leftContainer}>
-                    <h3>
+                    <h3 className={styles.logo}>
                         Niloware
                     </h3>
                     <div className={styles.socials}>
-                        <Link href="">
-                            <FaFacebook />
+                        <Link
+                            className={styles.social}
+                            href=""
+                        >
+                            <FaFacebook 
+                            />
                         </Link>
-                        <Link href="">
+                        <Link
+                            className={styles.social}
+                            href=""
+                        >
                             <FaInstagram />
                         </Link>
-                        <Link href="">
+                        <Link
+                            className={styles.social}
+                            href=""
+                        >
                             <FaXTwitter />
                         </Link>
                     </div>
