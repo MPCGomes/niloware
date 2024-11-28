@@ -1,48 +1,47 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import styles from './Process.module.scss';
 import { FaPhoneAlt, FaClipboardList, FaCheckCircle, FaShareSquare } from 'react-icons/fa';
-import Arrow from '../../../public/assets/arrow.png';
+import Arrow from '@/public/assets/homePage/arrow.png';
 import { useTranslation } from '@/src/hooks/useTranslation';
 import ProcessButton from '@/src/components/ProcessButton/ProcessButton';
 
-const Process: React.FC = () => {
-    const { process } = useTranslation();
+interface Step {
+    title: string;
+    description: string;
+}
 
-    const icons = [
-        FaPhoneAlt,
-        FaClipboardList,
-        FaCheckCircle,
-        FaShareSquare
-    ];
+interface Process {
+    title: string;
+    steps: Step[];
+}
+
+const ProcessComponent: React.FC = () => {
+    const { title, steps } = useTranslation<Process>('homePage', 'process');
+
+    const icons = [FaPhoneAlt, FaClipboardList, FaCheckCircle, FaShareSquare];
 
     return (
         <section className={styles.process}>
             <div className={styles.container}>
-                <h2>
-                    {process?.title}
-                </h2>
+                <h2>{title}</h2>
                 <div className={styles.processContainer}>
-                    {process?.steps?.map((step, index) => (
+                    {steps?.map((step, index) => (
                         <React.Fragment key={index}>
                             <ProcessButton
                                 icon={icons[index]}
                                 title={step.title}
                                 description={step.description}
                             />
-                            {index < process.steps.length - 1 && (
-                                <Image
-                                    className={styles.arrow}
-                                    src={Arrow}
-                                    alt="arrow"
-                                />
+                            {index < steps.length - 1 && (
+                                <Image className={styles.arrow} src={Arrow} alt="arrow" />
                             )}
                         </React.Fragment>
                     ))}
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Process
+export default ProcessComponent;
