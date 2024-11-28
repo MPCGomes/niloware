@@ -16,7 +16,7 @@ interface ResourceTranslations {
 }
 
 const Resource: React.FC = () => {
-  const { title, cards } = useTranslation<ResourceTranslations>('homePage', 'resources');
+  const { t } = useTranslation<ResourceTranslations>('homePage', 'resources');
 
   const icons = [
     FaDesktop,
@@ -27,11 +27,13 @@ const Resource: React.FC = () => {
     FaHeadset,
   ];
 
-  if (!title || !cards) {
+  if (!t.title || !t.cards) {
     return (
       <section className={styles.resources}>
         <div className={styles.container}>
-          <h2 className={classNames(styles.subtitle)}>Loading...</h2>
+          <h2 className={styles.subtitle}>
+            Loading...
+          </h2>
         </div>
       </section>
     );
@@ -41,10 +43,10 @@ const Resource: React.FC = () => {
     <section className={styles.resources}>
       <div className={styles.container}>
         <h2 className={classNames(styles.subtitle)}>
-          {title}
+          {t.title}
         </h2>
         <div className={styles.cards}>
-          {cards.map((card: ResourceCardData, index: number) => (
+          {t.cards.map((card, index) => (
             <ResourceCard
               key={index}
               icon={icons[index]}

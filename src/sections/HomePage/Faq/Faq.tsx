@@ -14,14 +14,16 @@ interface FaqTranslations {
 }
 
 const Faq: React.FC = () => {
-  const { title, items } = useTranslation<FaqTranslations>('homePage', 'faq');
+  const { t } = useTranslation<FaqTranslations>('homePage', 'faq');
 
   return (
     <section className={styles.faq}>
       <div className={styles.container}>
-        <h2>{title}</h2>
+        <h2>
+          {t.title}
+        </h2>
         <div>
-          <CustomAccordion items={items || []} />
+          <CustomAccordion items={t.items || []} />
         </div>
       </div>
     </section>

@@ -19,33 +19,39 @@ interface ServicesTranslations {
 }
 
 const Services: React.FC = () => {
-    const { title, plans } = useTranslation<ServicesTranslations>('homePage', 'services');
+    const { t } = useTranslation<ServicesTranslations>('homePage', 'services');
 
     return (
         <section className={styles.services}>
             <div className={styles.container}>
                 <div className={styles.text}>
-                    <h2>{title}</h2>
+                    <h2>
+                        {t.title}
+                    </h2>
                 </div>
                 <div className={styles.card}>
-                    {plans?.map((plan, index) => (
+                    {t.plans?.map((plan, index) => (
                         <ServiceCard
                             key={index}
                             plan={plan.plan}
                             description={plan.description}
                             textPrice={plan.textPrice}
                             price={plan.price}
-                            siteItem={<ul>
-                                {plan.siteItems.map((item, i) => (
-                                    <li key={i}>
-                                        <span>
-                                            <IoCheckmarkCircle />
-                                        </span>{' '}
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>}
-                            buttonText={plan.buttonText} extraPrice={''} />
+                            siteItem={
+                                <ul>
+                                    {plan.siteItems.map((item, i) => (
+                                        <li key={i}>
+                                            <span>
+                                                <IoCheckmarkCircle />
+                                            </span>{' '}
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            }
+                            buttonText={plan.buttonText}
+                            extraPrice={''}
+                        />
                     ))}
                 </div>
             </div>

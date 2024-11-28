@@ -29,7 +29,7 @@ interface ContactTranslations {
 }
 
 const Contact: React.FC = () => {
-  const translations = useTranslation<ContactTranslations>('homePage', 'contact');
+  const { t } = useTranslation<ContactTranslations>('homePage', 'contact');
 
   const [formData, setFormData] = useState({
     name: '',
@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<boolean>(false);
 
-  if (!translations || !translations.placeholders) {
+  if (!t.placeholders) {
     return (
       <section className={styles.contact}>
         <div className={styles.container}>
@@ -58,8 +58,6 @@ const Contact: React.FC = () => {
     );
   }
 
-  const { title, placeholders, errors, messages } = translations;
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({
@@ -68,7 +66,7 @@ const Contact: React.FC = () => {
     });
     setErrorsState({
       ...errorsState,
-      [name]: '', // Clear error for the field as the user types
+      [name]: '',
     });
   };
 
@@ -77,23 +75,23 @@ const Contact: React.FC = () => {
     const newErrors = { name: '', email: '', phone: '', message: '', captcha: '' };
 
     if (formData.name.length < 3) {
-      newErrors.name = errors.name;
+      newErrors.name = t.errors.name;
       valid = false;
     }
     if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      newErrors.email = errors.email;
+      newErrors.email = t.errors.email;
       valid = false;
     }
     if (!/^\d{10,}$/.test(formData.phone)) {
-      newErrors.phone = errors.phone;
+      newErrors.phone = t.errors.phone;
       valid = false;
     }
     if (formData.message.length < 10) {
-      newErrors.message = errors.message;
+      newErrors.message = t.errors.message;
       valid = false;
     }
     if (!captchaToken) {
-      newErrors.captcha = errors.captcha;
+      newErrors.captcha = t.errors.captcha;
       valid = false;
     }
 
@@ -105,7 +103,7 @@ const Contact: React.FC = () => {
     setCaptchaToken(token);
     setErrorsState({
       ...errorsState,
-      captcha: '', // Clear CAPTCHA error when valid token is set
+      captcha: '',
     });
   };
 
@@ -143,7 +141,7 @@ const Contact: React.FC = () => {
     } catch (err) {
       setErrorsState({
         ...errorsState,
-        captcha: errors.general,
+        captcha: t.errors.general,
       });
     } finally {
       setLoading(false);
@@ -153,63 +151,81 @@ const Contact: React.FC = () => {
   return (
     <section className={styles.contact}>
       <div className={styles.container}>
-        <h2>{title}</h2>
-        <form className={styles.inputs} onSubmit={handleSubmit} noValidate>
+        <h2>
+          {t.title}
+        </h2>
+        <form
+          className={styles.inputs}
+          onSubmit={handleSubmit}
+          noValidate
+        >
           <div>
             <input
               type="text"
               name="name"
-              placeholder={placeholders.name}
+              placeholder={t.placeholders.name}
               value={formData.name}
               onChange={handleChange}
             />
-            {errorsState.name && <p className={styles.error}>{errorsState.name}</p>}
+            {errorsState.name && <p className={styles.error}>
+              {errorsState.name}
+            </p>}
           </div>
           <div className={styles.contacts}>
             <div className={styles.contactField}>
               <input
                 type="text"
                 name="email"
-                placeholder={placeholders.email}
+                placeholder={t.placeholders.email}
                 value={formData.email}
                 onChange={handleChange}
               />
-              {errorsState.email && <p className={styles.error}>{errorsState.email}</p>}
+              {errorsState.email && <p className={styles.error}>
+                {errorsState.email}
+              </p>}
             </div>
             <div className={styles.contactField}>
               <input
                 type="text"
                 name="phone"
-                placeholder={placeholders.phone}
+                placeholder={t.placeholders.phone}
                 value={formData.phone}
                 onChange={handleChange}
               />
-              {errorsState.phone && <p className={styles.error}>{errorsState.phone}</p>}
+              {errorsState.phone && <p className={styles.error}>
+                {errorsState.phone}
+              </p>}
             </div>
           </div>
 
           <div>
             <textarea
               name="message"
-              placeholder={placeholders.message}
+              placeholder={t.placeholders.message}
               value={formData.message}
               onChange={handleChange}
             />
-            {errorsState.message && <p className={styles.error}>{errorsState.message}</p>}
+            {errorsState.message && <p className={styles.error}>
+              {errorsState.message}
+            </p>}
           </div>
           <ReCAPTCHA
             className={styles.captcha}
             sitekey="6Lc9I1cqAAAAAH6ojKJq8mclozs2RaBgVgG4220F"
             onChange={handleCaptchaChange}
           />
-          {errorsState.captcha && <p className={styles.error}>{errorsState.captcha}</p>}
+          {errorsState.captcha && <p className={styles.error}>
+            {errorsState.captcha}
+          </p>}
           <Button
-            text={loading ? messages.sending : messages.send}
+            text={loading ? t.messages.sending : t.messages.send}
             type="submit"
             className={styles.button}
           />
         </form>
-        {success && <p className={styles.success}>{messages.success}</p>}
+        {success && <p className={styles.success}>
+          {t.messages.success}
+        </p>}
       </div>
     </section>
   );
