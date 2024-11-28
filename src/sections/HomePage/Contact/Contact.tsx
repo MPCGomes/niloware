@@ -37,9 +37,15 @@ const Contact: React.FC = () => {
     phone: '',
     message: '',
   });
+  const [errorsState, setErrorsState] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+    captcha: '',
+  });
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<boolean>(false);
 
   if (!translations || !translations.placeholders) {
@@ -60,40 +66,55 @@ const Contact: React.FC = () => {
       ...formData,
       [name]: value,
     });
+    setErrorsState({
+      ...errorsState,
+      [name]: '', // Clear error for the field as the user types
+    });
+  };
+
+  const validateForm = (): boolean => {
+    let valid = true;
+    const newErrors = { name: '', email: '', phone: '', message: '', captcha: '' };
+
+    if (formData.name.length < 3) {
+      newErrors.name = errors.name;
+      valid = false;
+    }
+    if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = errors.email;
+      valid = false;
+    }
+    if (!/^\d{10,}$/.test(formData.phone)) {
+      newErrors.phone = errors.phone;
+      valid = false;
+    }
+    if (formData.message.length < 10) {
+      newErrors.message = errors.message;
+      valid = false;
+    }
+    if (!captchaToken) {
+      newErrors.captcha = errors.captcha;
+      valid = false;
+    }
+
+    setErrorsState(newErrors);
+    return valid;
   };
 
   const handleCaptchaChange = (token: string | null) => {
     setCaptchaToken(token);
+    setErrorsState({
+      ...errorsState,
+      captcha: '', // Clear CAPTCHA error when valid token is set
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError(null);
     setSuccess(false);
 
-    if (formData.name.length < 3) {
-      setError(errors.name);
-      setLoading(false);
-      return;
-    }
-    if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      setError(errors.email);
-      setLoading(false);
-      return;
-    }
-    if (!/^\d{10,}$/.test(formData.phone)) {
-      setError(errors.phone);
-      setLoading(false);
-      return;
-    }
-    if (formData.message.length < 10) {
-      setError(errors.message);
-      setLoading(false);
-      return;
-    }
-    if (!captchaToken) {
-      setError(errors.captcha);
+    if (!validateForm()) {
       setLoading(false);
       return;
     }
@@ -120,7 +141,10 @@ const Contact: React.FC = () => {
       });
       setCaptchaToken(null);
     } catch (err) {
-      setError(errors.general);
+      setErrorsState({
+        ...errorsState,
+        captcha: errors.general,
+      });
     } finally {
       setLoading(false);
     }
@@ -130,56 +154,61 @@ const Contact: React.FC = () => {
     <section className={styles.contact}>
       <div className={styles.container}>
         <h2>{title}</h2>
-        <form className={styles.inputs} onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder={placeholders.name}
-            value={formData.name}
-            onChange={handleChange}
-            minLength={3}
-            required
-          />
-          <div className={styles.contacts}>
-            <input
-              type="email"
-              name="email"
-              placeholder={placeholders.email}
-              value={formData.email}
-              onChange={handleChange}
-              pattern="^\S+@\S+\.\S+$"
-              required
-            />
+        <form className={styles.inputs} onSubmit={handleSubmit} noValidate>
+          <div>
             <input
               type="text"
-              name="phone"
-              placeholder={placeholders.phone}
-              value={formData.phone}
+              name="name"
+              placeholder={placeholders.name}
+              value={formData.name}
               onChange={handleChange}
-              pattern="^\d{10,}$"
-              required
             />
+            {errorsState.name && <p className={styles.error}>{errorsState.name}</p>}
           </div>
-          <textarea
-            name="message"
-            placeholder={placeholders.message}
-            value={formData.message}
-            onChange={handleChange}
-            minLength={10}
-            required
-          />
+          <div className={styles.contacts}>
+            <div className={styles.contactField}>
+              <input
+                type="text"
+                name="email"
+                placeholder={placeholders.email}
+                value={formData.email}
+                onChange={handleChange}
+              />
+              {errorsState.email && <p className={styles.error}>{errorsState.email}</p>}
+            </div>
+            <div className={styles.contactField}>
+              <input
+                type="text"
+                name="phone"
+                placeholder={placeholders.phone}
+                value={formData.phone}
+                onChange={handleChange}
+              />
+              {errorsState.phone && <p className={styles.error}>{errorsState.phone}</p>}
+            </div>
+          </div>
+
+          <div>
+            <textarea
+              name="message"
+              placeholder={placeholders.message}
+              value={formData.message}
+              onChange={handleChange}
+            />
+            {errorsState.message && <p className={styles.error}>{errorsState.message}</p>}
+          </div>
           <ReCAPTCHA
             className={styles.captcha}
             sitekey="6Lc9I1cqAAAAAH6ojKJq8mclozs2RaBgVgG4220F"
             onChange={handleCaptchaChange}
           />
+          {errorsState.captcha && <p className={styles.error}>{errorsState.captcha}</p>}
           <Button
             text={loading ? messages.sending : messages.send}
             type="submit"
             className={styles.button}
           />
         </form>
-        {error && <p className={styles.error}>{error}</p>}
         {success && <p className={styles.success}>{messages.success}</p>}
       </div>
     </section>
