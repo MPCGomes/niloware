@@ -4,6 +4,7 @@ import Button from '@/src/components/Button/Button';
 import styles from './Contact.module.scss';
 import { useTranslation } from '@/src/hooks/useTranslation';
 import axios from 'axios';
+import * as Yup from 'yup';
 
 interface ContactTranslations {
   title: string;
@@ -48,7 +49,7 @@ const Contact: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<boolean>(false);
 
-  if (!t.placeholders) {
+  if (!t.errors || !t.placeholders) {
     return (
       <section className={styles.contact}>
         <div className={styles.container}>
@@ -57,6 +58,18 @@ const Contact: React.FC = () => {
       </section>
     );
   }
+
+  const validationSchema = Yup.object().shape({
+    name: Yup.string()
+      .matches(/^[a-zA-Z\s]+$/, t.errors.name)
+      .min(3, t.errors.name)
+      .required(t.errors.name),
+    email: Yup.string().email(t.errors.email).required(t.errors.email),
+    phone: Yup.string()
+      .matches(/^[0-9+\s()-]+$/, t.errors.phone)
+      .required(t.errors.phone),
+    message: Yup.string().min(10, t.errors.message).required(t.errors.message),
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -70,33 +83,39 @@ const Contact: React.FC = () => {
     });
   };
 
-  const validateForm = (): boolean => {
-    let valid = true;
-    const newErrors = { name: '', email: '', phone: '', message: '', captcha: '' };
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const { name } = e.currentTarget;
 
-    if (formData.name.length < 3) {
-      newErrors.name = t.errors.name;
-      valid = false;
-    }
-    if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      newErrors.email = t.errors.email;
-      valid = false;
-    }
-    if (!/^\d{10,}$/.test(formData.phone)) {
-      newErrors.phone = t.errors.phone;
-      valid = false;
-    }
-    if (formData.message.length < 10) {
-      newErrors.message = t.errors.message;
-      valid = false;
-    }
-    if (!captchaToken) {
-      newErrors.captcha = t.errors.captcha;
-      valid = false;
+    if (name === 'name') {
+      if (!/^[a-zA-Z\s]*$/.test(e.key) && !['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+        e.preventDefault();
+      }
     }
 
-    setErrorsState(newErrors);
-    return valid;
+    if (name === 'phone') {
+      if (!/^[0-9+\s()-]*$/.test(e.key) && !['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+        e.preventDefault();
+      }
+    }
+  };
+
+  const validateForm = async (): Promise<boolean> => {
+    try {
+      await validationSchema.validate(formData, { abortEarly: false });
+      setErrorsState({ name: '', email: '', phone: '', message: '', captcha: '' });
+      return true;
+    } catch (err) {
+      const newErrors: typeof errorsState = { name: '', email: '', phone: '', message: '', captcha: '' };
+      if (err instanceof Yup.ValidationError) {
+        err.inner.forEach((error) => {
+          if (error.path) {
+            newErrors[error.path as keyof typeof errorsState] = error.message;
+          }
+        });
+      }
+      setErrorsState(newErrors);
+      return false;
+    }
   };
 
   const handleCaptchaChange = (token: string | null) => {
@@ -112,7 +131,18 @@ const Contact: React.FC = () => {
     setLoading(true);
     setSuccess(false);
 
-    if (!validateForm()) {
+    const isValid = await validateForm();
+
+    if (!isValid) {
+      setLoading(false);
+      return;
+    }
+
+    if (!captchaToken) {
+      setErrorsState((prev) => ({
+        ...prev,
+        captcha: t.errors.captcha,
+      }));
       setLoading(false);
       return;
     }
@@ -166,6 +196,7 @@ const Contact: React.FC = () => {
               placeholder={t.placeholders.name}
               value={formData.name}
               onChange={handleChange}
+              onKeyDown={handleKeyDown}
             />
             {errorsState.name && <p className={styles.error}>
               {errorsState.name}
@@ -191,13 +222,13 @@ const Contact: React.FC = () => {
                 placeholder={t.placeholders.phone}
                 value={formData.phone}
                 onChange={handleChange}
+                onKeyDown={handleKeyDown}
               />
               {errorsState.phone && <p className={styles.error}>
                 {errorsState.phone}
               </p>}
             </div>
           </div>
-
           <div>
             <textarea
               name="message"
@@ -214,9 +245,7 @@ const Contact: React.FC = () => {
             sitekey="6Lc9I1cqAAAAAH6ojKJq8mclozs2RaBgVgG4220F"
             onChange={handleCaptchaChange}
           />
-          {errorsState.captcha && <p className={styles.error}>
-            {errorsState.captcha}
-          </p>}
+          {errorsState.captcha && <p className={styles.error}>{errorsState.captcha}</p>}
           <Button
             text={loading ? t.messages.sending : t.messages.send}
             type="submit"
