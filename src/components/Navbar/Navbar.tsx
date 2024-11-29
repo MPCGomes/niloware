@@ -6,12 +6,8 @@ import Link from 'next/link';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import LanguageToggle from '../LanguageToggle/LanguageToggle';
 
-interface NavbarProps {
-  link: string;
-  customRef: string;
-}
 
-const Navbar: React.FC<NavbarProps> = ({ link, customRef }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -34,9 +30,12 @@ const Navbar: React.FC<NavbarProps> = ({ link, customRef }) => {
             styles.links,
             { [styles.open]: isOpen })
           }>
-            <a href={customRef}>
-              {link}
-            </a>
+            <Link href='home'>
+              Ínicio
+            </Link>
+            <Link href='/portfolio'>
+              Portfólio
+            </Link>
           </div>
         </div>
         <div className={styles.rightSide}>

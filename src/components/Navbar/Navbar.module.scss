@@ -4,6 +4,7 @@
 .navbar {
     background-color: vars.$dark-bg-color;
     padding: 15px 0;
+    text-decoration: none !important;
 
     h3 {
         font-size: vars.$fs-600;
@@ -11,7 +12,7 @@
         color: vars.$light-text;
 
         span {
-            color: vars.$primary-color;
+            color: var(--primary-color);
         }
 
         @media (min-width: 1024px) {
@@ -30,15 +31,15 @@
     display: none;
     border-radius: 10px;
     padding: 10px 20px;
-    border: 1px solid vars.$primary-color;
+    border: 1px solid var(--primary-color);
     background-color: transparent;
     font-size: vars.$fs-400;
-    color: vars.$primary-color;
+    color: var(--primary-color);
     cursor: pointer;
     letter-spacing: 1px;
 
     &:hover {
-        background-color: vars.$primary-color;
+        background-color: var(--primary-color);
         color: var(--light-container-color);
     }
 }
