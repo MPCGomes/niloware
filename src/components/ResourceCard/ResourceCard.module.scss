@@ -1,7 +1,7 @@
 @use '../../../styles/variables' as vars;
 
 .resourceCard {
-    border: 1px solid vars.$border-color;
+    border: 1px solid var(--border-color);
     background-color: var(--light-container-color);
     width: 100%;
     padding: 20px;
@@ -11,12 +11,12 @@
     border-radius: 10px;
 
     &:hover {
-        background-color: vars.$primary-color;
+        background-color: var(--primary-color);
         transform: translateY(-7px);
 
         .iconContainer {
             background-color: var(--light-container-color);
-            color: vars.$primary-color;
+            color: var(--primary-color);
         }
 
         .text {
@@ -32,7 +32,7 @@
 }
 
 .iconContainer {
-    background-color: vars.$primary-color;
+    background-color: var(--primary-color);
     color: var(--light-container-color);
     width: 40px;
     height: 40px;
