@@ -1,5 +1,5 @@
-@use '../../../../styles/variables'as vars;
-@use '../../../../styles/mixins'as mixins;
+@use '../../../../styles/variables' as vars;
+@use '../../../../styles/mixins' as mixins;
 
 .clients {
     background: var(--light-container-color);
@@ -14,19 +14,23 @@
 
 .text {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     margin-bottom: 48px;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     h2 {
         @include mixins.subtitle();
         margin-bottom: 0;
-        color: vars.$text-color;
+        color: var(--text-color);
     }
 
     a {
-        color: vars.$text-color;
+        color: var(--text-color);
         text-transform: uppercase;
         font-size: vars.$fs-200;
         display: flex;

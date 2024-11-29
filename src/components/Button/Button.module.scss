@@ -4,7 +4,7 @@
 .button {
     display: inline-block;
     padding: 15px 30px;
-    background-color: vars.$primary-color;
+    background-color: var(--primary-color);
     color: var(--light-container-color);
     text-transform: uppercase;
     font-size: vars.$fs-300;
@@ -13,8 +13,4 @@
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-
-    &:hover {
-        background-color: color.adjust(vars.$primary-color, $lightness: -10%);
-    }
 }
