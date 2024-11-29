@@ -1,6 +1,5 @@
 import React from 'react'
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import styles from './Footer.module.scss'
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
@@ -31,12 +30,6 @@ const Footer = () => {
                             href=""
                         >
                             <FaInstagram />
-                        </Link>
-                        <Link
-                            className={styles.social}
-                            href=""
-                        >
-                            <FaXTwitter />
                         </Link>
                     </div>
                 </div>

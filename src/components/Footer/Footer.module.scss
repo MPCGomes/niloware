@@ -3,7 +3,7 @@
 
 .footer {
     background-color: vars.$dark-bg-color;
-    color: var(--light-container-color);
+    color: var(--light-container-color) ;
     padding: 40px 0;
 
     .container {
@@ -18,15 +18,17 @@
     .logo {
         font-size: vars.$fs-700;
         text-transform: uppercase;
+        color: vars.$light-text;
 
         span {
-            color: vars.$primary-color;
+            color: var(--primary-color);
         }
     }
 
     .socials {
         display: flex;
         gap: 15px;
+        justify-content: center;
 
         .social {
             color: vars.$light-text;
@@ -34,8 +36,12 @@
             transition: color 0.3s ease-in-out;
 
             &:hover {
-                color: vars.$primary-color;
+                color: var(--primary-color);
             }
+        }
+
+        @media (min-width: 641px) {
+            justify-content: flex-start;
         }
     }
 
