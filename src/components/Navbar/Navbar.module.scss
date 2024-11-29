@@ -6,19 +6,23 @@
     padding: 15px 0;
 
     h3 {
-        font-size: vars.$fs-700;
+        font-size: vars.$fs-600;
         text-transform: uppercase;
         color: vars.$light-text;
 
         span {
             color: vars.$primary-color;
         }
+
+        @media (min-width: 1024px) {
+            font-size: vars.$fs-700;
+        }
     }
 }
 
 .rightSide {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
 }
 
@@ -74,6 +78,7 @@
     border: none;
     font-size: vars.$fs-700;
     color: vars.$light-text;
+    padding-top: 10px;
 
     cursor: pointer;
 }
