@@ -1,5 +1,5 @@
-@use '../../../../styles/variables'as vars;
-@use '../../../../styles/mixins'as mixins;
+@use '../../../../styles/variables' as vars;
+@use '../../../../styles/mixins' as mixins;
 
 .contact {
     padding: 80px 0;
@@ -12,7 +12,7 @@
 
     h2 {
         @include mixins.subtitle;
-        color: vars.$text-color;
+        color: var(--text-color);
     }
 }
 
@@ -26,7 +26,7 @@
     button {
         width: 100%;
         padding: 15px;
-        border: 1px solid vars.$border-color;
+        border: 1px solid var(--border-color);
         border-radius: 10px;
         font-size: vars.$fs-300;
         font-family: vars.$ff-primary;
@@ -40,7 +40,7 @@
 
     input::placeholder,
     textarea::placeholder {
-        color: vars.$border-color;
+        color: var(--border-color);
     }
 
     textarea {
@@ -51,6 +51,11 @@
     button {
         margin-top: 28px;
         font-size: vars.$fs-400;
+        background-color: var(--black-white);
+
+        &:hover {
+            background-color: var(--black-white);
+        }
     }
 }
 
