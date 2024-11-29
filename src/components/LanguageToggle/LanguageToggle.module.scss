@@ -25,7 +25,7 @@
     transition: all 0.3s ease-in-out;
 
     svg {
-      color: vars.$primary-color;
+      color: var(--primary-color);
     }
   }
 }
@@ -75,7 +75,7 @@
 
   &.active {
     font-weight: bold;
-    color: vars.$primary-color;
+    color: var(--primary-color);
   }
 }
 
