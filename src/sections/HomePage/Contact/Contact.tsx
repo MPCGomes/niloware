@@ -51,31 +51,35 @@ const Contact: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<boolean>(false);
 
-  const validationSchema = Yup.object().shape({
-    name: Yup.string()
-      .matches(/^[a-zA-Z\s]+$/, t.errors.name)
-      .min(3, t.errors.name)
-      .required(t.errors.name),
-    email: Yup.string().email(t.errors.email).required(t.errors.email),
-    phone: Yup.string()
-      .matches(/^[0-9+\s()-]+$/, t.errors.phone)
-      .required(t.errors.phone),
-    message: Yup.string().min(10, t.errors.message).required(t.errors.message),
-  });
+  if (!t || !t.placeholders || !t.errors || !t.messages) {
+    return null;
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
-    });
-    setErrorsState({
-      ...errorsState,
+    }));
+    setErrorsState((prev) => ({
+      ...prev,
       [name]: '',
-    });
+    }));
   };
 
   const validateForm = async (): Promise<boolean> => {
+    const validationSchema = Yup.object().shape({
+      name: Yup.string()
+        .matches(/^[a-zA-Z\s]+$/, t.errors.name)
+        .min(3, t.errors.name)
+        .required(t.errors.name),
+      email: Yup.string().email(t.errors.email).required(t.errors.email),
+      phone: Yup.string()
+        .matches(/^[0-9+\s()-]+$/, t.errors.phone)
+        .required(t.errors.phone),
+      message: Yup.string().min(10, t.errors.message).required(t.errors.message),
+    });
+
     try {
       await validationSchema.validate(formData, { abortEarly: false });
       setErrorsState({ name: '', email: '', phone: '', message: '', captcha: '' });
@@ -85,7 +89,7 @@ const Contact: React.FC = () => {
       if (err instanceof Yup.ValidationError) {
         err.inner.forEach((error) => {
           if (error.path) {
-            newErrors[error.path as keyof typeof errorsState] = error.message;
+            newErrors[error.path as keyof typeof newErrors] = error.message;
           }
         });
       }
@@ -96,10 +100,10 @@ const Contact: React.FC = () => {
 
   const handleCaptchaChange = (token: string | null) => {
     setCaptchaToken(token);
-    setErrorsState({
-      ...errorsState,
+    setErrorsState((prev) => ({
+      ...prev,
       captcha: '',
-    });
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -125,9 +129,9 @@ const Contact: React.FC = () => {
 
     try {
       await axios.post('https://api.emailjs.com/api/v1.0/email/send', {
-        service_id: 'service_yyvleds',
-        template_id: 'template_w8h6p1f',
-        user_id: 'TV0egaxYnT67PB2Ez',
+        service_id: 'your_service_id',
+        template_id: 'your_template_id',
+        user_id: 'your_user_id',
         template_params: {
           name: formData.name,
           email: formData.email,
@@ -145,10 +149,10 @@ const Contact: React.FC = () => {
       });
       setCaptchaToken(null);
     } catch (err) {
-      setErrorsState({
-        ...errorsState,
+      setErrorsState((prev) => ({
+        ...prev,
         captcha: t.errors.general,
-      });
+      }));
     } finally {
       setLoading(false);
     }
