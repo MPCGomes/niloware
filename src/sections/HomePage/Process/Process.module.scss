@@ -1,5 +1,5 @@
-@use '../../../../styles/variables' as vars;
-@use '../../../../styles/mixins' as mixins;
+@use '../../../../styles/variables'as vars;
+@use '../../../../styles/mixins'as mixins;
 
 .process {
     background-color: vars.$primary-color;
@@ -7,41 +7,36 @@
     padding-bottom: 80px;
     max-width: 1920px;
     margin: auto;
-}
 
-.container {
-    @include mixins.container();
+    .container {
+        @include mixins.container();
 
-    h2 {
-        @include mixins.subtitle(#FFFFFF);
+        h2 {
+            @include mixins.subtitle(#FFFFFF);
+        }
+
+        .processContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            color: var(--light-container-color);
+
+            @media (min-width: 1024px) {
+                flex-direction: row;
+                gap: 20px;
+            }
+        }
     }
 }
 
-.arrow {
+.icon {
     width: 90px;
     height: auto;
-    transform: rotate(90deg);
-}
 
-.processContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 80px;
-    color: var(--light-container-color);
-}
 
-@media (min-width: 1024px) {
-    .processContainer {
-        flex-direction: row;
-        align-items: center;
-        gap: 20px;
-        justify-content: space-between;
-    }
-
-    .arrow {
+    @media (max-width: 1024px) {
         width: 110px;
         height: auto;
-        transform: rotate(0deg);
+        transform: rotate(90deg);
     }
 }
