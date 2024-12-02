@@ -74,7 +74,14 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({ items }) => {
             <Typography style={{ fontWeight: 600 }}>{item.title}</Typography>
           </StyledAccordionSummary>
           <StyledAccordionDetails>
-            <Typography>{item.content}</Typography>
+            <Typography>
+              {item.content.split('\n').map((line, idx) => (
+                <React.Fragment key={idx}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}
+            </Typography>
           </StyledAccordionDetails>
         </StyledAccordion>
       ))}
