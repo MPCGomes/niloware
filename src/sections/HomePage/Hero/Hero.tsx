@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
         </h3>
         <Button
           className={styles.button}
-          link="#"
+          link="#services"
           text={t.cta}
         />
       </div>
