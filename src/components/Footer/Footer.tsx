@@ -1,6 +1,7 @@
-import React from 'react';
 import { FaInstagram } from 'react-icons/fa';
 import styles from './Footer.module.scss';
+import React from 'react'
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { useTranslation } from '../../../src/hooks/useTranslation';
 

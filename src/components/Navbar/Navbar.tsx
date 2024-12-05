@@ -6,12 +6,8 @@ import Link from 'next/link';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import LanguageToggle from '../LanguageToggle/LanguageToggle';
 
-interface NavbarProps {
-  link: string;
-  customRef: string;
-}
 
-const Navbar: React.FC<NavbarProps> = ({ link, customRef }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
