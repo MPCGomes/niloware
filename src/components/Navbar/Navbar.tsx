@@ -7,11 +7,10 @@ import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import LanguageToggle from '../LanguageToggle/LanguageToggle';
 
 interface NavbarProps {
-  link: string;
-  customRef: string;
+  links: { name: string; url: string }[];
 }
 
-const Navbar: React.FC<NavbarProps> = ({ link, customRef }) => {
+const Navbar: React.FC<NavbarProps> = ({ links }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -33,13 +32,19 @@ const Navbar: React.FC<NavbarProps> = ({ link, customRef }) => {
               [styles.open]: isOpen,
             })}
           >
-            <Link href={customRef}>{link}</Link>
+            {links.map((link, index) => (
+              <Link key={index} href={link.url}>
+                {link.name}
+              </Link>
+            ))}
           </div>
         </div>
         <div className={styles.rightSide}>
           <ThemeToggle />
           <LanguageToggle />
-          <button className={styles.button}>Fale Conosco</button>
+          <Link href={'#contact'}>
+            <button className={styles.button}>Fale Conosco</button>
+          </Link>
           <button onClick={toggleMenu} className={styles.menu}>
             <IoMdMenu />
           </button>

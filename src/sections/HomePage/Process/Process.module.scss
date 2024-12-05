@@ -20,6 +20,7 @@
             flex-direction: column;
             gap: 80px;
             color: var(--light-container-color);
+            align-items: center;
 
             @media (min-width: 1024px) {
                 flex-direction: row;
@@ -30,13 +31,13 @@
 }
 
 .icon {
-    width: 90px;
-    height: auto;
+    color: vars.$light-text;
+    font-size: 3rem;
+    transform: rotate(90deg);
+    
+    @media (min-width: 1024px) {
+    transform: rotate(0deg);
+    font-size: 7rem;
 
-
-    @media (max-width: 1024px) {
-        width: 110px;
-        height: auto;
-        transform: rotate(90deg);
     }
 }

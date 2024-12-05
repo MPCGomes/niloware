@@ -159,7 +159,10 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className={styles.contact}>
+    <section
+      id='contact'
+      className={styles.contact}
+    >
       <div className={styles.container}>
         <h2>{t.title}</h2>
         <form className={styles.inputs} onSubmit={handleSubmit} noValidate>

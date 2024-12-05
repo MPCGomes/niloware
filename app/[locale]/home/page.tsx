@@ -13,11 +13,15 @@ import Services from '@/src/sections/HomePage/Services/Services';
 import './page.scss'
 
 const HomePage: React.FC = () => {
+    const links = [
+        { name: 'Início', url: '/home' },
+        { name: 'Galeria', url: '/portfolio' },
+    ];
+
     return (
         <div>
             <Navbar
-                link={'Recursos'}
-                customRef={''}
+                links={links}
             />
             <Hero />
             <Resource />

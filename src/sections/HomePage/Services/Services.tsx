@@ -59,7 +59,10 @@ const Services: React.FC = () => {
     };
 
     return (
-        <section className={styles.services}>
+        <section
+            id='services'
+            className={styles.services}
+        >
             <div className={styles.container}>
                 <div className={styles.text}>
                     <h2>{t.title}</h2>
