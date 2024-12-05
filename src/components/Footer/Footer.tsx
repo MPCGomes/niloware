@@ -1,20 +1,20 @@
 import { FaInstagram } from 'react-icons/fa';
 import styles from './Footer.module.scss';
 import React from 'react'
-import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { useTranslation } from '../../../src/hooks/useTranslation';
 
 interface FooterTranslations {
-    footer: {
-        copyright: string;
-    };
+    copyright: string;
 }
 
 const Footer = () => {
     const { t } = useTranslation<FooterTranslations>('common', 'footer');
 
-    if (!t || !t.footer) {
+    console.log('Footer translations:', t);
+
+    if (!t || !t.copyright) {
+        console.warn('Footer translations not loaded:', t);
         return null;
     }
 
@@ -22,23 +22,16 @@ const Footer = () => {
         <footer className={styles.footer}>
             <div className={styles.container}>
                 <div className={styles.leftContainer}>
-                    <h3 className={styles.logo}>
-                        Niloware
-                    </h3>
+                    <h3 className={styles.logo}>Niloware</h3>
                     <div className={styles.socials}>
-                        <Link
-                            className={styles.social}
-                            href=""
-                        >
+                        <Link className={styles.social} href="">
                             <FaInstagram />
                         </Link>
                     </div>
                 </div>
                 <div className={styles.rightContainer}>
                     <div className={styles.copyright}>
-                        <p>
-                            {t.footer.copyright}
-                        </p>
+                        <p>{t.copyright}</p>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@ export const useTranslation = <T extends Record<string, any>>(
     const [translations, setTranslations] = useState<T>({} as T);
     const params = useParams();
 
-    const localeParam = params.locale;
+    const localeParam = params?.locale;
     const locale = Array.isArray(localeParam) ? localeParam[0] : localeParam || 'pt-br';
 
     useEffect(() => {
@@ -18,11 +18,12 @@ export const useTranslation = <T extends Record<string, any>>(
                 console.error('Page or section is undefined in useTranslation hook.');
                 return;
             }
+
             try {
                 const res = await axios.get<T>(`/locales/${locale}/${page}/${section}.json`);
                 setTranslations(res.data);
             } catch (error) {
-                console.error('Error loading translations:', error);
+                console.error(`Error loading translations for ${page}/${section}:`, error);
             }
         };
 
