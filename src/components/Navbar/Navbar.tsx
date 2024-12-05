@@ -6,8 +6,12 @@ import Link from 'next/link';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import LanguageToggle from '../LanguageToggle/LanguageToggle';
 
+interface NavbarProps {
+  link: string;
+  customRef: string;
+}
 
-const Navbar = () => {
+const Navbar: React.FC<NavbarProps> = ({ link, customRef }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -23,6 +27,7 @@ const Navbar = () => {
               Nilo<span>ware</span>
             </h3>
           </Link>
+
           <div
             className={classNames(styles.links, {
               [styles.open]: isOpen,
