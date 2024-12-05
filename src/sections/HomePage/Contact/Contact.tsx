@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Button from '@/src/components/Button/Button';
@@ -30,7 +32,7 @@ interface ContactTranslations {
 }
 
 const Contact: React.FC = () => {
-  const { t } = useTranslation<ContactTranslations>('homePage', 'contact');
+  const { t, locale } = useTranslation<ContactTranslations>('homePage', 'contact');
 
   const [formData, setFormData] = useState({
     name: '',
@@ -49,67 +51,45 @@ const Contact: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<boolean>(false);
 
-  if (!t.errors || !t.placeholders) {
-    return (
-      <section className={styles.contact}>
-        <div className={styles.container}>
-          <p>Loading translations...</p>
-        </div>
-      </section>
-    );
+  if (!t || !t.placeholders || !t.errors || !t.messages) {
+    return null;
   }
-
-  const validationSchema = Yup.object().shape({
-    name: Yup.string()
-      .matches(/^[a-zA-Z\s]+$/, t.errors.name)
-      .min(3, t.errors.name)
-      .required(t.errors.name),
-    email: Yup.string().email(t.errors.email).required(t.errors.email),
-    phone: Yup.string()
-      .matches(/^[0-9+\s()-]+$/, t.errors.phone)
-      .required(t.errors.phone),
-    message: Yup.string().min(10, t.errors.message).required(t.errors.message),
-  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
-    });
-    setErrorsState({
-      ...errorsState,
+    }));
+    setErrorsState((prev) => ({
+      ...prev,
       [name]: '',
-    });
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    const { name } = e.currentTarget;
-
-    if (name === 'name') {
-      if (!/^[a-zA-Z\s]*$/.test(e.key) && !['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
-        e.preventDefault();
-      }
-    }
-
-    if (name === 'phone') {
-      if (!/^[0-9+\s()-]*$/.test(e.key) && !['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
-        e.preventDefault();
-      }
-    }
+    }));
   };
 
   const validateForm = async (): Promise<boolean> => {
+    const validationSchema = Yup.object().shape({
+      name: Yup.string()
+        .matches(/^[a-zA-Z\s]+$/, t.errors.name)
+        .min(3, t.errors.name)
+        .required(t.errors.name),
+      email: Yup.string().email(t.errors.email).required(t.errors.email),
+      phone: Yup.string()
+        .matches(/^[0-9+\s()-]+$/, t.errors.phone)
+        .required(t.errors.phone),
+      message: Yup.string().min(10, t.errors.message).required(t.errors.message),
+    });
+
     try {
       await validationSchema.validate(formData, { abortEarly: false });
       setErrorsState({ name: '', email: '', phone: '', message: '', captcha: '' });
       return true;
     } catch (err) {
-      const newErrors: typeof errorsState = { name: '', email: '', phone: '', message: '', captcha: '' };
+      const newErrors = { name: '', email: '', phone: '', message: '', captcha: '' };
       if (err instanceof Yup.ValidationError) {
         err.inner.forEach((error) => {
           if (error.path) {
-            newErrors[error.path as keyof typeof errorsState] = error.message;
+            newErrors[error.path as keyof typeof newErrors] = error.message;
           }
         });
       }
@@ -120,10 +100,10 @@ const Contact: React.FC = () => {
 
   const handleCaptchaChange = (token: string | null) => {
     setCaptchaToken(token);
-    setErrorsState({
-      ...errorsState,
+    setErrorsState((prev) => ({
+      ...prev,
       captcha: '',
-    });
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -149,9 +129,9 @@ const Contact: React.FC = () => {
 
     try {
       await axios.post('https://api.emailjs.com/api/v1.0/email/send', {
-        service_id: 'service_yyvleds',
-        template_id: 'template_w8h6p1f',
-        user_id: 'TV0egaxYnT67PB2Ez',
+        service_id: 'your_service_id',
+        template_id: 'your_template_id',
+        user_id: 'your_user_id',
         template_params: {
           name: formData.name,
           email: formData.email,
@@ -169,10 +149,10 @@ const Contact: React.FC = () => {
       });
       setCaptchaToken(null);
     } catch (err) {
-      setErrorsState({
-        ...errorsState,
+      setErrorsState((prev) => ({
+        ...prev,
         captcha: t.errors.general,
-      });
+      }));
     } finally {
       setLoading(false);
     }
@@ -181,14 +161,8 @@ const Contact: React.FC = () => {
   return (
     <section className={styles.contact}>
       <div className={styles.container}>
-        <h2>
-          {t.title}
-        </h2>
-        <form
-          className={styles.inputs}
-          onSubmit={handleSubmit}
-          noValidate
-        >
+        <h2>{t.title}</h2>
+        <form className={styles.inputs} onSubmit={handleSubmit} noValidate>
           <div>
             <input
               type="text"
@@ -196,11 +170,8 @@ const Contact: React.FC = () => {
               placeholder={t.placeholders.name}
               value={formData.name}
               onChange={handleChange}
-              onKeyDown={handleKeyDown}
             />
-            {errorsState.name && <p className={styles.error}>
-              {errorsState.name}
-            </p>}
+            {errorsState.name && <p className={styles.error}>{errorsState.name}</p>}
           </div>
           <div className={styles.contacts}>
             <div className={styles.contactField}>
@@ -211,9 +182,7 @@ const Contact: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
               />
-              {errorsState.email && <p className={styles.error}>
-                {errorsState.email}
-              </p>}
+              {errorsState.email && <p className={styles.error}>{errorsState.email}</p>}
             </div>
             <div className={styles.contactField}>
               <input
@@ -222,11 +191,8 @@ const Contact: React.FC = () => {
                 placeholder={t.placeholders.phone}
                 value={formData.phone}
                 onChange={handleChange}
-                onKeyDown={handleKeyDown}
               />
-              {errorsState.phone && <p className={styles.error}>
-                {errorsState.phone}
-              </p>}
+              {errorsState.phone && <p className={styles.error}>{errorsState.phone}</p>}
             </div>
           </div>
           <div>
@@ -236,25 +202,24 @@ const Contact: React.FC = () => {
               value={formData.message}
               onChange={handleChange}
             />
-            {errorsState.message && <p className={styles.error}>
-              {errorsState.message}
-            </p>}
+            {errorsState.message && <p className={styles.error}>{errorsState.message}</p>}
           </div>
-          <ReCAPTCHA
-            className={styles.captcha}
-            sitekey="6Lc9I1cqAAAAAH6ojKJq8mclozs2RaBgVgG4220F"
-            onChange={handleCaptchaChange}
-          />
-          {errorsState.captcha && <p className={styles.error}>{errorsState.captcha}</p>}
+          <div className={styles.captchaContainer}>
+            <ReCAPTCHA
+              className={styles.captcha}
+              sitekey="6Lc9I1cqAAAAAH6ojKJq8mclozs2RaBgVgG4220F"
+              hl={locale}
+              onChange={handleCaptchaChange}
+            />
+            {errorsState.captcha && <p className={styles.error}>{errorsState.captcha}</p>}
+          </div>
           <Button
             text={loading ? t.messages.sending : t.messages.send}
             type="submit"
             className={styles.button}
           />
         </form>
-        {success && <p className={styles.success}>
-          {t.messages.success}
-        </p>}
+        {success && <p className={styles.success}>{t.messages.success}</p>}
       </div>
     </section>
   );

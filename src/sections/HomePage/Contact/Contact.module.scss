@@ -101,3 +101,11 @@
     font-size: vars.$fs-200;
     margin-top: 5px;
 }
+
+.captchaContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 0;
+}

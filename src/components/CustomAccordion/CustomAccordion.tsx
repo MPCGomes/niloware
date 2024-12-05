@@ -4,6 +4,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { styled } from '@mui/material/styles';
 import styles from './CustomAccordion.module.scss';
 
 interface AccordionItem {
@@ -15,54 +16,74 @@ interface CustomAccordionProps {
   items: AccordionItem[];
 }
 
+const StyledAccordion = styled(Accordion)(({ theme }) => ({
+  borderRadius: '4px',
+  boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+  overflow: 'hidden',
+  border: '1px solid white',
+  backgroundColor: 'transparent',
+  color: 'white',
+  '&.Mui-expanded': {
+    backgroundColor: 'black',
+    color: 'black',
+    border: 'none',
+  },
+}));
+
+const StyledAccordionSummary = styled(AccordionSummary)(({ theme }) => ({
+  backgroundColor: 'transparent',
+  color: 'white',
+  '&.Mui-expanded': {
+    backgroundColor: 'black',
+    color: 'white',
+  },
+}));
+
+const StyledAccordionDetails = styled(AccordionDetails)(({ theme }) => ({
+  backgroundColor: 'white',
+  color: 'black',
+  paddingTop: '16px',
+}));
+
+const CustomExpandMoreIcon = styled(ExpandMoreIcon)(({ theme }) => ({
+  color: 'white',
+}));
+
 const CustomAccordion: React.FC<CustomAccordionProps> = ({ items }) => {
-  const [expanded, setExpanded] = useState<number | false>(false);
+  const [expanded, setExpanded] = useState<number[]>([]);
 
   const handleChange = (index: number) => (
     event: React.SyntheticEvent,
     isExpanded: boolean
   ) => {
-    setExpanded(isExpanded ? index : false);
+    setExpanded((prev) =>
+      isExpanded ? [...prev, index] : prev.filter((i) => i !== index)
+    );
   };
 
   return (
     <div className={styles.accordionContainer}>
       {items.map((item, index) => (
-        <Accordion
+        <StyledAccordion
           key={index}
-          expanded={expanded === index}
+          expanded={expanded.includes(index)}
           onChange={handleChange(index)}
-          disableGutters
-          sx={{
-            borderRadius: '10px',
-            boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-            overflow: 'hidden',
-            border: 'none',
-            '&:first-of-type': {
-              borderTopLeftRadius: '10px',
-              borderTopRightRadius: '10px',
-            },
-            '&:last-of-type': {
-              borderBottomLeftRadius: '10px',
-              borderBottomRightRadius: '10px',
-            },
-            '&.Mui-expanded': {
-              margin: '0',
-              borderRadius: '10px',
-            },
-          }}
+          style={{ margin: 0 }}
         >
-          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={styles.title}>
-              {item.title}
+          <StyledAccordionSummary expandIcon={<CustomExpandMoreIcon />}>
+            <Typography style={{ fontWeight: 600 }}>{item.title}</Typography>
+          </StyledAccordionSummary>
+          <StyledAccordionDetails>
+            <Typography>
+              {item.content.split('\n').map((line, idx) => (
+                <React.Fragment key={idx}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}
             </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography className={styles.content}>
-              {item.content}
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
+          </StyledAccordionDetails>
+        </StyledAccordion>
       ))}
     </div>
   );

@@ -1,29 +1,53 @@
 {
-  "title": "Perguntas Frequentes",
-  "items": [
+  "heading": "Perguntas Frequentes",
+  "questions": [
     {
-      "title": "Item 1",
-      "content": "Descrição do Item 1."
+      "question": "Por que devo ter um site?",
+      "answer": "Um site ajuda a divulgar sua marca, produtos e serviços, mantendo sua presença online 24 horas por dia. Ele aumenta a visibilidade da empresa nos mecanismos de busca, como o Google, fortalece sua credibilidade e melhora o relacionamento com os clientes.\n\nAlém disso, ele ajuda a atrair mais clientes, permite mensurar resultados com ferramentas de análise, como o Google Analytics, melhorar a experiência do usuário e ampliar suas vendas, sendo uma solução com excelente custo-benefício."
     },
     {
-      "title": "Item 2",
-      "content": "Descrição do Item 2."
+      "question": "Quais tipos de sites a Niloware desenvolve?",
+      "answer": "Desenvolvemos blogs, diretórios, lojas virtuais, portais de notícias e outros tipos de sites para diversas áreas, como advocacia, academias, pet shops, pousadas, restaurantes e muito mais, sempre adaptados às suas necessidades."
     },
     {
-      "title": "Item 3",
-      "content": "Descrição do Item 3."
+      "question": "Qual é o prazo médio de entrega de um site?",
+      "answer": "Sites expressos, baseados em modelos pré-fabricados, levam até 5 dias úteis. Sites personalizados e sob medida são entregues em até 20 dias úteis."
     },
     {
-      "title": "Item 4",
-      "content": "Descrição do Item 4."
+      "question": "O que preciso fornecer para começar a desenvolver meu site?",
+      "answer": "Você precisa de um domínio (endereço), servidor de hospedagem (local para armazenar os arquivos e banco de dados) e informações iniciais, como logotipo, paleta de cores, fotos, vídeos e textos com os conteúdos que deseja destacar, como descrições de serviços ou produtos, lista de parceiros, entre outros.\n\nNossa equipe está à disposição para ajudar em todas as etapas, desde a escolha do domínio até a organização final do conteúdo."
     },
     {
-      "title": "Item 5",
-      "content": "Descrição do Item 5."
+      "question": "Meu site será compatível com tablets e celulares?",
+      "answer": "Sim, todos os nossos sites são responsivos, ou seja, adaptados para computadores, tablets e celulares, garantindo a melhor experiência possível, independentemente do dispositivo utilizado para acessá-los."
     },
     {
-      "title": "Item 6",
-      "content": "Descrição do Item 6."
+      "question": "Meu site aparecerá no Google?",
+      "answer": "Sim, aplicamos as melhores práticas para que seu site seja encontrado em mecanismos de busca, como o Google, aumentando sua visibilidade.\n\nNo entanto, a primeira página não pode ser garantida automaticamente devido a questões técnicas e à sua concorrência."
+    },
+    {
+      "question": "Posso hospedar meu site em servidores diferentes da Niloware?",
+      "answer": "Sim, fornecemos todos os arquivos necessários para que você hospede seu site em qualquer servidor, mantendo as mesmas funcionalidades. Contudo, não oferecemos suporte técnico para hospedagens externas."
+    },
+    {
+      "question": "Quais são os custos mensais obrigatórios após a entrega?",
+      "answer": "Os custos obrigatórios só existem se a hospedagem for feita conosco. Eles incluem hospedagem, manutenção e suporte, podendo ser pagos mensal ou anualmente.\n\nEsses valores e serviços estão detalhados no contrato digital, garantindo total transparência."
+    },
+    {
+      "question": "Quais as formas de pagamento disponíveis?",
+      "answer": "Aceitamos boleto, cartão de crédito, cartão de débito e Pix. Os pagamentos são realizados via Mercado Pago, garantindo segurança em todas as transações."
+    },
+    {
+      "question": "Posso fazer alterações no meu site após a entrega?",
+      "answer": "Sim, nossos sites são desenvolvidos em WordPress, que oferece um painel simples e intuitivo. Isso permite que você edite textos, imagens e outros conteúdos com facilidade, mesmo sem conhecimentos técnicos."
+    },
+    {
+      "question": "Qual é a garantia de segurança ao contratar a Niloware?",
+      "answer": "Antes de iniciarmos o desenvolvimento, fornecemos um contrato digital detalhado.\n\nEste documento inclui informações sobre prazos, custos, direitos e responsabilidades, garantindo transparência total e segurança jurídica para ambas as partes."
+    },
+    {
+      "question": "Como posso solicitar um orçamento?",
+      "answer": "Entre em contato conosco pelo site ou WhatsApp. Nossa equipe analisará suas necessidades e enviará uma proposta personalizada o mais rápido possível."
     }
   ]
 }

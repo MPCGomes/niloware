@@ -1,8 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
 import styles from './Process.module.scss';
-import { FaPhoneAlt, FaClipboardList, FaCheckCircle, FaShareSquare } from 'react-icons/fa';
-import Arrow from '@/public/assets/homePage/arrow.png';
+import { FaPhoneAlt, FaClipboardList, FaCheckCircle, FaShareSquare, FaArrowRight } from 'react-icons/fa';
 import { useTranslation } from '@/src/hooks/useTranslation';
 import ProcessButton from '@/src/components/ProcessButton/ProcessButton';
 
@@ -36,11 +34,7 @@ const ProcessComponent: React.FC = () => {
                                 description={step.description}
                             />
                             {index < t.steps.length - 1 && (
-                                <Image
-                                    className={styles.arrow}
-                                    src={Arrow}
-                                    alt="arrow"
-                                />
+                                <FaArrowRight className={styles.icon} />
                             )}
                         </React.Fragment>
                     ))}

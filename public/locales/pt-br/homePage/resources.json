@@ -1,29 +1,29 @@
 {
-  "title": "Texto",
+  "title": "Recursos",
   "cards": [
     {
-      "title": "Texto 1",
-      "description": "Descrição 1"
+      "title": "Design Personalizado e Responsivo",
+      "description": "Desenvolvemos sites adaptados à identidade visual da sua empresa, funcionando perfeitamente em computadores, tablets e celulares."
     },
     {
-      "title": "Texto 2",
-      "description": "Descrição 2"
+      "title": "Otimização SEO",
+      "description": "Seu site será otimizado para ser facilmente encontrado em buscas na internet, ajudando você a atrair mais clientes."
     },
     {
-      "title": "Texto 3",
-      "description": "Descrição 3"
+      "title": "Fácil Gerenciamento",
+      "description": "Com um painel intuitivo, você pode atualizar textos, imagens e outros conteúdos do site sem dificuldades ou conhecimentos técnicos."
     },
     {
-      "title": "Texto 4",
-      "description": "Descrição 4"
+      "title": "Tecnologia Avançada",
+      "description": "Utilizamos ferramentas e tecnologias avançadas para criar sites rápidos, seguros e eficientes."
     },
     {
-      "title": "Texto 5",
-      "description": "Descrição 5"
+      "title": "Desempenho Aprimorado",
+      "description": "Sites projetados para oferecer uma experiência fluida ao usuário, aumentando o engajamento e os resultados do seu negócio."
     },
     {
-      "title": "Texto 6",
-      "description": "Descrição 6"
+      "title": "Suporte Técnico",
+      "description": "Oferecemos suporte para dúvidas sobre o uso do site e resolução de problemas técnicos, garantindo que tudo funcione perfeitamente."
     }
   ]
 }
