@@ -1,21 +1,21 @@
 {
-  "title": "Texto",
+  "title": "Processo",
   "steps": [
     {
-      "title": "Etapa 1",
-      "description": "Descrição da Etapa 1"
+      "title": "Contato",
+      "description": "Fale conosco para compartilhar suas ideias e necessidades."
     },
     {
-      "title": "Etapa 2",
-      "description": "Descrição da Etapa 2"
+      "title": "Briefing",
+      "description": "Coletamos informações para alinhar o projeto às suas expectativas."
     },
     {
-      "title": "Etapa 3",
-      "description": "Descrição da Etapa 3"
+      "title": "Revisão",
+      "description": "Acompanhe o desenvolvimento e sugira ajustes para garantir o resultado desejado."
     },
     {
-      "title": "Etapa 4",
-      "description": "Descrição da Etapa 4"
+      "title": "Entrega",
+      "description": "Entregamos seu site finalizado dentro do prazo e em perfeito funcionamento."
     }
   ]
 }
