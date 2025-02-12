@@ -1,0 +1,15 @@
+@use '_variables'as *;
+
+body {
+  color: $text-primary;
+  background-color: $background;
+  font-family: $font-family;
+}
+
+.section {
+  width: 100%;
+  padding: 72px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}

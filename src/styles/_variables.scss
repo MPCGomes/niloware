@@ -1,0 +1,35 @@
+// Color Palette
+$primary: #0072FF;
+$primary-gradient: linear-gradient(45deg, #0072FF, #00C6FF, 0.1);
+
+$text-primary: #122E50;
+$text-secondary: #666666;
+$text-light: #ffffff;
+
+$background: #ffffff;
+$background-card: #F9FAFC;
+
+$border-subtle: rgba(17, 24, 39, 0.1);
+
+// Typography
+$font-family: 'Inter, sans-serif';
+
+$font-scale: 1.5; // Multiplier
+
+// Font Sizes
+$font-size-xxl: 3.5rem; // 56px
+$font-size-xl: 3rem; // 48px
+$font-size-lg: 2.25rem; // 36px
+$font-size-md: 1.5rem; // 24px
+$font-size-base: 1.25rem; // 20px
+$font-size-sm: 0.875rem; // 14px
+$font-size-xs: 0.75rem; // 12px
+
+// Line Heights
+$line-height-xxl: $font-size-xxl * $font-scale;
+$line-height-xl: $font-size-xl * $font-scale;
+$line-height-lg: $font-size-lg * $font-scale;
+$line-height-md: $font-size-md * $font-scale;
+$line-height-base: $font-size-base * $font-scale;
+$line-height-sm: $font-size-sm * $font-scale;
+$line-height-xs: $font-size-xs * $font-scale;
