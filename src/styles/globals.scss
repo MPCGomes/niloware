@@ -6,6 +6,21 @@ body {
   font-family: $font-family;
 }
 
+.container {
+  width: 100%;
+  max-width: $breakpoint-mobile;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (min-width: $breakpoint-mobile) {
+    max-width: $breakpoint-tablet;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    max-width: $breakpoint-desktop;
+  }
+}
+
 .section {
   width: 100%;
   padding: 72px 120px;
