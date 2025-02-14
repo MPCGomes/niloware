@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+.nav{
+    background: rgb(0,114,255);
+    background: linear-gradient(90deg, rgba(0,114,255,1) 0%, rgba(0,198,255,1) 100%);
+    border-bottom: 1px solid hsla(0, 0%, 89%, 0.4);
+
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0px;
+
+        p{
+            font-size: $font-size-md;
+            font-weight: bold;
+            color: $text-light;
+            text-transform: uppercase;
+        }
+    }
+}
