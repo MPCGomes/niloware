@@ -1,0 +1,27 @@
+@import "../../../styles/variables";
+
+.hero {
+  background: rgb(0, 114, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 114, 255, 1) 0%,
+    rgba(0, 198, 255, 1) 100%
+  );
+
+  div {
+    align-items: center;
+  }
+
+  div h1 {
+    font-size: $font-size-xxl;
+    text-align: center;
+    color: $text-light;
+  }
+
+  div h3 {
+    font-size: $font-size-md;
+    text-align: center;
+    color: $text-light;
+    font-weight: 400;
+  }
+}
