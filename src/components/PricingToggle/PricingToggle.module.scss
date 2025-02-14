@@ -1,0 +1,46 @@
+@use "../../styles/variables"as *;
+
+.toggle {
+  display: inline-flex;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.option {
+  flex: 1;
+  text-align: center;
+  padding: 8px 24px;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+  color: $text-secondary;
+  background: $background-card;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+
+  &:first-child {
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+.active {
+  background: $primary-gradient;
+  color: $text-light;
+
+  .discount {
+    color: $text-light;
+  }
+}
+
+.discount {
+  color: $primary;
+}
