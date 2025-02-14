@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.btn{
+    padding: 12px 32px;
+    font-size: $font-size-base;
+    border-radius: 30px;
+    border: $text-light;
+    color: $text-light;
+    background-color: transparent;
+    cursor: pointer;
+}
