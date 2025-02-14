@@ -9,7 +9,7 @@ $text-light: #ffffff;
 $background: #ffffff;
 $background-card: #F9FAFC;
 
-$border-subtle: rgba(17, 24, 39, 0.1);
+$border: rgba(17, 24, 39, 0.1);
 
 // Typography
 $font-family: 'Inter, sans-serif';
@@ -35,4 +35,4 @@ $line-height-sm: $font-size-sm * $font-scale;
 // Breakpoints
 $breakpoint-mobile: 576px;
 $breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
+$breakpoint-desktop: 1440px;
