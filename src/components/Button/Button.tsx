@@ -1,10 +1,14 @@
 import React from 'react'
 import styles from './Button.module.scss'
 
-const Button = () => {
+interface ButtonProps {
+  text: React.ReactNode;
+}
+
+const Button: React.FC<ButtonProps> = ({ text}) => {
   return (
     <button className={styles.btn}>
-        Placeholder
+      {text}
     </button>
   )
 }

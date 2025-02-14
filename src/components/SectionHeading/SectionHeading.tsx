@@ -7,7 +7,7 @@ const SectionHeading = () => {
     <nav className={styles.nav}>
       <div className="container">
         <p>Niloware</p>
-        <Button />
+        <Button text='(12) 3456-7890'/>
       </div>
     </nav>
   );
