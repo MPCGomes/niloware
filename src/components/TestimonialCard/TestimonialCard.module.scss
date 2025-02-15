@@ -1,0 +1,66 @@
+@use "@/styles/variables"as *;
+
+.card {
+  width: 250px;
+  height: 350px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid $border;
+  border-radius: 8px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.photo {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: $font-size-base;
+  font-weight: 500;
+  color: $text-secondary;
+  line-height: $line-height-base;
+}
+
+.title {
+  font-size: $font-size-base;
+  color: $text-secondary;
+  line-height: $line-height-base;
+  font-weight: 200;
+}
+
+.rating {
+  display: flex;
+  gap: 4px;
+}
+
+.starFilled {
+  color: #FBBF24;
+  width: 20px;
+  height: 19px;
+}
+
+.starEmpty {
+  color: $text-secondary;
+  width: 20px;
+  height: 19px;
+}
+
+.testimonial {
+  font-size: $font-size-base;
+  color: $text-secondary;
+  line-height: $line-height-base;
+}

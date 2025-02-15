@@ -1,6 +1,7 @@
 // Palette
 $primary: #0072FF;
-$primary-gradient: linear-gradient(90deg, rgba(0,114,255,1) 0%, rgba(0,198,255,1) 100%);
+
+$primary-gradient: linear-gradient(45deg, #0072FF, #00C6FF);
 
 $text-primary: #122E50;
 $text-secondary: #666666;
@@ -9,10 +10,11 @@ $text-light: #ffffff;
 $background: #ffffff;
 $background-card: #F9FAFC;
 
-$border-subtle: rgba(17, 24, 39, 0.1);
+$border: rgba(17, 24, 39, 0.1);
 
 // Typography
-$font-family: 'Inter, sans-serif';
+$font-family: "Inter",
+sans-serif;
 $font-scale: 1.5; // Multiplier
 
 // Font Sizes
@@ -34,4 +36,4 @@ $line-height-sm: $font-size-sm * $font-scale;
 // Breakpoints
 $breakpoint-mobile: 576px;
 $breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
+$breakpoint-desktop: 1440px;
