@@ -3,14 +3,42 @@
     "photo": "/images/user1.jpg",
     "name": "Julhão",
     "title": "Dev dos Gato",
-    "rating": 5,
+    "rating": 1,
     "testimonial": "QUE HORROR VERGONHA NACIONAL BOOOOOOOOOOOO"
   },
   {
     "photo": "/images/user2.jpg",
     "name": "Jane Smith",
     "title": "Marketing Director",
-    "rating": 4,
+    "rating": 1,
+    "testimonial": "Great experience overall. Would use again!"
+  },
+  {
+    "photo": "/images/user2.jpg",
+    "name": "Jane Smith",
+    "title": "Marketing Director",
+    "rating": 2,
+    "testimonial": "Great experience overall. Would use again!"
+  },
+  {
+    "photo": "/images/user2.jpg",
+    "name": "Jane Smith",
+    "title": "Marketing Director",
+    "rating": 2,
+    "testimonial": "Great experience overall. Would use again!"
+  },
+  {
+    "photo": "/images/user2.jpg",
+    "name": "Jane Smith",
+    "title": "Marketing Director",
+    "rating": 3,
+    "testimonial": "Great experience overall. Would use again!"
+  },
+  {
+    "photo": "/images/user2.jpg",
+    "name": "Jane Smith",
+    "title": "Marketing Director",
+    "rating": 3,
     "testimonial": "Great experience overall. Would use again!"
   }
 ]
