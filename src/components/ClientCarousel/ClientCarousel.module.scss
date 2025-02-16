@@ -1,0 +1,25 @@
+@use "@/styles/variables"as *;
+
+.wrapper {
+  width: 100%;
+}
+
+.carousel {
+  width: 100%;
+  min-width: 100%;
+  height: 28px;
+  background: transparent;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  filter: grayscale(100%) brightness(150%);
+}
+
+.image {
+  max-height: 28px;
+  width: auto;
+}
