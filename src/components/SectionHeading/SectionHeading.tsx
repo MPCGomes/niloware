@@ -1,15 +1,20 @@
 import React from "react";
 import styles from "./SectionHeading.module.scss";
-import Button from "../Button/Button";
 
-const SectionHeading = () => {
+interface SectionHeadingProps {
+  subheading: string;
+  heading: string;
+}
+
+const SectionHeading: React.FC<SectionHeadingProps> = ({
+  subheading,
+  heading,
+}) => {
   return (
-    <nav className={styles.nav}>
-      <div className="container">
-        <p>Niloware</p>
-        <Button text='(12) 3456-7890'/>
-      </div>
-    </nav>
+    <div className={styles.sectionHeading}>
+      <p className={styles.subheading}>{subheading}</p>
+      <p className={styles.heading}>{heading}</p>
+    </div>
   );
 };
 

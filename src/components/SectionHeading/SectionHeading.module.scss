@@ -1,21 +1,22 @@
-@import '../../styles/variables';
+@use "../../styles/variables"as *;
 
-.nav{
-    background: rgb(0,114,255);
-    background: linear-gradient(90deg, rgba(0,114,255,1) 0%, rgba(0,198,255,1) 100%);
-    border-bottom: 1px solid hsla(0, 0%, 89%, 0.4);
+.sectionHeading {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
 
-    div{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px 0px;
+.subheading {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $primary;
+    text-transform: uppercase;
+}
 
-        p{
-            font-size: $font-size-md;
-            font-weight: bold;
-            color: $text-light;
-            text-transform: uppercase;
-        }
-    }
+.heading {
+    font-size: $font-size-xl;
+    line-height: $line-height-xl;
+    color: $text-primary;
+    font-weight: 700;
 }
