@@ -9,7 +9,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ text, icon, onClick }) => {
   return (
-    <button onClick={onClick} className={styles.btn}>
+    <button onClick={onClick} className={styles.button}>
       {icon && <span className={styles.icon}>{icon}</span>}
       {text}
     </button>
