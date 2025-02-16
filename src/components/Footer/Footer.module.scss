@@ -44,14 +44,11 @@
 .icons {
   display: flex;
   gap: 8px;
-}
 
-.icons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.right {
-  font-weight: 300;
+  a {
+    color: $text-secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

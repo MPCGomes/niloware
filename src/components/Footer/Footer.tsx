@@ -13,8 +13,20 @@ const Footer: React.FC = () => {
           <div className={styles.left}>
             <Logo size="xxl" />
             <div className={styles.icons}>
-              <Instagram fontSize="medium" />
-              <WhatsApp fontSize="medium" />
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram fontSize="medium" />
+              </a>
+              <a
+                href="https://wa.me/5512974096393"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <WhatsApp fontSize="medium" />
+              </a>
             </div>
           </div>
           <p className={styles.right}>
