@@ -1,8 +1,9 @@
 "use client";
 
 import { FC, useEffect, useState } from "react";
-import TestimonialCard from "../../../components/TestimonialCard/TestimonialCard";
-import styles from "./TestimonialsSection.module.scss";
+import axios from "axios";
+import TestimonialsCarousel from "../../../components/TestimonialsCarousel/TestimonialsCarousel";
+import SectionHeading from "@/components/SectionHeading/SectionHeading";
 
 interface Testimonial {
   photo: string;
@@ -18,9 +19,8 @@ const TestimonialsSection: FC = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await fetch("/data/testimonials.json");
-        const data = await response.json();
-        setTestimonials(data.slice(0, 5));
+        const response = await axios.get("/data/testimonials.json");
+        setTestimonials(response.data);
       } catch (error) {
         console.error("Failed to load testimonials:", error);
       }
@@ -30,14 +30,14 @@ const TestimonialsSection: FC = () => {
   }, []);
 
   return (
-    <section className="section">
-      <div className="container">
-        <div className={styles.testimonials}>
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index} {...testimonial} />
-          ))}
-        </div>
-      </div>
+    <section className="container section">
+      <SectionHeading
+        subheading="Confira como ajudamos negócios a crescerem"
+        heading="O Que Nossos Clientes Dizem?"
+      />
+      {testimonials.length > 0 && (
+        <TestimonialsCarousel testimonials={testimonials} />
+      )}
     </section>
   );
 };
