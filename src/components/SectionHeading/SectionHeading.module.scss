@@ -5,6 +5,13 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
+    justify-content: center;
+
+    &.row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .subheading {
@@ -12,6 +19,18 @@
     line-height: $line-height-base;
     color: $primary;
     text-transform: uppercase;
+}
+
+.subheadingLink {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $primary;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .heading {

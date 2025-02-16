@@ -32,7 +32,12 @@ const PortfolioSection: React.FC = () => {
 
   return (
     <section className="container section">
-      <SectionHeading subheading="Nosso Trabalho" heading="Portfólio" />
+      <SectionHeading
+        subheading="Ver Todos os Projetos"
+        heading="Portfólio"
+        isRow
+        link="/portfolio"
+      />
 
       <div className={styles.portfolioGrid}>
         {portfolioItems.length > 0 && <PortfolioCard {...portfolioItems[0]} />}
