@@ -1,0 +1,21 @@
+@use "../../styles/variables"as *;
+
+.logo {
+  font-weight: bold;
+  letter-spacing: -2%;
+  color: $text-secondary;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.light {
+  color: $text-light;
+}
+
+.md {
+  font-size: $font-size-lg;
+}
+
+.xxl {
+  font-size: $font-size-xxl;
+}
