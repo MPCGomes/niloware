@@ -1,16 +1,19 @@
-import React from 'react'
-import styles from './Button.module.scss'
+import React from "react";
+import styles from "./Button.module.scss";
 
 interface ButtonProps {
   text: React.ReactNode;
+  icon?: React.ReactNode;
+  onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ text}) => {
+const Button: React.FC<ButtonProps> = ({ text, icon, onClick }) => {
   return (
-    <button className={styles.btn}>
+    <button onClick={onClick} className={styles.btn}>
+      {icon && <span className={styles.icon}>{icon}</span>}
       {text}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

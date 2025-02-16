@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@use "../../styles/variables"as *;
 
 .btn {
     padding: 12px 32px;
@@ -8,4 +8,13 @@
     color: $text-light;
     background-color: transparent;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
 }
