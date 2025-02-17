@@ -24,7 +24,9 @@ jobs:
 
       - name: Delete existing files from FTP (except default.php)
         run: |
-          sudo apt-get install -y lftp
+          if ! command -v lftp &> /dev/null; then
+            sudo apt-get install -y lftp
+          fi
           lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }} ${{ secrets.FTP_HOST }} <<EOF
           set ssl:verify-certificate no
           cd domains/niloware.com/public_html
@@ -38,5 +40,5 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          local-dir: "out"
+          local-dir: "out/"
           server-dir: "domains/niloware.com/public_html"
