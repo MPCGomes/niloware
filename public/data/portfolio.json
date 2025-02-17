@@ -2,28 +2,28 @@
   {
     "title": "Projeto Principal",
     "feature": "Landing Page Exclusiva",
-    "imageBackground": "/images/portfolio1.jpg",
+    "imageBackground": "/portfolio/portfolio1.jpg",
     "height": "400px",
     "fullWidth": true
   },
   {
     "title": "E-Commerce",
     "feature": "Loja Online Completa",
-    "imageBackground": "/images/portfolio2.jpg",
+    "imageBackground": "/portfolio/portfolio2.jpg",
     "height": "300px",
     "fullWidth": false
   },
   {
     "title": "Blog Profissional",
     "feature": "Plataforma de Conteúdo",
-    "imageBackground": "/images/portfolio3.jpg",
+    "imageBackground": "/portfolio/portfolio3.jpg",
     "height": "300px",
     "fullWidth": false
   },
   {
     "title": "Landing Page",
     "feature": "Alta Conversão",
-    "imageBackground": "/images/portfolio4.jpg",
+    "imageBackground": "/portfolio/portfolio4.jpg",
     "height": "300px",
     "fullWidth": false
   }
