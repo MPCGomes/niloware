@@ -7,76 +7,28 @@ import clsx from "clsx";
 interface SectionHeadingProps {
   subheading: string;
   heading: string;
-  isRow?: boolean;
-  link?: string;
-  reverseOrder?: boolean;
+  variant?: "column" | "row";
 }
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({
   subheading,
   heading,
-  isRow = false,
-  link,
-  reverseOrder = false,
+  variant = "column",
 }) => {
   return (
-    <div
-      className={clsx(styles.sectionHeading, {
-        [styles.row]: isRow,
-        [styles.reverse]: reverseOrder,
-      })}
-    >
-      {isRow ? (
+    <div className={clsx(styles.sectionHeading, styles[variant])}>
+      {variant === "row" ? (
         <>
-          {!reverseOrder ? (
-            <>
-              <p className={styles.heading}>{heading}</p>
-              {link ? (
-                <Link href={link} className={styles.subheadingLink}>
-                  <span className={styles.subheading}>{subheading}</span>
-                  <OpenInNew fontSize="small" />
-                </Link>
-              ) : (
-                <p className={styles.subheading}>{subheading}</p>
-              )}
-            </>
-          ) : (
-            <>
-              {link ? (
-                <Link href={link} className={styles.subheadingLink}>
-                  <span className={styles.subheading}>{subheading}</span>
-                  <OpenInNew fontSize="small" />
-                </Link>
-              ) : (
-                <p className={styles.subheading}>{subheading}</p>
-              )}
-              <p className={styles.heading}>{heading}</p>
-            </>
-          )}
+          <p className={styles.heading}>{heading}</p>
+          <Link href="/portfolio" className={styles.subheadingLink}>
+            <span className={styles.subheading}>{subheading}</span>
+            <OpenInNew fontSize="small" />
+          </Link>
         </>
       ) : (
         <>
-          {!reverseOrder &&
-            (link ? (
-              <Link href={link} className={styles.subheadingLink}>
-                <span className={styles.subheading}>{subheading}</span>
-                <OpenInNew fontSize="small" />
-              </Link>
-            ) : (
-              <p className={styles.subheading}>{subheading}</p>
-            ))}
-
+          <p className={styles.subheading}>{subheading}</p>
           <p className={styles.heading}>{heading}</p>
-
-          {reverseOrder &&
-            (link ? (
-              <Link href={link} className={styles.subheadingLink}>
-                <span className={styles.subheading}>{subheading}</span>
-                <OpenInNew fontSize="small" />
-              </Link>
-            ) : (
-              <p className={styles.subheading}>{subheading}</p>
-            ))}
         </>
       )}
     </div>
