@@ -1,12 +1,12 @@
 import TestimonialsSection from "@/containers/homePage/testimonialsSection/TestimonialsSection";
 import styles from "./page.module.scss";
-import PricingToggle from "@/components/PricingToggle/PricingToggle";
 import HeroSection from "@/containers/homePage/heroSection/HeroSection";
 import FeaturesSection from "@/containers/homePage/featuresSection/FeaturesSection";
 import PortfolioSection from "@/containers/homePage/portfolioSection/PortfolioSection";
 import ClientsSection from "@/containers/homePage/clientsSection/ClientsSection";
 import PricingSection from "@/containers/homePage/pricingSection/PricingSection";
 import FaqSection from "@/containers/homePage/faqSection/FaqSection";
+import CtaSection from "@/containers/homePage/ctaSection/CtaSection";
 
 export default function Home() {
   return (
@@ -18,6 +18,7 @@ export default function Home() {
       <PricingSection />
       <FaqSection />
       <TestimonialsSection />
+      <CtaSection />
     </div>
   );
 }
