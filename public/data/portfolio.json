@@ -26,5 +26,12 @@
     "imageBackground": "/portfolio/portfolio4.jpg",
     "height": "300px",
     "fullWidth": false
+  },
+  {
+    "title": "Landing Page",
+    "feature": "Alta Conversão",
+    "imageBackground": "/portfolio/portfolio5.jpg",
+    "height": "300px",
+    "fullWidth": false
   }
 ]
