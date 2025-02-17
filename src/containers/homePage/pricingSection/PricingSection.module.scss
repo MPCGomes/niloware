@@ -1,0 +1,16 @@
+@import '../../../styles/variables';
+
+.pricingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @media (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+  }
+}
+
+.pricingToggle{
+    display: flex;
+    justify-content: center;
+}
