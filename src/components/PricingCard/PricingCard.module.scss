@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+
+.pricingCard {
+  background: $background-card;
+  padding: 24px;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.plan {
+  display: flex;
+  justify-content: space-between;
+
+  :nth-child(1) {
+    font-size: $font-size-md;
+  }
+
+  :nth-child(2) {
+    font-size: $font-size-sm;
+    padding: 4px 12px;
+    border: 2px solid hsla(0, 0%, 100%, 0.5);
+    border-radius: 30px;
+  }
+}
+
+.price {
+  font-size: $font-size-xl;
+}
+
+.monthlyPrice {
+  font-size: $font-size-base;
+}
+
+.featureList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  li {
+    font-size: $font-size-base;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
