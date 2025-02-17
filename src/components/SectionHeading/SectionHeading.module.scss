@@ -1,41 +1,52 @@
-@use "../../styles/variables"as *;
+@use "../../styles/variables" as *;
 
 .sectionHeading {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 
-    &.row {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+  &.row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.column {
+    text-align: center; // ✅ Ensures centralization
+  }
 }
 
 .subheading {
-    font-size: $font-size-base;
-    line-height: $line-height-base;
-    color: $primary;
-    text-transform: uppercase;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $primary;
+  text-transform: uppercase;
 }
 
 .subheadingLink {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    color: $primary;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: $primary;
+  text-decoration: none;
 
-    &:hover {
-        text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .heading {
-    font-size: $font-size-xl;
-    line-height: $line-height-xl;
-    color: $text-primary;
-    font-weight: 700;
+  font-size: $font-size-xl;
+  line-height: $line-height-xl;
+  color: $text-primary;
+  font-weight: 700;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .column {
+    align-items: center;
+    text-align: center;
+  }
 }
