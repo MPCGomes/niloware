@@ -1,0 +1,42 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Export static files
+        run: npm run output
+
+      - name: Delete existing files from FTP (except default.php)
+        run: |
+          sudo apt-get install -y lftp
+          lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }} ${{ secrets.FTP_HOST }} <<EOF
+          set ssl:verify-certificate no
+          cd domains/niloware.com/public_html
+          rm -rf !(default.php)   # Deletes everything except default.php
+          bye
+          EOF
+
+      - name: Upload files to FTP
+        uses: sebastianpopp/ftp-action@v1
+        with:
+          host: ${{ secrets.FTP_HOST }}
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          localDir: "out"
+          remoteDir: "domains/niloware.com/public_html"
