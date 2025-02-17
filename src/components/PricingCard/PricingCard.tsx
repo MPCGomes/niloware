@@ -3,12 +3,12 @@ import styles from "./PricingCard.module.scss";
 import Button from "../Button/Button";
 import { Check as CheckIcon } from "@mui/icons-material";
 
-interface FeatureCardProps {
+interface PricingCardProps {
   plan: string;
   mostPopular: string;
   price: string;
   monthlyPrice: string;
-  feature: string;
+  features: string[];
   backgroundGradient: string;
   textColor: string;
   btnColor: string;
@@ -17,12 +17,12 @@ interface FeatureCardProps {
   checkColor: string;
 }
 
-const PricingCard: React.FC<FeatureCardProps> = ({
+const PricingCard: React.FC<PricingCardProps> = ({
   plan,
   mostPopular,
   price,
   monthlyPrice,
-  feature,
+  features,
   backgroundGradient,
   textColor,
   btnColor,
@@ -37,18 +37,20 @@ const PricingCard: React.FC<FeatureCardProps> = ({
     >
       <div className={styles.plan}>
         <p>{plan}</p>
-        <p>{mostPopular}</p>
+        {mostPopular && <p className={styles.mostPopular}>{mostPopular}</p>}
       </div>
       <p className={styles.price}>{price}</p>
-      <p className={styles.monthlyPrice}>{monthlyPrice}</p>
-      <Button text={"Contratar"} color={btnColor} borderColor={btnBorder} />
+      {monthlyPrice && <p className={styles.monthlyPrice}>{monthlyPrice}</p>}
+      <Button text="Contratar" color={btnColor} borderColor={btnBorder} />
       <ul className={styles.featureList}>
-        <li style={{ color: listColor }}>
-          <span style={{ color: checkColor }}>
-            <CheckIcon fontSize="small" />
-          </span>{" "}
-          {feature}
-        </li>
+        {features.map((feature, index) => (
+          <li key={index} style={{ color: listColor }}>
+            <span style={{ color: checkColor }}>
+              <CheckIcon fontSize="small" />
+            </span>{" "}
+            {feature}
+          </li>
+        ))}
       </ul>
     </div>
   );

@@ -4,23 +4,30 @@ import { useState } from "react";
 import clsx from "clsx";
 import styles from "./PricingToggle.module.scss";
 
-const PricingToggle = () => {
+const PricingToggle = ({
+  onToggle,
+}: {
+  onToggle: (isAnnual: boolean) => void;
+}) => {
   const [isAnnual, setIsAnnual] = useState(false);
+
+  const handleToggle = (value: boolean) => {
+    setIsAnnual(value);
+    onToggle(value);
+  };
 
   return (
     <div className={styles.toggle}>
-      {/* Mensal (Left) */}
       <div
         className={clsx(styles.option, { [styles.active]: !isAnnual })}
-        onClick={() => setIsAnnual(false)}
+        onClick={() => handleToggle(false)}
       >
         Mensal
       </div>
 
-      {/* Anual (Right) */}
       <div
         className={clsx(styles.option, { [styles.active]: isAnnual })}
-        onClick={() => setIsAnnual(true)}
+        onClick={() => handleToggle(true)}
       >
         <span>Anual</span>
         <span className={styles.discount}>-20%</span>
