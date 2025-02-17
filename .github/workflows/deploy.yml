@@ -41,4 +41,4 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           local-dir: "out/"
-          server-dir: "domains/niloware.com/public_html"
+          server-dir: "domains/niloware.com/public_html/"
