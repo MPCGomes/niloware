@@ -7,15 +7,17 @@
 
   div {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    gap: 32px;
     align-items: center;
+    text-align: center;
+    gap: 32px;
     color: $text-light;
     font-size: $font-size-md;
 
     @media (min-width: $breakpoint-tablet) {
       flex-direction: row;
+      text-align: left;
+      justify-content: center;
     }
 
     @media (min-width: $breakpoint-desktop) {
