@@ -1,4 +1,4 @@
-@import "../../../styles/variables";
+@use "@/styles/variables"as *;
 
 .ctaSection {
   background: $primary;
@@ -14,12 +14,12 @@
     color: $text-light;
     font-size: $font-size-md;
 
-    @media (min-width: $breakpoint-tablet){
-        flex-direction: row;
+    @media (min-width: $breakpoint-tablet) {
+      flex-direction: row;
     }
 
-    @media (min-width: $breakpoint-desktop){
-        gap: 64px;
+    @media (min-width: $breakpoint-desktop) {
+      gap: 64px;
     }
 
     button {
