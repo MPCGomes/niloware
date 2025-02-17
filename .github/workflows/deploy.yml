@@ -22,6 +22,9 @@ jobs:
       - name: Export static files
         run: npm run output
 
+      - name: Generate Sitemap
+        run: npm run postbuild
+
       - name: Delete existing files from FTP (except default.php)
         run: |
           sudo apt-get install -y lftp
