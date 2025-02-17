@@ -5,6 +5,7 @@ import HeroSection from "@/containers/homePage/heroSection/HeroSection";
 import FeaturesSection from "@/containers/homePage/featuresSection/FeaturesSection";
 import PortfolioSection from "@/containers/homePage/portfolioSection/PortfolioSection";
 import ClientsSection from "@/containers/homePage/clientsSection/ClientsSection";
+import PricingSection from "@/containers/homePage/pricingSection/PricingSection";
 import FaqSection from "@/containers/homePage/faqSection/FaqSection";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <ClientsSection />
       <FeaturesSection />
       <PortfolioSection />
+      <PricingSection />
       <FaqSection />
       <TestimonialsSection />
     </div>
