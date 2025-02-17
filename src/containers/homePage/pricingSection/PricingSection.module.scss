@@ -4,13 +4,14 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  align-items: flex-start;
 
   @media (min-width: $breakpoint-desktop) {
     flex-direction: row;
   }
 }
 
-.pricingToggle{
-    display: flex;
-    justify-content: center;
+.pricingToggle {
+  display: flex;
+  justify-content: center;
 }
