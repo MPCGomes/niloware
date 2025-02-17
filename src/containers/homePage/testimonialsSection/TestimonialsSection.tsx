@@ -32,8 +32,8 @@ const TestimonialsSection: FC = () => {
   return (
     <section className="container section">
       <SectionHeading
-        subheading="Confira como ajudamos negócios a crescerem"
-        heading="O Que Nossos Clientes Dizem?"
+        subheading="Confira o que nossos clientes estão dizendo"
+        heading="Depoimentos"
       />
       {testimonials.length > 0 && (
         <TestimonialsCarousel testimonials={testimonials} />

@@ -1,0 +1,13 @@
+@use "@/styles/variables"as *;
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  gap: 24px;
+
+  @media (min-width: $breakpoint-mobile) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+  }
+}

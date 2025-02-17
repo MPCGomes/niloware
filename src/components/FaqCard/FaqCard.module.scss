@@ -1,0 +1,54 @@
+@use "../../styles/variables"as *;
+
+.faqCard {
+  border-radius: 12px;
+  background-color: $background-card;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+
+  .question {
+    width: 100%;
+    background: transparent;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    font-weight: 600;
+    padding: 24px;
+    text-align: left;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: $text-primary;
+    transition: color 0.3s ease;
+
+    .icon {
+      color: $text-primary;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+  }
+
+  &.open {
+    background-color: rgba(0, 114, 225, 0.1);
+  }
+}
+
+.open .question {
+  color: $primary;
+
+  .icon {
+    color: $primary;
+  }
+}
+
+.answer {
+  display: none;
+  padding: 24px;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-primary;
+}
+
+.open .answer {
+  display: block;
+}
