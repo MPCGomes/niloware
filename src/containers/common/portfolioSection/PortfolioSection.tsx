@@ -44,7 +44,7 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({
     <section className="container section">
       {!hideHeading && (
         <SectionHeading
-          subheading="Ver Todos os Projetos"
+          subheading="Ver Todos"
           heading="Portfólio"
           variant="row"
         />
