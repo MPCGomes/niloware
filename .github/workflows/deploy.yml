@@ -19,9 +19,6 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Export static files
-        run: npm run output
-
       - name: Generate Sitemap
         run: npm run postbuild
 
