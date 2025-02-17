@@ -33,7 +33,7 @@ jobs:
           EOF
 
       - name: Upload files to FTP
-        uses: sebastianpopp/ftp-action@v1
+        uses: SamKirkland/FTP-Deploy-Action@v4
         with:
           host: ${{ secrets.FTP_HOST }}
           user: ${{ secrets.FTP_USER }}
