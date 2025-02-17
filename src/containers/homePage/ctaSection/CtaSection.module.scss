@@ -1,0 +1,29 @@
+@import "../../../styles/variables";
+
+.ctaSection {
+  background: $primary;
+  background: $primary-gradient;
+  padding: 30px;
+
+  div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    color: $text-light;
+    font-size: $font-size-md;
+
+    @media (min-width: $breakpoint-tablet){
+        flex-direction: row;
+    }
+
+    @media (min-width: $breakpoint-desktop){
+        gap: 64px;
+    }
+
+    button {
+      font-size: $font-size-md;
+    }
+  }
+}
