@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import PortfolioCard from "../../../components/PortfolioCard/PortfolioCard";
+import PortfolioCard from "@/components/PortfolioCard/PortfolioCard";
 import SectionHeading from "@/components/SectionHeading/SectionHeading";
 import styles from "./PortfolioSection.module.scss";
 
@@ -14,7 +14,15 @@ interface PortfolioItem {
   fullWidth: boolean;
 }
 
-const PortfolioSection: React.FC = () => {
+interface PortfolioSectionProps {
+  limit?: number | null;
+  hideHeading?: boolean;
+}
+
+const PortfolioSection: React.FC<PortfolioSectionProps> = ({
+  limit = null,
+  hideHeading = false,
+}) => {
   const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[]>([]);
 
   useEffect(() => {
@@ -30,20 +38,26 @@ const PortfolioSection: React.FC = () => {
     fetchPortfolio();
   }, []);
 
+  const displayedItems = limit
+    ? portfolioItems.slice(0, limit)
+    : portfolioItems;
+
   return (
     <section className="container section">
-      <SectionHeading
-        subheading="Ver Todos os Projetos"
-        heading="Portfólio"
-        isRow
-        link="/portfolio"
-      />
+      {!hideHeading && (
+        <SectionHeading
+          subheading="Ver Todos os Projetos"
+          heading="Portfólio"
+          isRow
+          link={limit ? "/portfolio" : undefined}
+        />
+      )}
 
       <div className={styles.portfolioGrid}>
-        {portfolioItems.length > 0 && <PortfolioCard {...portfolioItems[0]} />}
+        {displayedItems.length > 0 && <PortfolioCard {...displayedItems[0]} />}
 
         <div className={styles.row}>
-          {portfolioItems.slice(1).map((item, index) => (
+          {displayedItems.slice(1).map((item, index) => (
             <PortfolioCard key={index} {...item} />
           ))}
         </div>
