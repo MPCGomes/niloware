@@ -1,37 +1,32 @@
 [
   {
     "title": "Projeto Principal",
-    "feature": "Landing Page Exclusiva",
-    "imageBackground": "/portfolio/portfolio1.jpg",
-    "height": "400px",
-    "fullWidth": true
+    "features": ["Landing Page Exclusiva", "SEO Otimizado"],
+    "imageBackground": "/portfolio/portfolio1.jpg"
   },
   {
-    "title": "E-Commerce",
-    "feature": "Loja Online Completa",
-    "imageBackground": "/portfolio/portfolio2.jpg",
-    "height": "300px",
-    "fullWidth": false
+    "title": "Projeto Principal",
+    "features": ["Landing Page Exclusiva", "SEO Otimizado"],
+    "imageBackground": "/portfolio/portfolio1.jpg"
   },
   {
-    "title": "Blog Profissional",
-    "feature": "Plataforma de Conteúdo",
-    "imageBackground": "/portfolio/portfolio3.jpg",
-    "height": "300px",
-    "fullWidth": false
+    "title": "Projeto Principal",
+    "features": ["Landing Page Exclusiva", "SEO Otimizado"],
+    "imageBackground": "/portfolio/portfolio1.jpg"
   },
   {
-    "title": "Landing Page",
-    "feature": "Alta Conversão",
-    "imageBackground": "/portfolio/portfolio4.jpg",
-    "height": "300px",
-    "fullWidth": false
+    "title": "Projeto Principal",
+    "features": ["Landing Page Exclusiva", "SEO Otimizado"],
+    "imageBackground": "/portfolio/portfolio1.jpg"
   },
   {
-    "title": "Landing Page",
-    "feature": "Alta Conversão",
-    "imageBackground": "/portfolio/portfolio5.jpg",
-    "height": "300px",
-    "fullWidth": false
+    "title": "Projeto Principal",
+    "features": ["Landing Page Exclusiva", "SEO Otimizado"],
+    "imageBackground": "/portfolio/portfolio1.jpg"
+  },
+  {
+    "title": "Projeto Principal",
+    "features": ["Landing Page Exclusiva", "SEO Otimizado"],
+    "imageBackground": "/portfolio/portfolio1.jpg"
   }
 ]
