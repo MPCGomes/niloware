@@ -1,8 +1,7 @@
 import TestimonialsSection from "@/containers/homePage/testimonialsSection/TestimonialsSection";
-import styles from "./page.module.scss";
 import HeroSection from "@/containers/homePage/heroSection/HeroSection";
 import FeaturesSection from "@/containers/homePage/featuresSection/FeaturesSection";
-import PortfolioSection from "@/containers/homePage/portfolioSection/PortfolioSection";
+import PortfolioSection from "@/containers/common/portfolioSection/PortfolioSection";
 import ClientsSection from "@/containers/homePage/clientsSection/ClientsSection";
 import PricingSection from "@/containers/homePage/pricingSection/PricingSection";
 import FaqSection from "@/containers/homePage/faqSection/FaqSection";
@@ -10,11 +9,11 @@ import CtaSection from "@/containers/homePage/ctaSection/CtaSection";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
+    <div>
       <HeroSection />
       <ClientsSection />
       <FeaturesSection />
-      <PortfolioSection />
+      <PortfolioSection limit={4} />
       <PricingSection />
       <FaqSection />
       <TestimonialsSection />
