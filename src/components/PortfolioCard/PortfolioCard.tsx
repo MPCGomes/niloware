@@ -3,26 +3,32 @@ import styles from "./PortfolioCard.module.scss";
 
 interface PortfolioCardProps {
   title: React.ReactNode;
-  feature: React.ReactNode;
+  features: React.ReactNode[];
   imageBackground: string;
-  height: string;
+  isFirst: boolean;
 }
 
 const PortfolioCard: React.FC<PortfolioCardProps> = ({
   title,
-  feature,
+  features,
   imageBackground,
-  height,
+  isFirst,
 }) => {
   return (
     <div
       className={styles.portfolioCard}
-      style={{ backgroundImage: `url(${imageBackground})`, 
-      height: height }}
+      style={{
+        backgroundImage: `url(${imageBackground})`,
+        height: isFirst ? "380px" : "230px",
+      }}
     >
       <p className={styles.title}>{title}</p>
       <div className={styles.featureContainer}>
-        <p className={styles.feature}>{feature}</p>
+        {features.map((feature, index) => (
+          <p key={index} className={styles.feature}>
+            {feature}
+          </p>
+        ))}
       </div>
     </div>
   );
