@@ -5,6 +5,7 @@ import HeroSection from "@/containers/homePage/heroSection/HeroSection";
 import FeaturesSection from "@/containers/homePage/featuresSection/FeaturesSection";
 import PortfolioSection from "@/containers/homePage/portfolioSection/PortfolioSection";
 import ClientsSection from "@/containers/homePage/clientsSection/ClientsSection";
+import FaqSection from "@/containers/homePage/faqSection/FaqSection";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <ClientsSection />
       <FeaturesSection />
       <PortfolioSection />
-      <PricingToggle />
+      <FaqSection />
       <TestimonialsSection />
     </div>
   );
