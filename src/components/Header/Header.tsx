@@ -15,7 +15,7 @@ const Header: React.FC = () => {
         <div className={styles.section}>
           <Logo size="md" light />
           <Button
-            text="+55 12 97409-6393"
+            text={<span className={styles.buttonText}>+55 12 97409-6393</span>}
             icon={<WhatsApp fontSize="small" />}
             onClick={() => window.open(whatsappLink, "_blank")}
           />
