@@ -8,10 +8,8 @@ import styles from "./PortfolioSection.module.scss";
 
 interface PortfolioItem {
   title: string;
-  feature: string;
+  features: string[];
   imageBackground: string;
-  height: string;
-  fullWidth: boolean;
 }
 
 interface PortfolioSectionProps {
@@ -48,17 +46,18 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({
         <SectionHeading
           subheading="Ver Todos os Projetos"
           heading="Portfólio"
-          isRow
-          link={limit ? "/portfolio" : undefined}
+          variant="row"
         />
       )}
 
       <div className={styles.portfolioGrid}>
-        {displayedItems.length > 0 && <PortfolioCard {...displayedItems[0]} />}
+        {displayedItems.length > 0 && (
+          <PortfolioCard {...displayedItems[0]} isFirst={true} />
+        )}
 
         <div className={styles.row}>
           {displayedItems.slice(1).map((item, index) => (
-            <PortfolioCard key={index} {...item} />
+            <PortfolioCard key={index} {...item} isFirst={false} />
           ))}
         </div>
       </div>
