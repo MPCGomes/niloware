@@ -9,10 +9,12 @@ interface FeatureCardProps {
   price: string;
   monthlyPrice: string;
   feature: string;
-  backgroundGradient:string;
+  backgroundGradient: string;
   textColor: string;
   btnColor: string;
   btnBorder: string;
+  listColor: string;
+  checkColor: string;
 }
 
 const PricingCard: React.FC<FeatureCardProps> = ({
@@ -25,12 +27,14 @@ const PricingCard: React.FC<FeatureCardProps> = ({
   textColor,
   btnColor,
   btnBorder,
-
+  listColor,
+  checkColor,
 }) => {
   return (
-    <div 
-    style={{background: backgroundGradient, color: textColor}}
-    className={styles.pricingCard}>
+    <div
+      style={{ background: backgroundGradient, color: textColor }}
+      className={styles.pricingCard}
+    >
       <div className={styles.plan}>
         <p>{plan}</p>
         <p>{mostPopular}</p>
@@ -39,8 +43,11 @@ const PricingCard: React.FC<FeatureCardProps> = ({
       <p className={styles.monthlyPrice}>{monthlyPrice}</p>
       <Button text={"Contratar"} color={btnColor} borderColor={btnBorder} />
       <ul className={styles.featureList}>
-        <li>
-          <CheckIcon fontSize="small" /> {feature}
+        <li style={{ color: listColor }}>
+          <span style={{ color: checkColor }}>
+            <CheckIcon fontSize="small" />
+          </span>{" "}
+          {feature}
         </li>
       </ul>
     </div>
