@@ -16,13 +16,13 @@ export const metadata: Metadata = {
   viewport: "width=device-width, initial-scale=1.0",
   openGraph: {
     type: "website",
-    url: "https://niloware.com",
+    url: "https://www.niloware.com.br/",
     title: "Niloware | Criação de Sites Profissionais",
     description:
       "A Niloware é uma agência especializada na criação de sites profissionais para empresas. Peça um orçamento agora!",
     images: [
       {
-        url: "https://niloware.com/og-image.jpg",
+        url: "https://www.niloware.com.br/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Niloware",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Niloware | Criação de Sites Profissionais",
     description:
       "A Niloware é uma agência especializada na criação de sites profissionais para empresas. Peça um orçamento agora!",
-    images: ["https://niloware.com/og-image.jpg"],
+    images: ["https://www.niloware.com.br/og-image.jpg"],
   },
 };
 
