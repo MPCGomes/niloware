@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.scss";
 import Header from "@/components/Header/Header";
@@ -13,7 +13,6 @@ export const metadata: Metadata = {
   keywords:
     "criação de sites, desenvolvimento web, agência de sites, sites profissionais, Niloware",
   robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1.0",
   openGraph: {
     type: "website",
     url: "https://www.niloware.com.br/",
@@ -36,6 +35,11 @@ export const metadata: Metadata = {
       "A Niloware é uma agência especializada na criação de sites profissionais para empresas. Peça um orçamento agora!",
     images: ["https://www.niloware.com.br/og-image.jpg"],
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
 };
 
 export default function RootLayout({
