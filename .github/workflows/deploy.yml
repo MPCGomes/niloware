@@ -30,7 +30,7 @@ jobs:
           lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }} ${{ secrets.FTP_HOST }} <<EOF
           set ssl:verify-certificate no
           cd public_html
-          rm -rf !(default.php)   # Deletes everything except default.php
+          ls | grep -v 'default.php' | xargs rm -rf
           bye
           EOF
 
