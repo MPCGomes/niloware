@@ -22,6 +22,9 @@ jobs:
       - name: Generate Sitemap
         run: npm run postbuild
 
+      - name: Verify build output
+        run: ls -R out/ || echo "⚠️ Diretório out/ está vazio!"
+
       - name: Delete existing files from FTP (except default.php)
         run: |
           if ! command -v lftp &> /dev/null; then
@@ -30,10 +33,12 @@ jobs:
           lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }} ${{ secrets.FTP_HOST }} <<EOF
           set ssl:verify-certificate no
           cd /domains/niloware.com.br/public_html
-          glob -a rm -rf *  # Deletes everything
-          rm -rf .[^.]*  # Deletes hidden files
+          rm -rf * || echo "⚠️ Falha ao remover arquivos, verificando permissões..."
           bye
           EOF
+
+      - name: Wait after delete
+        run: sleep 5  # Aguarda o servidor processar a remoção dos arquivos
 
       - name: Upload files to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
