@@ -29,7 +29,7 @@ jobs:
           fi
           lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }} ${{ secrets.FTP_HOST }} <<EOF
           set ssl:verify-certificate no
-          cd public_html
+          cd public_html 
           ls | grep -v 'default.php' | xargs rm -rf
           bye
           EOF
