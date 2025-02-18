@@ -22,17 +22,17 @@ jobs:
       - name: Generate Sitemap
         run: npm run postbuild
 
-      - name: Upload files to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          local-dir: "out/"
-          server-dir: "public_html/"
-          delete: true
-          exclude: |
-            default.php
+      - name: Delete existing files from FTP (except default.php)
+        run: |
+          if ! command -v lftp &> /dev/null; then
+            sudo apt-get install -y lftp
+          fi
+          lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }} ${{ secrets.FTP_HOST }} <<EOF
+          set ssl:verify-certificate no
+          cd domains/niloware.com.br/public_html
+          glob -a rm -rf [!.]*
+          bye
+          EOF
 
       - name: Upload files to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -41,4 +41,4 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           local-dir: "out/"
-          server-dir: "public_html/"
+          server-dir: "domains/niloware.com.br/public_html/"
