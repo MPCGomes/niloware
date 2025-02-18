@@ -25,7 +25,7 @@ jobs:
       - name: Verify build output
         run: ls -R out/ || echo "⚠️ Diretório out/ está vazio!"
 
-      - name: Delete existing files from FTP (except default.php)
+      - name: Delete existing files from FTP (except config.php)
         run: |
           if ! command -v lftp &> /dev/null; then
             sudo apt-get install -y lftp
@@ -33,12 +33,12 @@ jobs:
           lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }} ${{ secrets.FTP_HOST }} <<EOF
           set ssl:verify-certificate no
           cd /domains/niloware.com.br/public_html
-          rm -rf * || echo "⚠️ Falha ao remover arquivos, verificando permissões..."
+          find . -mindepth 1 ! -name 'config.php' -delete || echo "⚠️ Alguns arquivos podem não ter sido removidos"
           bye
           EOF
 
       - name: Wait after delete
-        run: sleep 5  # Aguarda o servidor processar a remoção dos arquivos
+        run: sleep 10
 
       - name: Upload files to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -48,3 +48,4 @@ jobs:
           password: ${{ secrets.FTP_PASS }}
           local-dir: "out/"
           server-dir: "/domains/niloware.com.br/public_html/"
+          force: true
