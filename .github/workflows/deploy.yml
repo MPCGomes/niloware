@@ -29,8 +29,9 @@ jobs:
           fi
           lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }} ${{ secrets.FTP_HOST }} <<EOF
           set ssl:verify-certificate no
-          cd domains/niloware.com.br/public_html
-          glob -a rm -rf [!.]*
+          cd /domains/niloware.com.br/public_html
+          glob -a rm -rf *  # Deletes everything
+          rm -rf .[^.]*  # Deletes hidden files
           bye
           EOF
 
@@ -41,4 +42,4 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           local-dir: "out/"
-          server-dir: "domains/niloware.com.br/public_html/"
+          server-dir: "/domains/niloware.com.br/public_html/"
