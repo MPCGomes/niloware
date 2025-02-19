@@ -1,32 +1,27 @@
 [
   {
-    "title": "Projeto Principal",
-    "features": ["Landing Page Exclusiva", "SEO Otimizado"],
-    "imageBackground": "/portfolio/portfolio1.jpg"
+    "title": "Pousada Lilabella",
+    "features": ["Landing Page", "Hoteralaria"],
+    "imageBackground": "/portfolio/pousada-lilabella.png"
   },
   {
-    "title": "Projeto Principal",
-    "features": ["Landing Page Exclusiva", "SEO Otimizado"],
-    "imageBackground": "/portfolio/portfolio1.jpg"
+    "title": "Litoral Pisos",
+    "features": ["Landing Page", "Construção"],
+    "imageBackground": "/portfolio/litoral-pisos.png"
   },
   {
-    "title": "Projeto Principal",
-    "features": ["Landing Page Exclusiva", "SEO Otimizado"],
-    "imageBackground": "/portfolio/portfolio1.jpg"
+    "title": "Marmoraria Stone",
+    "features": ["Landing Page", "Construção"],
+    "imageBackground": "/portfolio/marmoraria-stone.png"
   },
   {
-    "title": "Projeto Principal",
-    "features": ["Landing Page Exclusiva", "SEO Otimizado"],
-    "imageBackground": "/portfolio/portfolio1.jpg"
+    "title": "Clínica Ápice",
+    "features": ["Landing Page", "Saúde"],
+    "imageBackground": "/portfolio/clinica-apice.png"
   },
   {
-    "title": "Projeto Principal",
-    "features": ["Landing Page Exclusiva", "SEO Otimizado"],
-    "imageBackground": "/portfolio/portfolio1.jpg"
-  },
-  {
-    "title": "Projeto Principal",
-    "features": ["Landing Page Exclusiva", "SEO Otimizado"],
-    "imageBackground": "/portfolio/portfolio1.jpg"
+    "title": "Gesso Andrade",
+    "features": ["Landing Page", "Construção"],
+    "imageBackground": "/portfolio/gesso-andrade.png"
   }
 ]
