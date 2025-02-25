@@ -31,7 +31,7 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
     autoplaySpeed: 5000,
     cssEase: "linear",
     fade: false,
-    centerMode: false,
+    centerMode: true,
     variableWidth: true,
     trackStyle: { display: "flex", gap: "20px" },
     responsive: [
