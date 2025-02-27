@@ -1,10 +1,11 @@
 @use "@/styles/variables"as *;
 
 .portfolioCard {
-  background-position: top;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden;
   height: 300px;
 
   display: flex;
