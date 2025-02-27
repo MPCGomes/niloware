@@ -7,6 +7,10 @@
   font-family: $font-family;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   color: $text-primary;
   background-color: $background;
@@ -17,12 +21,12 @@ body {
   max-width: $breakpoint-mobile;
   margin: 0 auto;
 
-  @media (min-width: $breakpoint-mobile) {
-    max-width: $breakpoint-tablet;
+  @media (min-width: $breakpoint-tablet) {
+    max-width: 1024px;
   }
 
-  @media (min-width: $breakpoint-tablet) {
-    max-width: $breakpoint-desktop;
+  @media (min-width: $breakpoint-desktop) {
+    max-width: 1440px;
   }
 }
 
@@ -33,11 +37,11 @@ body {
   flex-direction: column;
   gap: 56px;
 
-  @media (min-width: $breakpoint-mobile) {
+  @media (min-width: $breakpoint-tablet) {
     padding: 72px 16px;
   }
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-desktop) {
     padding: 72px 120px;
   }
 }

@@ -1,21 +1,43 @@
 @use "@/styles/variables" as *;
 
 .portfolioGrid {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d";
 
-  @media (max-width: $breakpoint-tablet) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-areas:
+      "a b"
+      "c d";
   }
 
-  @media (max-width: $breakpoint-mobile) {
-    grid-template-columns: 1fr;
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-areas:
+      "a a a"
+      "b c d";
+
+      .grid1{
+        height: 380px;
+      }
+  }
+
+  .grid1 {
+    grid-area: a;
+  }
+
+  .grid2 {
+    grid-area: b;
+  }
+
+  .grid3 {
+    grid-area: c;
+  }
+
+  .grid4 {
+    grid-area: d;
   }
 }

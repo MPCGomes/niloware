@@ -10,11 +10,11 @@
   margin: 0 auto;
 
   @media (min-width: $breakpoint-mobile) {
-    max-width: $breakpoint-tablet;
+    max-width: 1024px;
   }
 
   @media (min-width: $breakpoint-tablet) {
-    max-width: $breakpoint-desktop;
+    max-width: 1440px;
   }
 }
 

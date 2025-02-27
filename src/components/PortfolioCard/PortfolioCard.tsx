@@ -1,26 +1,27 @@
 import React from "react";
 import styles from "./PortfolioCard.module.scss";
+import Link from "next/link";
 
 interface PortfolioCardProps {
   title: React.ReactNode;
   features: React.ReactNode[];
   imageBackground: string;
-  isFirst: boolean;
+  link: string;
 }
 
 const PortfolioCard: React.FC<PortfolioCardProps> = ({
   title,
   features,
   imageBackground,
-  isFirst,
+  link,
 }) => {
   return (
-    <div
+    <Link
       className={styles.portfolioCard}
       style={{
-        backgroundImage: `url(${imageBackground})`,
-        height: isFirst ? "380px" : "230px",
+        backgroundImage: `url(${imageBackground})`
       }}
+      href={link}
     >
       <p className={styles.title}>{title}</p>
       <div className={styles.featureContainer}>
@@ -30,7 +31,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
           </p>
         ))}
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -1,6 +1,8 @@
-@use "@/styles/variables"as *;
+@use "@/styles/variables" as *;
 
 .hero {
+  padding-top: 30px;
+
   background: rgb(0, 114, 255);
   background: linear-gradient(90deg,
       rgba(0, 114, 255, 1) 0%,
@@ -21,5 +23,17 @@
     text-align: center;
     color: $text-light;
     font-weight: 400;
+
+    width: 70%;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .hero {
+    padding-top: 60px;
+
+    div h3 {
+      width: 60%;
+    }
   }
 }

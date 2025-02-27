@@ -1,6 +1,7 @@
 import Button from "@/components/Button/Button";
 import React from "react";
 import styles from "./HeroSection.module.scss";
+import ClientsSection from "../clientsSection/ClientsSection";
 
 const HeroSection = () => {
   return (
@@ -13,6 +14,7 @@ const HeroSection = () => {
         </h3>
         <Button text="Peça um Orçamento" />
       </div>
+      <ClientsSection />
     </section>
   );
 };
