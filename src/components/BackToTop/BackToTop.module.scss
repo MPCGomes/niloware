@@ -1,0 +1,19 @@
+.backToTop{
+    position: fixed;
+    z-index: 6;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 1);
+    color: white;
+    opacity: 50%;
+}
