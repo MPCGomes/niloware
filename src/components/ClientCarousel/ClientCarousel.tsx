@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,6 +17,12 @@ const logos = [
 ];
 
 const ClientCarousel: React.FC = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const settings = {
     dots: false,
     arrows: false,
@@ -28,25 +34,28 @@ const ClientCarousel: React.FC = () => {
     autoplaySpeed: 5000,
     cssEase: "linear",
     fade: false,
-    centerMode: false,
+    centerMode: true,
     variableWidth: true,
   };
 
   return (
-    <div className={styles.wrapper}>
-      <Slider {...settings} className={styles.carousel}>
-        {logos.map((src, index) => (
-          <div key={index} className={styles.imageWrapper}>
-            <img
-              src={src}
-              alt={`Client ${index}`}
-              className={styles.image}
-              width="auto"
-              height={28}
-            />
-          </div>
-        ))}
-      </Slider>
+    <div className={`${styles.wrapper} ${isMounted ? styles.visible : ""}`}>
+      {isMounted && (
+        <Slider {...settings} className={styles.carousel}>
+          {logos.map((src, index) => (
+            <div key={index} className={styles.imageWrapper}>
+              <img
+                src={src}
+                alt={`Client ${index}`}
+                className={styles.image}
+                width="auto"
+                height={28}
+                draggable="false"
+              />
+            </div>
+          ))}
+        </Slider>
+      )}
     </div>
   );
 };
