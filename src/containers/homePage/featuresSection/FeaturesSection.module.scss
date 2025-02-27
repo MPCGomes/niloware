@@ -5,11 +5,11 @@
   grid-template-columns: 1fr;
   gap: 24px;
 
-  @media (min-width: $breakpoint-mobile) {
+  @media (min-width: $breakpoint-tablet) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-desktop) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
