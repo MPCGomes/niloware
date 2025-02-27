@@ -5,6 +5,7 @@
   grid-template-columns: 1fr;
   width: 100%;
   gap: 24px;
+  align-items: start;
 
   @media (min-width: $breakpoint-mobile) {
     grid-template-columns: repeat(2, 1fr);

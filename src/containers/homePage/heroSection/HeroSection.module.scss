@@ -4,11 +4,9 @@
   padding-top: 30px;
 
   background: rgb(0, 114, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 114, 255, 1) 0%,
-    rgba(0, 198, 255, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(0, 114, 255, 1) 0%,
+      rgba(0, 198, 255, 1) 100%);
 
   div {
     align-items: center;

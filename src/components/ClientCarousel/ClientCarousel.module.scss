@@ -15,11 +15,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 100px;
-  filter: grayscale(100%) brightness(150%);
-}
-
-.image {
-  max-height: 28px;
-  width: auto;
+  filter: brightness(0) invert(1) contrast(100%);
 }

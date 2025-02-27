@@ -30,6 +30,10 @@ const PricingCard: React.FC<PricingCardProps> = ({
   listColor,
   checkColor,
 }) => {
+  const whatsappLink = `https://wa.me/5512974096393?text=Olá, quero contratar o plano ${encodeURIComponent(
+    plan
+  )}.`;
+
   return (
     <div
       style={{ background: backgroundGradient, color: textColor }}
@@ -41,7 +45,12 @@ const PricingCard: React.FC<PricingCardProps> = ({
       </div>
       <p className={styles.price}>{price}</p>
       {monthlyPrice && <p className={styles.monthlyPrice}>{monthlyPrice}</p>}
-      <Button text="Contratar" color={btnColor} borderColor={btnBorder} />
+      <Button
+        text="Contratar"
+        color={btnColor}
+        borderColor={btnBorder}
+        onClick={() => window.open(whatsappLink, "_blank")}
+      />
       <ul className={styles.featureList}>
         {features.map((feature, index) => (
           <li key={index} style={{ color: listColor }}>

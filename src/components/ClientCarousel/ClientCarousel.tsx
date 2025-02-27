@@ -2,12 +2,19 @@
 
 import React from "react";
 import Slider from "react-slick";
-import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./ClientCarousel.module.scss";
 
-const logos = Array.from({ length: 8 }, (_, i) => `/logos/${i + 1}.png`);
+const logos = [
+  "/logos/logumrh.png",
+  "/logos/propabanda.png",
+  "/logos/clinica-apice.webp",
+  "/logos/gesso-andrade.webp",
+  "/logos/litoral-pisos.webp",
+  "/logos/marmoraria-stone.webp",
+  "/logos/pousada-lilabella.webp",
+];
 
 const ClientCarousel: React.FC = () => {
   const settings = {
@@ -30,11 +37,11 @@ const ClientCarousel: React.FC = () => {
       <Slider {...settings} className={styles.carousel}>
         {logos.map((src, index) => (
           <div key={index} className={styles.imageWrapper}>
-            <Image
+            <img
               src={src}
               alt={`Client ${index}`}
               className={styles.image}
-              width={100}
+              width="auto"
               height={28}
             />
           </div>
