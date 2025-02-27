@@ -2,6 +2,9 @@
 
 .header {
   background: $primary-gradient;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
 }
 
 .container {
@@ -10,11 +13,11 @@
   margin: 0 auto;
 
   @media (min-width: $breakpoint-mobile) {
-    max-width: $breakpoint-tablet;
+    max-width: 1024px;
   }
 
   @media (min-width: $breakpoint-tablet) {
-    max-width: $breakpoint-desktop;
+    max-width: 1440px;
   }
 }
 
