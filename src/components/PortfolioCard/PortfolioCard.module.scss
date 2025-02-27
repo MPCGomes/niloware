@@ -1,11 +1,12 @@
-@use "@/styles/variables"as *;
+@use "@/styles/variables" as *;
 
 .portfolioCard {
   background-position: top;
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
   position: relative;
-  height: 300px;
+  min-height: 300px;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
@@ -15,15 +16,24 @@
   padding: 26px 24px;
   border-radius: 24px;
   color: $text-light;
+  text-decoration: none;
+
+  transition: background-size 0.3s ease-in-out;
+
+  &:hover {
+    background-size: 110%;
+  }
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(0deg,
-        rgba(0, 0, 0, 0.75) 0%,
-        rgba(0, 114, 255, 0.15) 100%);
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 115, 255, 0.3) 100%
+    );
     border-radius: 24px;
   }
 }
