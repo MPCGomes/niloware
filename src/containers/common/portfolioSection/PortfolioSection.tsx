@@ -61,36 +61,37 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({
       <div className={styles.portfolioGrid}>
         <div className={styles.grid1}>
           <PortfolioCard
-            title={"Eflyer"}
-            features={["Otimização SEO", "Landing Page"]}
-            imageBackground={"./portfolio/portfolio1.jpg"}
-            link={"#"}
+            title={"Litoral Pisos"}
+            features={["Landing Page", "Construção"]}
+            imageBackground={"./portfolio/litoral-pisos.png"}
+            link={"https://litoralpisos.com.br/"}
           />
         </div>
         <div className={styles.grid2}>
           <PortfolioCard
-            title={"Eflyer"}
-            features={["Otimização SEO", "Landing Page"]}
-            imageBackground={"./portfolio/portfolio2.jpg"}
-            link={"#"}
+            title={"Gesso Andrade"}
+            features={["Landing Page", "Construção"]}
+            imageBackground={"./portfolio/gesso-andrade.png"}
+            link={"https://gessoandrade.com.br/"}
           />
         </div>
         <div className={styles.grid3}>
           <PortfolioCard
-            title={"Eflyer"}
-            features={["Otimização SEO", "Landing Page"]}
-            imageBackground={"./portfolio/portfolio3.jpg"}
-            link={"#"}
+            title={"Clínica Ápice"}
+            features={["Landing Page", "Saúde"]}
+            imageBackground={"./portfolio/clinica-apice.png"}
+            link={"https://apiceclinicamult.com.br/"}
           />
         </div>
         <div className={styles.grid4}>
           <PortfolioCard
-            title={"Eflyer"}
-            features={["Otimização SEO", "Landing Page"]}
-            imageBackground={"./portfolio/portfolio4.jpg"}
-            link={"#"}
+            title={"Pousada Lilabella"}
+            features={["Landing Page", "Hotelaria"]}
+            imageBackground={"./portfolio/pousada-lilabella.png"}
+            link={"https://pousadalilabella.com.br/"}
           />
         </div>
+
       </div>
     </section>
   );

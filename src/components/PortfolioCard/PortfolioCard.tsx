@@ -22,6 +22,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
         backgroundImage: `url(${imageBackground})`
       }}
       href={link}
+      target="_blank"
     >
       <p className={styles.title}>{title}</p>
       <div className={styles.featureContainer}>
