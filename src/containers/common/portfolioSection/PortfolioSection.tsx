@@ -14,12 +14,12 @@ interface PortfolioItem {
 
 interface PortfolioSectionProps {
   limit?: number | null;
-  hideHeading?: boolean;
+  portfolio?: boolean;
 }
 
 const PortfolioSection: React.FC<PortfolioSectionProps> = ({
   limit = null,
-  hideHeading = false,
+  portfolio = false,
 }) => {
   const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[]>([]);
 
@@ -42,23 +42,54 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({
 
   return (
     <section className="container section">
-      {!hideHeading && (
+      {!portfolio ? (
         <SectionHeading
           subheading="Ver Todos"
           heading="Portfólio"
           variant="row"
+          link={"/portfolio"}
         />
-      )}
+      ):(
+        <SectionHeading
+          subheading="Voltar"
+          heading="Portfólio"
+          variant="row"
+          link={"/"}
+        />
+      ) }
 
       <div className={styles.portfolioGrid}>
-        {displayedItems.length > 0 && (
-          <PortfolioCard {...displayedItems[0]} isFirst={true} />
-        )}
-
-        <div className={styles.row}>
-          {displayedItems.slice(1).map((item, index) => (
-            <PortfolioCard key={index} {...item} isFirst={false} />
-          ))}
+        <div className={styles.grid1}>
+          <PortfolioCard
+            title={"Eflyer"}
+            features={["Otimização SEO", "Landing Page"]}
+            imageBackground={"./portfolio/portfolio1.jpg"}
+            link={"#"}
+          />
+        </div>
+        <div className={styles.grid2}>
+          <PortfolioCard
+            title={"Eflyer"}
+            features={["Otimização SEO", "Landing Page"]}
+            imageBackground={"./portfolio/portfolio2.jpg"}
+            link={"#"}
+          />
+        </div>
+        <div className={styles.grid3}>
+          <PortfolioCard
+            title={"Eflyer"}
+            features={["Otimização SEO", "Landing Page"]}
+            imageBackground={"./portfolio/portfolio3.jpg"}
+            link={"#"}
+          />
+        </div>
+        <div className={styles.grid4}>
+          <PortfolioCard
+            title={"Eflyer"}
+            features={["Otimização SEO", "Landing Page"]}
+            imageBackground={"./portfolio/portfolio4.jpg"}
+            link={"#"}
+          />
         </div>
       </div>
     </section>
