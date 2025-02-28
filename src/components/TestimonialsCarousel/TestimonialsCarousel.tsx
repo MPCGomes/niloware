@@ -25,15 +25,14 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
     cssEase: "linear",
     fade: false,
-    centerMode: true,
-    variableWidth: true,
-    trackStyle: { display: "flex", gap: "20px" },
+    centerMode: false,
+    variableWidth: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -53,7 +52,7 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
   return (
     <Slider {...settings}>
       {testimonials.map((testimonial, index) => (
-        <div key={index} className="slick-slide">
+        <div key={index}>
           <TestimonialCard {...testimonial} />
         </div>
       ))}
