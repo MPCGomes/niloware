@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import PortfolioCard from "@/components/PortfolioCard/PortfolioCard";
 import SectionHeading from "@/components/SectionHeading/SectionHeading";
 import styles from "./PortfolioSection.module.scss";
@@ -22,20 +21,25 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({
   limit = null,
   portfolio = false,
 }) => {
-  const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[]>([]);
+  const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[] | null>(
+    null
+  );
 
   useEffect(() => {
     const fetchPortfolio = async () => {
       try {
-        const response = await axios.get("/content/portfolio.json");
-        setPortfolioItems(response.data);
-      } catch (error) {
-        console.error("Erro ao carregar portfólio:", error);
+        const response = await fetch("/content/portfolio.json");
+        const data = await response.json();
+        if (data.length) setPortfolioItems(data);
+      } catch {
+        console.error("Erro ao carregar portfólio");
       }
     };
 
     fetchPortfolio();
   }, []);
+
+  if (!portfolioItems) return null;
 
   const displayedItems = limit
     ? portfolioItems.slice(0, limit)
@@ -43,30 +47,16 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({
 
   return (
     <section className="container section">
-      {!portfolio ? (
-        <SectionHeading
-          subheading="Ver Todos"
-          heading="Portfólio"
-          variant="row"
-          link={"/portfolio"}
-        />
-      ) : (
-        <SectionHeading
-          subheading="Voltar"
-          heading="Portfólio"
-          variant="row"
-          link={"/"}
-        />
-      )}
+      <SectionHeading
+        subheading={portfolio ? "Voltar" : "Ver Todos"}
+        heading="Portfólio"
+        variant="row"
+        link={portfolio ? "/" : "/portfolio"}
+      />
       <div className={styles.portfolioGrid}>
         {displayedItems.map((item, index) => (
           <div key={index} className={styles[`grid${index + 1}`]}>
-            <PortfolioCard
-              title={item.title}
-              tags={item.tags}
-              imageBackground={item.imageBackground}
-              link={item.link}
-            />
+            <PortfolioCard {...item} />
           </div>
         ))}
       </div>
