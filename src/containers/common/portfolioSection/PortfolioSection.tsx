@@ -8,25 +8,34 @@ import styles from "./PortfolioSection.module.scss";
 
 interface PortfolioItem {
   title: string;
-  features: string[];
+  tags: string[];
   imageBackground: string;
+  link: string;
 }
 
 interface PortfolioSectionProps {
   limit?: number | null;
+<<<<<<< Updated upstream
   hideHeading?: boolean;
+=======
+  viewAll?: boolean;
+>>>>>>> Stashed changes
 }
 
 const PortfolioSection: React.FC<PortfolioSectionProps> = ({
   limit = null,
+<<<<<<< Updated upstream
   hideHeading = false,
+=======
+  viewAll = false,
+>>>>>>> Stashed changes
 }) => {
   const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[]>([]);
 
   useEffect(() => {
     const fetchPortfolio = async () => {
       try {
-        const response = await axios.get("/data/portfolio.json");
+        const response = await axios.get("/content/portfolio.json");
         setPortfolioItems(response.data);
       } catch (error) {
         console.error("Erro ao carregar portfólio:", error);
@@ -42,6 +51,7 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({
 
   return (
     <section className="container section">
+<<<<<<< Updated upstream
       {!hideHeading && (
         <SectionHeading
           subheading="Ver Todos"
@@ -60,6 +70,26 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({
             <PortfolioCard key={index} {...item} isFirst={false} />
           ))}
         </div>
+=======
+      <SectionHeading
+        subheading={viewAll ? "Voltar" : "Ver Todos"}
+        heading="Portfólio"
+        variant="row"
+        link={viewAll ? "/" : "/portfolio"}
+      />
+
+      <div className={styles.portfolioGrid}>
+        {displayedItems.map((item, index) => (
+          <div key={index} className={styles[`grid${index + 1}`]}>
+            <PortfolioCard
+              title={item.title}
+              tags={item.tags}
+              imageBackground={item.imageBackground}
+              link={item.link}
+            />
+          </div>
+        ))}
+>>>>>>> Stashed changes
       </div>
     </section>
   );
