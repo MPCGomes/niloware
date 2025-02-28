@@ -4,28 +4,28 @@
   background: $primary;
   background: $primary-gradient;
   padding: 30px;
+}
 
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 32px;
-    color: $text-light;
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+  color: $text-light;
+  font-size: $font-size-base;
+
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+    text-align: left;
+    justify-content: center;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    gap: 64px;
+  }
+
+  button {
     font-size: $font-size-base;
-
-    @media (min-width: $breakpoint-tablet) {
-      flex-direction: row;
-      text-align: left;
-      justify-content: center;
-    }
-
-    @media (min-width: $breakpoint-desktop) {
-      gap: 64px;
-    }
-
-    button {
-      font-size: $font-size-base;
-    }
   }
 }
