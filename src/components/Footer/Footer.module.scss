@@ -7,15 +7,15 @@
 
 .container {
   width: 100%;
-  max-width: $breakpoint-mobile;
   margin: 0 auto;
+  max-width: 1440px;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (max-width: $breakpoint-desktop) {
     max-width: 1024px;
   }
 
-  @media (min-width: $breakpoint-desktop) {
-    max-width: 1440px;
+  @media (max-width: $breakpoint-tablet) {
+    max-width: $breakpoint-mobile;
   }
 }
 

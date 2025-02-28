@@ -5,28 +5,29 @@ import Logo from "../Logo/Logo";
 import { Instagram, WhatsApp } from "@mui/icons-material";
 import styles from "./Footer.module.scss";
 
+const ExternalLink: React.FC<{ href: string; children: React.ReactNode }> = ({
+  href,
+  children,
+}) => (
+  <a href={href} target="_blank" rel="noopener noreferrer">
+    {children}
+  </a>
+);
+
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.section}>
           <div className={styles.left}>
-            <Logo size="xxl" />
+            <Logo size="xxl" variant="dark" />
             <div className={styles.icons}>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <ExternalLink href="https://instagram.com">
                 <Instagram fontSize="medium" />
-              </a>
-              <a
-                href="https://wa.me/5512974096393"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </ExternalLink>
+              <ExternalLink href="https://wa.me/5512974096393">
                 <WhatsApp fontSize="medium" />
-              </a>
+              </ExternalLink>
             </div>
           </div>
           <p className={styles.right}>
