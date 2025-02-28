@@ -16,12 +16,9 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 }) => {
   return (
     <div className={styles.featureCard}>
-      <p 
-      className={styles.icon} 
-      style={{ color: iconColor }}
-      >
+      <div className={styles.icon} style={{ color: iconColor }}>
         {icon}
-      </p>
+      </div>
       <p className={styles.title}>{title}</p>
       <p className={styles.description}>{description}</p>
     </div>
