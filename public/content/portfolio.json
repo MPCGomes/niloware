@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Pousada Lilabella",
+    "tags": ["Landing Page", "Hotelaria"],
+    "imageBackground": "/portfolio-images/pousada-lilabella.webp",
+    "link": "https://pousadalilabella.com.br/"
+  },
+  {
+    "title": "Litoral Pisos",
+    "tags": ["Landing Page", "Construção"],
+    "imageBackground": "/portfolio-images/litoral-pisos.webp",
+    "link": "https://litoralpisos.com.br/"
+  },
+  {
+    "title": "Marmoraria Stone",
+    "tags": ["Landing Page", "Construção"],
+    "imageBackground": "/portfolio-images/marmoraria-stone.webp",
+    "link": "https://marmorariastone.com.br/"
+  },
+  {
+    "title": "Clínica Ápice",
+    "tags": ["Landing Page", "Saúde"],
+    "imageBackground": "/portfolio-images/clinica-apice.webp",
+    "link": "https://apiceclinicamult.com.br/"
+  },
+  {
+    "title": "Gesso Andrade",
+    "tags": ["Landing Page", "Construção"],
+    "imageBackground": "/portfolio-images/gesso-andrade.webp",
+    "link": "https://gessoandrade.com.br/"
+  }
+]
