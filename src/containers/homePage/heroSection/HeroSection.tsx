@@ -1,9 +1,13 @@
+"use client";
+
 import Button from "@/components/Button/Button";
 import React from "react";
 import styles from "./HeroSection.module.scss";
 import ClientsSection from "../clientsSection/ClientsSection";
 
 const HeroSection = () => {
+  const whatsappLink = `https://wa.me/5512974096393?text=Olá, estou interessado nos seus serviços!`;
+
   return (
     <section className={styles.hero}>
       <div className="container section">
@@ -12,7 +16,10 @@ const HeroSection = () => {
           Um negócio confiável consegue mais vendas. Criamos sites que fazem as
           pessoas escolherem você.
         </h3>
-        <Button text="Peça um Orçamento" />
+        <Button
+          text={<span className={styles.buttonText}>Peça um Orçamento</span>}
+          onClick={() => window.open(whatsappLink, "_blank")}
+        />
       </div>
       <ClientsSection />
     </section>

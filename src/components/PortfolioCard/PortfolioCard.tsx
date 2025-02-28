@@ -4,14 +4,14 @@ import Link from "next/link";
 
 interface PortfolioCardProps {
   title: React.ReactNode;
-  features: React.ReactNode[];
+  tags: React.ReactNode[];
   imageBackground: string;
   link: string;
 }
 
 const PortfolioCard: React.FC<PortfolioCardProps> = ({
   title,
-  features,
+  tags,
   imageBackground,
   link,
 }) => {
@@ -19,16 +19,21 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
     <Link
       className={styles.portfolioCard}
       style={{
+        backgroundImage: `url(${imageBackground})`,
+<<<<<<< Updated upstream
+        height: isFirst ? "380px" : "230px",
+=======
+>>>>>>> Stashed changes
         backgroundImage: `url(${imageBackground})`
       }}
       href={link}
       target="_blank"
     >
       <p className={styles.title}>{title}</p>
-      <div className={styles.featureContainer}>
-        {features.map((feature, index) => (
-          <p key={index} className={styles.feature}>
-            {feature}
+      <div className={styles.tagContainer}>
+        {tags.map((tag, index) => (
+          <p key={index} className={styles.tag}>
+            {tag}
           </p>
         ))}
       </div>

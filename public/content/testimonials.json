@@ -1,0 +1,51 @@
+[
+  {
+    "photo": "/testimonial-avatars/default-avatar.png",
+    "name": "Giovanna Faria",
+    "title": "Logum RH",
+    "rating": 5,
+    "testimonial": "Fizeram um ótimo trabalho! O site ficou prático e fácil de usar. Atendimento sempre rápido, e qualquer ajuste foi resolvido sem complicação."
+  },
+  {
+    "photo": "/testimonial-avatars/default-avatar.png",
+    "name": "Roberto",
+    "title": "Gesso Andrade",
+    "rating": 5,
+    "testimonial": "Site bonito e bem organizado. O suporte foi excelente e sempre disponível para tirar dúvidas. Recomendo para quem busca um serviço profissional."
+  },
+  {
+    "photo": "/testimonial-avatars/default-avatar.png",
+    "name": "Johnny",
+    "title": "Propabanda",
+    "rating": 5,
+    "testimonial": "Nosso site ficou incrível! Simples de navegar e visualmente do jeito que queríamos. A equipe entendeu bem nossas ideias e fez tudo com muita atenção."
+  },
+  {
+    "photo": "/testimonial-avatars/default-avatar.png",
+    "name": "Mariana Souza",
+    "title": "Pousada Lilabella",
+    "rating": 5,
+    "testimonial": "Muito satisfeito! O site transmite bem a identidade da pousada e facilitou bastante as reservas. Foi tudo feito com muito cuidado e profissionalismo."
+  },
+  {
+    "photo": "/testimonial-avatars/default-avatar.png",
+    "name": "Carlos Mendes",
+    "title": "Marmoraria Stone",
+    "rating": 5,
+    "testimonial": "O site ficou excelente! Rápido, bonito e fácil de mexer. Nossos clientes agora encontram tudo com facilidade. Um serviço de primeira, valeu muito a pena!"
+  },
+  {
+    "photo": "/testimonial-avatars/default-avatar.png",
+    "name": "Fernanda Oliveira",
+    "title": "Clínica Ápice",
+    "rating": 5,
+    "testimonial": "Atendimento impecável! O site ficou limpo, profissional e fácil para os pacientes navegarem. Foi um grande diferencial para nossa clínica."
+  },
+  {
+    "photo": "/testimonial-avatars/default-avatar.png",
+    "name": "Lucas Almeida",
+    "title": "Litoral Pisos",
+    "rating": 5,
+    "testimonial": "Nosso site ficou do jeito que imaginamos. Rápido, organizado e com um visual moderno. Foi uma ótima escolha, recomendo sem dúvidas!"
+  }
+]
