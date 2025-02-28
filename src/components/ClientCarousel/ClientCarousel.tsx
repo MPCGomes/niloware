@@ -6,14 +6,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./ClientCarousel.module.scss";
 
-const logos = [
-  "/logos/logumrh.png",
-  "/logos/propabanda.png",
-  "/logos/clinica-apice.webp",
-  "/logos/gesso-andrade.webp",
-  "/logos/litoral-pisos.webp",
-  "/logos/marmoraria-stone.webp",
-  "/logos/pousada-lilabella.webp",
+const clientLogos = [
+  "/client-logos/logumrh.webp",
+  "/client-logos/propabanda.webp",
+  "/client-logos/clinica-apice.webp",
+  "/client-logos/gesso-andrade.webp",
+  "/client-logos/litoral-pisos.webp",
+  "/client-logos/marmoraria-stone.webp",
+  "/client-logos/pousada-lilabella.webp",
 ];
 
 const ClientCarousel: React.FC = () => {
@@ -42,7 +42,7 @@ const ClientCarousel: React.FC = () => {
     <div className={`${styles.wrapper} ${isMounted ? styles.visible : ""}`}>
       {isMounted && (
         <Slider {...settings} className={styles.carousel}>
-          {logos.map((src, index) => (
+          {clientLogos.map((src, index) => (
             <div key={index} className={styles.imageWrapper}>
               <img
                 src={src}
