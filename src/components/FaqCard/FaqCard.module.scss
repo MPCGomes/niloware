@@ -42,14 +42,16 @@
 }
 
 .answer {
-  display: none;
-  padding: 24px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 24px;
   font-size: $font-size-base;
   line-height: $line-height-base;
   color: $text-primary;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
 .open .answer {
-  display: block;
-  padding: 0 24px 24px;
+  max-height: 200px;
+  padding-bottom: 24px;
 }

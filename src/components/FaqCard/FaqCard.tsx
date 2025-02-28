@@ -14,14 +14,14 @@ const FaqCard: React.FC<FaqCardProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={clsx(styles.faqCard, { [styles.open]: isOpen })}>
+    <div className={clsx(styles.faqCard, isOpen && styles.open)}>
       <button className={styles.question} onClick={() => setIsOpen(!isOpen)}>
         <span>{question}</span>
-        <ExpandMore
-          className={clsx(styles.icon, { [styles.rotated]: isOpen })}
-        />
+        <ExpandMore className={clsx(styles.icon, isOpen && styles.rotated)} />
       </button>
-      <div className={styles.answer}>{isOpen && <p>{answer}</p>}</div>
+      <div className={styles.answer} aria-hidden={!isOpen}>
+        <p>{answer}</p>
+      </div>
     </div>
   );
 };
