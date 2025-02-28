@@ -8,7 +8,7 @@ interface SectionHeadingProps {
   subheading: string;
   heading: string;
   variant?: "column" | "row";
-  link: string;
+  link?: string;
 }
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({
@@ -19,7 +19,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
 }) => {
   return (
     <div className={clsx(styles.sectionHeading, styles[variant])}>
-      {variant === "row" ? (
+      {variant === "row" && link ? (
         <>
           <p className={styles.heading}>{heading}</p>
           <Link href={link} className={styles.subheadingLink}>
