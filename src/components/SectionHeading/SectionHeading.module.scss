@@ -1,4 +1,4 @@
-@use "../../styles/variables" as *;
+@use "../../styles/variables"as *;
 
 .sectionHeading {
   display: flex;
@@ -14,7 +14,7 @@
   }
 
   &.column {
-    text-align: center; // ✅ Ensures centralization
+    text-align: center;
   }
 }
 
