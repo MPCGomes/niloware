@@ -21,7 +21,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
   features,
   variant = "default",
 }) => {
-  const whatsappLink = `https://wa.me/5512974096393?text=Olá, quero contratar o plano ${encodeURIComponent(
+  const whatsappLink = `https://wa.me/5512997591515?text=Olá, quero contratar o plano ${encodeURIComponent(
     plan
   )}.`;
 
