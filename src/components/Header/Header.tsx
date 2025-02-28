@@ -8,7 +8,7 @@ import styles from "./Header.module.scss";
 
 const Header: React.FC = () => {
   const whatsappLink =
-    "https://wa.me/5512974096393?text=Olá, estou interessado nos seus serviços!";
+    "https://wa.me/5512997591515?text=Olá, estou interessado nos seus serviços!";
 
   const openWhatsApp = () => {
     window.open(whatsappLink, "_blank");
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
         <div className={styles.section}>
           <Logo size="md" />
           <Button
-            text={<span className={styles.buttonText}>+55 12 97409-6393</span>}
+            text={<span className={styles.buttonText}>+55 12 9 9759-1515</span>}
             icon={<WhatsApp fontSize="small" />}
             onClick={openWhatsApp}
           />
