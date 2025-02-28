@@ -3,7 +3,7 @@
 .featureGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 32px;
 
   @media (min-width: $breakpoint-tablet) {
     grid-template-columns: repeat(2, 1fr);

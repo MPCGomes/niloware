@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import FeatureCard from "../../../components/FeatureCard/FeatureCard";
+import FeatureCard from "@/components/FeatureCard/FeatureCard";
+import SectionHeading from "@/components/SectionHeading/SectionHeading";
 import styles from "./FeaturesSection.module.scss";
 import {
   Devices as DevicesIcon,
@@ -11,7 +12,6 @@ import {
   Share as ShareIcon,
   HeadsetMic as HeadsetMicIcon,
 } from "@mui/icons-material";
-import SectionHeading from "@/components/SectionHeading/SectionHeading";
 
 const features = [
   {
@@ -61,12 +61,12 @@ const FeaturesSection: React.FC = () => {
   return (
     <section className="container section">
       <SectionHeading
-        subheading={"Você merece um site que vai impulsionar seu negócio"}
-        heading={"Por Que Nos Escolher?"}
+        subheading="Você merece um site que vai impulsionar seu negócio"
+        heading="Por Que Nos Escolher?"
       />
       <div className={styles.featureGrid}>
-        {features.map((feature, index) => (
-          <FeatureCard key={index} {...feature} />
+        {features.map((feature) => (
+          <FeatureCard key={feature.title} {...feature} />
         ))}
       </div>
     </section>
