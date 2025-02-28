@@ -20,12 +20,10 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
 }) => {
   return (
     <div className={styles.card}>
-      {/* Profile */}
-
       <div className={styles.profile}>
         <Image
           src={photo}
-          alt={name}
+          alt={`${name} - ${title}`}
           width={42}
           height={42}
           className={styles.photo}
@@ -36,7 +34,6 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
         </div>
       </div>
 
-      {/* Rating */}
       <div className={styles.rating}>
         {[...Array(5)].map((_, index) => (
           <Star
@@ -46,7 +43,6 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
         ))}
       </div>
 
-      {/* Testimonial */}
       <p className={styles.testimonial}>{testimonial}</p>
     </div>
   );
