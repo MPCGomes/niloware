@@ -1,4 +1,4 @@
-@use "@/styles/variables" as *;
+@use "@/styles/variables"as *;
 
 .portfolioCard {
   background-position: top;
@@ -29,11 +29,9 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.8) 0%,
-      rgba(0, 115, 255, 0.3) 100%
-    );
+    background: linear-gradient(0deg,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 115, 255, 0.3) 100%);
     border-radius: 24px;
   }
 }

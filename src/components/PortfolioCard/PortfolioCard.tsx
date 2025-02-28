@@ -18,11 +18,13 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
   return (
     <Link
       className={styles.portfolioCard}
-      style={{
-        backgroundImage: `url(${imageBackground})`
-      }}
       href={link}
       target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Veja o projeto: ${title}`}
+      style={{
+        backgroundImage: `url(${imageBackground})`,
+      }}
     >
       <p className={styles.title}>{title}</p>
       <div className={styles.tagContainer}>
