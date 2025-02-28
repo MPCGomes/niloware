@@ -1,31 +1,24 @@
-import React from "react";
+import React, { FC } from "react";
+import clsx from "clsx";
 import styles from "./Button.module.scss";
 
 interface ButtonProps {
   text: React.ReactNode;
   icon?: React.ReactNode;
-  color?: string;
-  borderColor?: string;
+  color?: "default" | "subtle";
   onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button: FC<ButtonProps> = ({
   text,
   icon,
-  color,
-  borderColor,
+  color = "default",
   onClick,
-}) => {
-  return (
-    <button
-      style={{ color: color, border: `2px solid ${borderColor}` }}
-      onClick={onClick}
-      className={styles.button}
-    >
-      {icon && <span className={styles.icon}>{icon}</span>}
-      {text}
-    </button>
-  );
-};
+}) => (
+  <button className={clsx(styles.button, styles[color])} onClick={onClick}>
+    {icon && <span className={styles.icon}>{icon}</span>}
+    {text}
+  </button>
+);
 
 export default Button;

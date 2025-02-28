@@ -13,6 +13,21 @@
     justify-content: center;
     gap: 8px;
     font-weight: 500;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &.default {
+        border-color: $text-light;
+        color: $text-light;
+    }
+
+    &.subtle {
+        border-color: $border;
+        color: $text-primary;
+    }
 }
 
 .icon {
