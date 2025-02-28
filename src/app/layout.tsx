@@ -81,9 +81,15 @@ export default function RootLayout({
       </head>
 
       <body>
+        {/* Header fica aqui */}
         <Header />
+
         <BackToTop />
+
+        {/* Conteúdo da página */}
         {children}
+
+        {/* Footer */}
         <Footer />
       </body>
     </html>

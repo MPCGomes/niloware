@@ -7,6 +7,19 @@
   div {
     align-items: center;
   }
+
+  height: calc(100dvh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: 60px;
+
+    .subheading {
+      width: 60%;
+    }
+  }
 }
 
 .heading {
@@ -21,14 +34,4 @@
   color: $text-light;
   font-weight: 400;
   width: 70%;
-}
-
-@media (min-width: $breakpoint-desktop) {
-  .hero {
-    padding-top: 60px;
-
-    .subheading {
-      width: 60%;
-    }
-  }
 }

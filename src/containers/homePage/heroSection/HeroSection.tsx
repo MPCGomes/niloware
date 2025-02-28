@@ -6,7 +6,8 @@ import styles from "./HeroSection.module.scss";
 import ClientsSection from "../clientsSection/ClientsSection";
 
 const HeroSection = () => {
-  const whatsappLink = `https://wa.me/5512997591515?text=Olá, estou interessado nos seus serviços!`;
+  const whatsappLink =
+    "https://wa.me/5512997591515?text=Olá, estou interessado nos seus serviços!";
 
   return (
     <section className={styles.hero}>
