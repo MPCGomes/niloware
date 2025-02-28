@@ -23,7 +23,6 @@ const PricingSection = () => {
       <div className={styles.pricingContainer}>
         <PricingCard
           plan="Profissional"
-          mostPopular=""
           price="R$ 989,90"
           monthlyPrice={isAnnual ? "+ R$ 287,04 / Ano" : "+ R$ 29,90 / Mês"}
           features={[
@@ -37,17 +36,12 @@ const PricingSection = () => {
             "Backup Diário",
             "Suporte Prioritário",
           ]}
-          backgroundGradient=""
-          textColor=""
-          btnColor="#122E50"
-          btnBorder="#122E5010"
-          listColor="#666666"
-          checkColor="#0072FF"
+          variant="default"
         />
 
         <PricingCard
           plan="Básico"
-          mostPopular="Mais Popular"
+          mostPopular={true}
           price="R$ 589,90"
           monthlyPrice={isAnnual ? "+ R$ 287,04 / Ano" : "+ R$ 29,90 / Mês"}
           features={[
@@ -59,17 +53,11 @@ const PricingSection = () => {
             "Anti-DDoS",
             "Backup Semanal",
           ]}
-          backgroundGradient="linear-gradient(90deg, #0072FF, #00C6FF)"
-          textColor="#fff"
-          btnColor=""
-          btnBorder=""
-          listColor=""
-          checkColor=""
+          variant="popular"
         />
 
         <PricingCard
           plan="Personalizado"
-          mostPopular=""
           price="À COMBINAR"
           monthlyPrice={isAnnual ? "+ R$ 287,04 / Ano" : "+ R$ 29,90 / Mês"}
           features={[
@@ -83,12 +71,7 @@ const PricingSection = () => {
             "Backup Personalizado",
             "Suporte Especializado",
           ]}
-          backgroundGradient=""
-          textColor=""
-          btnColor="#122E50"
-          btnBorder="#122E5010"
-          listColor="#666666"
-          checkColor="#0072FF"
+          variant="default"
         />
       </div>
     </section>
