@@ -35,14 +35,14 @@
   z-index: 2;
 }
 
-.featureContainer {
+.tagContainer {
   z-index: 2;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
 
-.feature {
+.tag {
   font-size: $font-size-base;
   padding: 2px 10px;
   border: 1px solid $text-light;
