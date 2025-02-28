@@ -19,7 +19,7 @@ const TestimonialsSection: FC = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await axios.get("/data/testimonials.json");
+        const response = await axios.get("/content/testimonials.json");
         setTestimonials(response.data);
       } catch (error) {
         console.error("Failed to load testimonials:", error);
@@ -34,6 +34,7 @@ const TestimonialsSection: FC = () => {
       <SectionHeading
         subheading="Confira o que nossos clientes estão dizendo"
         heading="Depoimentos"
+        link={""}
       />
       {testimonials.length > 0 && (
         <TestimonialsCarousel testimonials={testimonials} />
