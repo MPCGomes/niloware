@@ -2,6 +2,13 @@ import "../styles/globals.scss";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import BackToTop from "@/components/BackToTop/BackToTop";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -9,8 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className={inter.className}>
       <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Niloware | Criação de Sites Profissionais</title>
         <meta
           name="description"
@@ -18,8 +27,8 @@ export default function RootLayout({
         />
         <meta name="robots" content="index, follow" />
 
+        {/* Favicon & Icons */}
         <link rel="icon" href="/favicon.ico" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -39,6 +48,7 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/site.webmanifest" />
 
+        {/* OpenGraph (Facebook, LinkedIn) */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.niloware.com.br/" />
         <meta
@@ -54,6 +64,7 @@ export default function RootLayout({
           content="https://www.niloware.com.br/og-image.jpg"
         />
 
+        {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -67,20 +78,9 @@ export default function RootLayout({
           name="twitter:image"
           content="https://www.niloware.com.br/og-image.jpg"
         />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
-          rel="stylesheet"
-        />
       </head>
 
-      <body style={{ fontFamily: "Inter, sans-serif" }}>
+      <body>
         <Header />
         <BackToTop />
         {children}
