@@ -1,38 +1,33 @@
-@use "@/styles/variables" as *;
+@use "@/styles/variables"as *;
 
 .hero {
   padding-top: 30px;
-
-  background: rgb(0, 114, 255);
-  background: linear-gradient(90deg,
-      rgba(0, 114, 255, 1) 0%,
-      rgba(0, 198, 255, 1) 100%);
+  background: $primary-gradient;
 
   div {
     align-items: center;
   }
+}
 
-  div h1 {
-    font-size: $font-size-xxl;
-    text-align: center;
-    color: $text-light;
-  }
+.heading {
+  font-size: $font-size-xxl;
+  text-align: center;
+  color: $text-light;
+}
 
-  div h3 {
-    font-size: $font-size-md;
-    text-align: center;
-    color: $text-light;
-    font-weight: 400;
-
-    width: 70%;
-  }
+.subheading {
+  font-size: $font-size-md;
+  text-align: center;
+  color: $text-light;
+  font-weight: 400;
+  width: 70%;
 }
 
 @media (min-width: $breakpoint-desktop) {
   .hero {
     padding-top: 60px;
 
-    div h3 {
+    .subheading {
       width: 60%;
     }
   }
