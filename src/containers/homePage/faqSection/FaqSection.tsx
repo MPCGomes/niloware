@@ -75,8 +75,8 @@ const FaqSection: React.FC = () => {
         heading="Perguntas Frequentes"
       />
       <div className={styles.faqGrid}>
-        {faqs.map((faq, index) => (
-          <FaqCard key={index} {...faq} />
+        {faqs.map((faq) => (
+          <FaqCard key={faq.question} {...faq} />
         ))}
       </div>
     </section>
