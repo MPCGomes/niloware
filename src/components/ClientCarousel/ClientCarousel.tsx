@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./ClientCarousel.module.scss";
+import Image from "next/image";
 
 const clientLogos = [
   "/client-logos/logumrh.webp",
@@ -44,12 +45,14 @@ const ClientCarousel: React.FC = () => {
         <Slider {...settings} className={styles.carousel}>
           {clientLogos.map((src, index) => (
             <div key={index} className={styles.imageWrapper}>
-              <img
+              <Image
                 src={src}
                 alt={`Client ${index}`}
                 className={styles.image}
-                width="auto"
+                width={0}
                 height={28}
+                sizes="auto"
+                style={{ width: "auto", height: "28px" }}
                 draggable="false"
               />
             </div>
