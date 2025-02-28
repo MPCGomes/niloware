@@ -12,8 +12,10 @@ const PricingToggle = ({
   const [isAnnual, setIsAnnual] = useState(false);
 
   const handleToggle = (value: boolean) => {
-    setIsAnnual(value);
-    onToggle(value);
+    if (value !== isAnnual) {
+      setIsAnnual(value);
+      onToggle(value);
+    }
   };
 
   return (
@@ -24,7 +26,6 @@ const PricingToggle = ({
       >
         Mensal
       </div>
-
       <div
         className={clsx(styles.option, { [styles.active]: isAnnual })}
         onClick={() => handleToggle(true)}
