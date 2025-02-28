@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
               <ExternalLink href="https://instagram.com">
                 <Instagram fontSize="medium" />
               </ExternalLink>
-              <ExternalLink href="https://wa.me/5512974096393">
+              <ExternalLink href="https://wa.me/5512997591515">
                 <WhatsApp fontSize="medium" />
               </ExternalLink>
             </div>
