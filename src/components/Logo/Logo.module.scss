@@ -3,9 +3,12 @@
 .logo {
   font-weight: bold;
   letter-spacing: -2%;
-  color: $text-secondary;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.dark {
+  color: $text-secondary;
 }
 
 .light {

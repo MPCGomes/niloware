@@ -2,20 +2,17 @@
 
 import React from "react";
 import Link from "next/link";
-import styles from "./Logo.module.scss";
 import clsx from "clsx";
+import styles from "./Logo.module.scss";
 
 interface LogoProps {
   size: "md" | "xxl";
-  light?: boolean;
+  variant?: "light" | "dark";
 }
 
-const Logo: React.FC<LogoProps> = ({ size, light }) => {
+const Logo: React.FC<LogoProps> = ({ size, variant = "light" }) => {
   return (
-    <Link
-      href="/"
-      className={clsx(styles.logo, styles[size], { [styles.light]: light })}
-    >
+    <Link href="/" className={clsx(styles.logo, styles[size], styles[variant])}>
       NILOWARE
     </Link>
   );
