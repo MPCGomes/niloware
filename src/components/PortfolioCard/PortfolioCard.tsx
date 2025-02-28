@@ -19,11 +19,6 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
     <Link
       className={styles.portfolioCard}
       style={{
-        backgroundImage: `url(${imageBackground})`,
-<<<<<<< Updated upstream
-        height: isFirst ? "380px" : "230px",
-=======
->>>>>>> Stashed changes
         backgroundImage: `url(${imageBackground})`
       }}
       href={link}
