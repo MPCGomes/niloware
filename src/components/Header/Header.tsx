@@ -16,8 +16,8 @@ const Header: React.FC = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.container}>
-        <div className={styles.section}>
+      <div className="container">
+        <div className={styles.headerSection}>
           <Logo size="md" />
           <Button
             text={<span className={styles.buttonText}>+55 12 9 9759-1515</span>}

@@ -4,22 +4,7 @@
   background: $primary-gradient;
 }
 
-.container {
-  width: 100%;
-  margin: 0 auto;
-  max-width: 1440px;
-
-  @media (max-width: $breakpoint-desktop) {
-    max-width: 1024px;
-  }
-
-  @media (max-width: $breakpoint-tablet) {
-    max-width: $breakpoint-mobile;
-  }
-}
-
-.section {
-  width: 100%;
+.headerSection {
   height: 80px;
   padding: 0 16px;
   display: flex;
@@ -28,6 +13,10 @@
   align-items: center;
 
   @media (min-width: $breakpoint-tablet) {
+    padding: 0 16px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
     padding: 0 120px;
   }
 }
