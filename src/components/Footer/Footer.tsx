@@ -17,8 +17,8 @@ const ExternalLink: React.FC<{ href: string; children: React.ReactNode }> = ({
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.container}>
-        <div className={styles.section}>
+      <div className="container">
+        <div className={styles.footerSection}>
           <div className={styles.left}>
             <Logo size="xxl" variant="dark" />
             <div className={styles.icons}>

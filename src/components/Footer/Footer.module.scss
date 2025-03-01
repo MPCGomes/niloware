@@ -5,35 +5,20 @@
   color: $text-secondary;
 }
 
-.container {
-  width: 100%;
-  margin: 0 auto;
-  max-width: 1440px;
-
-  @media (max-width: $breakpoint-desktop) {
-    max-width: 1024px;
-  }
-
-  @media (max-width: $breakpoint-tablet) {
-    max-width: $breakpoint-mobile;
-  }
-}
-
-.section {
-  width: 100%;
+.footerSection {
   padding: 50px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $breakpoint-tablet) {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 16px;
   }
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-desktop) {
     padding: 50px 120px;
   }
 }
@@ -43,7 +28,7 @@
   flex-direction: column;
   align-items: flex-start;
 
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $breakpoint-tablet) {
     align-items: center;
   }
 }
