@@ -1,10 +1,14 @@
-@use "../../styles/variables"as *;
+@use "@/styles/variables"as *;
 
 .faqCard {
   border-radius: 12px;
   background-color: $background-card;
   border: 1px solid transparent;
   transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(0, 114, 255, 0.05);
+  }
 
   .question {
     width: 100%;
@@ -29,7 +33,7 @@
   }
 
   &.open {
-    background-color: rgba(0, 114, 225, 0.1);
+    background-color: rgba(0, 114, 255, 0.1);
   }
 }
 
