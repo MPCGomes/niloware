@@ -20,7 +20,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
       className={styles.portfolioCard}
       href={link}
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener noreferrer nofollow"
       aria-label={`Veja o projeto: ${title}`}
       style={{
         backgroundImage: `url(${imageBackground})`,
