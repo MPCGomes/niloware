@@ -1,12 +1,12 @@
 export const metadata = {
   title: "Portfólio | Niloware",
   description:
-    "Veja os projetos da Niloware e descubra como podemos ajudar sua empresa.",
+    "Confira os sites profissionais desenvolvidos pela Niloware para empresas de diversos segmentos. Transforme sua presença online!",
   openGraph: {
-    url: "https://www.niloware.com.br/portfolio",
+    url: "https://www.niloware.com.br/portfolio/",
     title: "Portfólio | Niloware",
     description:
-      "Veja os projetos da Niloware e descubra como podemos ajudar sua empresa.",
+      "Confira os sites profissionais desenvolvidos pela Niloware para empresas de diversos segmentos. Transforme sua presença online!",
     images: [
       {
         url: "https://www.niloware.com.br/portfolio-og-image.jpg",

@@ -1,12 +1,12 @@
 export const metadata = {
   title: "Criação de Sites Profissionais | Niloware",
   description:
-    "A Niloware cria sites profissionais para empresas. Peça um orçamento agora!",
+    "Precisando de um site profissional? A Niloware cria sites modernos e otimizados para negócios. Peça um orçamento agora!",
   openGraph: {
     url: "https://www.niloware.com.br/",
     title: "Criação de Sites Profissionais | Niloware",
     description:
-      "A Niloware cria sites profissionais para empresas. Peça um orçamento agora!",
+      "Precisando de um site profissional? A Niloware cria sites modernos e otimizados para negócios. Peça um orçamento agora!",
     images: [
       {
         url: "https://www.niloware.com.br/og-image.jpg",
