@@ -8,7 +8,7 @@
     align-items: center;
   }
 
-  height: calc(100dvh - 80px);
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -26,6 +26,10 @@
   font-size: $font-size-xxl;
   text-align: center;
   color: $text-light;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-size-lg;
+  }
 }
 
 .subheading {
@@ -34,4 +38,8 @@
   color: $text-light;
   font-weight: 400;
   width: 70%;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-size-base;
+  }
 }
