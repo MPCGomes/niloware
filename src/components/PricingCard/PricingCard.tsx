@@ -36,7 +36,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
 
       <Button
         text="Contratar"
-        color={variant === "popular" ? "default" : "subtle"}
+        variant={variant === "popular" ? "default" : "subtle"}
         onClick={() => window.open(whatsappLink, "_blank")}
       />
 
