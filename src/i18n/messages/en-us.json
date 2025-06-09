@@ -1,0 +1,379 @@
+{
+  "common": {
+    "header": {
+      "nav": {
+        "home": "Home",
+        "portfolio": "Portfolio"
+      },
+      "contact": {
+        "phone": "+12 34 5 6789 0123",
+        "whatsappText": "Hello, I'm interested in your services!"
+      }
+    },
+    "footer": {
+      "copyright": "™ & © 2024 Niloware. All rights reserved."
+    }
+  },
+  "homepage": {
+    "seo": {
+      "title": "Website That Brings You Clients | Niloware",
+      "description": "Your business deserves more visibility, trust, and results. We build professional websites that help you grow. Get a free quote now.",
+      "canonical": "https://www.niloware.com/en-us/",
+      "openGraph": {
+        "url": "https://www.niloware.com/en-us/",
+        "title": "Website That Brings You Clients | Niloware",
+        "description": "Your business deserves more visibility, trust, and results. We build professional websites that help you grow. Get a free quote now.",
+        "images": [
+          {
+            "url": "https://www.niloware.com/og-image.jpg",
+            "width": 1200,
+            "height": 630
+          }
+        ]
+      },
+      "alternateLocales": [
+        {
+          "hrefLang": "pt-br",
+          "href": "https://www.niloware.com/pt-br/"
+        },
+        {
+          "hrefLang": "es-es",
+          "href": "https://www.niloware.com/es-es/"
+        },
+        {
+          "hrefLang": "en-us",
+          "href": "https://www.niloware.com/en-us/"
+        }
+      ],
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Niloware",
+          "url": "https://www.niloware.com",
+          "logo": "https://www.niloware.com/logo.png",
+          "sameAs": [
+            "https://www.linkedin.com/company/niloware",
+            "https://www.instagram.com/niloware"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Niloware",
+          "url": "https://www.niloware.com",
+          "inLanguage": "en-US"
+        }
+      ]
+    },
+    "features": {
+      "subheading": "Everything your business needs to grow online",
+      "heading": "Why Choose Niloware?",
+      "features": [
+        {
+          "title": "Responsive Design",
+          "description": "Websites that adapt seamlessly to desktops, tablets, and mobile phones."
+        },
+        {
+          "title": "Google Visibility",
+          "description": "Structured to help your business show up on Google and reach customers."
+        },
+        {
+          "title": "Easy Personalization",
+          "description": "Edit text, images, and videos anytime—no technical skills required."
+        },
+        {
+          "title": "Flexible Solutions",
+          "description": "Landing pages, online stores, and more—tailored to your business needs."
+        },
+        {
+          "title": "Business Integrations",
+          "description": "Connect payments, newsletters, CRM tools, and more—streamline daily tasks."
+        },
+        {
+          "title": "Ongoing Support",
+          "description": "Dedicated support team for technical help, troubleshooting, and guidance."
+        }
+      ]
+    },
+    "hero": {
+      "heading": "Win More Customers With a Professional Website",
+      "subheading": "Credibility sells. Turn first-time visitors into loyal clients with a site designed to impress and convert.",
+      "cta": "Request a Quote",
+      "whatsappText": "Hello, I'm interested in your services!"
+    },
+    "portfolio": {
+      "preview": {
+        "heading": "Real Clients, Real Results",
+        "subheading": "Explore the work"
+      },
+      "page": {
+        "heading": "Portfolio",
+        "subheading": "Back"
+      },
+      "items": [
+        {
+          "title": "LogumRH",
+          "tags": ["Website", "HR"],
+          "imageBackground": "",
+          "link": ""
+        },
+        {
+          "title": "Top 10",
+          "tags": ["Website", "Sports"],
+          "imageBackground": "",
+          "link": ""
+        },
+        {
+          "title": "Probanda",
+          "tags": ["Application", "Marketing"],
+          "imageBackground": "",
+          "link": ""
+        }
+      ]
+    },
+    "pricing": {
+      "subheading": "Choose the right plan for your business",
+      "heading": "Choose your plan",
+      "plans": {
+        "basic": {
+          "name": "Basic",
+          "description": "For simple websites with everything you need to start—fast, affordable, and easy to manage.",
+          "planPrice": "99.90 USD",
+          "hostPrice": "4.90 USD",
+          "cta": "Choose Plan",
+          "features": [
+            "Landing Page",
+            "Pre-Built Design",
+            "Responsive",
+            "Basic SEO",
+            "SSL",
+            "Privacy Protection",
+            "DDoS Protection",
+            "Monthly Backup",
+            "Standard Support"
+          ]
+        },
+        "professional": {
+          "name": "Professional",
+          "description": "Best for businesses that want more content, better visibility, and faster support when needed.",
+          "planPrice": "199.80 USD",
+          "hostPrice": "4.90 USD",
+          "cta": "Choose Plan",
+          "features": [
+            "1-10 Pages",
+            "Pre-Built Design",
+            "Responsive",
+            "Advanced SEO",
+            "SSL",
+            "Privacy Protection",
+            "DDoS Protection",
+            "Weekly Backup",
+            "Priority Support"
+          ]
+        },
+        "custom": {
+          "name": "Custom",
+          "description": "Fully customizable—use the calculator to build exactly what you need.",
+          "planPrice": "0.0 USD",
+          "hostPrice": "0.0 USD",
+          "cta": "Choose Plan",
+          "features": [
+            {
+              "name": "Pages",
+              "options": [
+                { "label": "Landing Page", "price": 99.9 },
+                { "label": "1-10 Pages", "price": 199.8 }
+              ]
+            },
+            {
+              "name": "Design",
+              "options": [
+                { "label": "Pre-Built Design", "priceAdjustmentPercent": 0 },
+                { "label": "Custom Design", "priceAdjustmentPercent": 50 }
+              ]
+            },
+            "Responsive",
+            {
+              "name": "SEO",
+              "options": [
+                { "label": "Basic SEO", "priceAdjustmentPercent": 0 },
+                { "label": "Advanced SEO", "priceAdjustmentPercent": 5 }
+              ]
+            },
+            "SSL",
+            "Privacy Protection",
+            "DDoS Protection",
+            {
+              "name": "Backup",
+              "options": [
+                { "label": "Monthly Backup", "priceAdjustmentPercent": 0 },
+                { "label": "Weekly Backup", "priceAdjustmentPercent": 5 }
+              ]
+            },
+            {
+              "name": "Support",
+              "options": [
+                { "label": "Standard Support", "priceAdjustmentPercent": 0 },
+                { "label": "Priority Support", "priceAdjustmentPercent": 5 }
+              ]
+            },
+            {
+              "name": "E-Commerce",
+              "options": [
+                { "label": "No E-Commerce", "priceAdjustmentPercent": 0 },
+                { "label": "E-Commerce", "priceAdjustmentPercent": 50 }
+              ]
+            },
+            {
+              "name": "Integration",
+              "options": [
+                { "label": "No Integration", "priceAdjustmentPercent": 0 },
+                { "label": "Integration", "priceAdjustmentPercent": 5 }
+              ]
+            },
+            {
+              "name": "Delivery",
+              "options": [
+                { "label": "Regular Delivery", "priceAdjustmentPercent": 0 },
+                { "label": "Express Delivery", "priceAdjustmentPercent": 20 }
+              ]
+            }
+          ]
+        }
+      },
+      "tooltips": {
+        "responsive": "Adapts automatically to desktop, tablet, and mobile.",
+        "seo": "Helps more people find your business on Google.",
+        "ssl": "Keeps your visitors’ information safe and secure.",
+        "privacy": "Protects your customers’ data and respects their privacy.",
+        "ddos": "Blocks attacks that could crash your website."
+      }
+    },
+    "testimonials": {
+      "subheading": "How We Help Businesses Grow",
+      "heading": "What Our Clients Say",
+      "items": [
+        {
+          "photo": "/testimonial-avatars/default-avatar.png",
+          "name": "John Due",
+          "role": "Role",
+          "rating": 5,
+          "testimonial": "Testimonial."
+        }
+      ]
+    },
+    "faq": {
+      "subheading": "Still need help? We’re here for you.",
+      "heading": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "question": "Why does my business need a website?",
+          "answer": "A website makes your business easier to find online, adds credibility, and helps attract more customers."
+        },
+        {
+          "question": "What is the average turnaround time?",
+          "answer": "Basic websites are delivered in up to five business days, Professional websites in up to ten, and custom projects in up to twenty."
+        },
+        {
+          "question": "Will my site work on phones and tablets?",
+          "answer": "Yes. All our websites adjust automatically to look great on desktops, tablets, and smartphones."
+        },
+        {
+          "question": "Can I host the site with another provider?",
+          "answer": "Yes. We provide all necessary files for you to host elsewhere. You won’t be charged for hosting or support in that case, but our support only applies to sites hosted with us."
+        },
+        {
+          "question": "What payment methods do you accept?",
+          "answer": "We accept credit and debit cards and PayPal (worldwide), as well as Pix, bank transfer, and bank slip (Brazil only)."
+        },
+        {
+          "question": "How do I request a quote?",
+          "answer": "You can click any “Choose Plan” or “Request a Quote” button, or simply tap the floating WhatsApp icon to chat with us directly."
+        },
+        {
+          "question": "What types of sites do you build?",
+          "answer": "We create blogs, landing pages, online stores, and specialized websites for areas such as healthcare, legal, veterinary, food service, and others."
+        },
+        {
+          "question": "What do I need to provide?",
+          "answer": "At a minimum, we’ll need your business name, contact details, and logo. If you have any text, images, or videos you'd like to include, you're welcome to send those as well."
+        },
+        {
+          "question": "Will my site appear on Google?",
+          "answer": "Yes. We set up every site so it can appear on search engines like Google, Bing, and Yahoo."
+        },
+        {
+          "question": "What are the monthly costs after delivery?",
+          "answer": "If you choose to host with us, we offer hosting and support for 5.90 USD per month or 56 USD per year (a 20% discount). There are no monthly fees if you don’t host the site with us."
+        },
+        {
+          "question": "Is my data and investment secure?",
+          "answer": "Yes. We use a digital contract to clearly outline responsibilities, deadlines, ownership, and guarantees—protecting both sides."
+        },
+        {
+          "question": "Can I update the site myself later?",
+          "answer": "Yes. All our packages include a simple control panel so you can easily update text, images, and other content on your own."
+        }
+      ]
+    },
+    "cta": {
+      "text": "Your business deserves to grow—ready to make it happen?",
+      "button": "Request a Quote",
+      "whatsappText": "Hello, I'm interested in your services!"
+    }
+  },
+  "portfolio": {
+    "seo": {
+      "title": "Professional Websites Portfolio | Niloware",
+      "description": "Explore Niloware’s portfolio of professional websites that drive real results. Get inspired and request your free quote today.",
+      "canonical": "https://www.niloware.com/en-us/portfolio/",
+      "openGraph": {
+        "url": "https://www.niloware.com/en-us/portfolio/",
+        "title": "Professional Websites Portfolio | Niloware",
+        "description": "Explore Niloware’s portfolio of professional websites that drive real results. Get inspired and request your free quote today.",
+        "images": [
+          {
+            "url": "https://www.niloware.com/portfolio-og-image.jpg",
+            "width": 1200,
+            "height": 630
+          }
+        ]
+      },
+      "alternateLocales": [
+        {
+          "hrefLang": "pt-br",
+          "href": "https://www.niloware.com/pt-br/portfolio/"
+        },
+        {
+          "hrefLang": "es-es",
+          "href": "https://www.niloware.com/es-es/portfolio/"
+        },
+        {
+          "hrefLang": "en-us",
+          "href": "https://www.niloware.com/en-us/portfolio/"
+        }
+      ],
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Niloware",
+          "url": "https://www.niloware.com",
+          "logo": "https://www.niloware.com/logo.png",
+          "sameAs": [
+            "https://www.linkedin.com/company/niloware",
+            "https://www.instagram.com/niloware"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Niloware",
+          "url": "https://www.niloware.com",
+          "inLanguage": "en-US"
+        }
+      ]
+    }
+  }
+}
