@@ -1,0 +1,63 @@
+import type { FC } from "react";
+import Image from "next/image";
+import { Star } from "@mui/icons-material";
+
+interface TestimonialCardProps {
+  photo: string;
+  name: string;
+  role: string;
+  rating: number;
+  testimonial: string;
+}
+
+const TestimonialCard: FC<TestimonialCardProps> = ({
+  photo,
+  name,
+  role,
+  rating,
+  testimonial,
+}) => {
+  return (
+    <div className="w-[250px] h-[350px] p-[16px] flex flex-col gap-[16px] border border-border rounded-[8px]">
+      <div className="flex items-center gap-[16px] w-full">
+        <Image
+          src={photo}
+          alt={`${name} - ${role}`}
+          width={48}
+          height={48}
+          className="rounded-full object-cover"
+        />
+        <div className="flex flex-col">
+          <p className="text-base font-medium text-text-secondary leading-[1.5]">
+            {name}
+          </p>
+          <p className="text-base font-extralight text-text-secondary leading-[1.5]">
+            {role}
+          </p>
+        </div>
+      </div>
+
+      <div className="flex gap-[4px] text-text-secondary">
+        {[...Array(5)].map((_, index) => (
+          <Star
+            key={index}
+            sx={{
+              color:
+                index < rating
+                  ? "#FBBF24"
+                  : "var(--tw-text-opacity,1) theme('colors.text-secondary')",
+              width: "20px",
+              height: "19px",
+            }}
+          />
+        ))}
+      </div>
+
+      <p className="text-base text-text-secondary leading-[1.5]">
+        {testimonial}
+      </p>
+    </div>
+  );
+};
+
+export default TestimonialCard;
