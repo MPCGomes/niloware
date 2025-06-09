@@ -135,6 +135,7 @@
     "pricing": {
       "subheading": "Choose the right plan for your business",
       "heading": "Choose your plan",
+      "whatsappMessage": "Hello, I want to hire the {planName} plan.",
       "plans": {
         "basic": {
           "name": "Basic",

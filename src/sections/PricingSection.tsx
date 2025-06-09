@@ -25,6 +25,7 @@ interface Plan {
   description: string;
   planPrice: string; // e.g. "99.90 USD"
   hostPrice: string; // e.g. "4.90 USD"
+  cta: string;
   features: Feature[];
 }
 
@@ -87,6 +88,7 @@ const PricingSection: FC<PricingSectionProps> = ({ locale }) => {
               variant={variant}
               isAnnual={isAnnual}
               isCustom={key === "custom"}
+              cta={plan.cta}
             />
           );
         })}

@@ -6,6 +6,8 @@ import clsx from "clsx";
 import Button from "./Button";
 import { Check as CheckIcon } from "@mui/icons-material";
 import SwitchOption from "./SwitchOption";
+import { useWhatsappLink } from "@/hooks/useWhatsappLink";
+import { useTranslations } from "next-intl";
 
 interface FeatureOption {
   label: string;
@@ -29,6 +31,7 @@ interface PricingCardProps {
   variant?: "default" | "popular";
   isAnnual?: boolean;
   isCustom?: boolean;
+  cta: string;
 }
 
 const PricingCard: FC<PricingCardProps> = ({
@@ -40,6 +43,7 @@ const PricingCard: FC<PricingCardProps> = ({
   variant = "default",
   isAnnual = false,
   isCustom = false,
+  cta,
 }) => {
   const [selections, setSelections] = useState<Record<string, 0 | 1>>(() =>
     features.reduce((acc, f) => {
@@ -48,21 +52,54 @@ const PricingCard: FC<PricingCardProps> = ({
     }, {} as Record<string, 0 | 1>)
   );
 
+  const t = useTranslations("homepage.pricing");
+
+  const whatsappLink = useWhatsappLink("homepage.pricing", "whatsappMessage", {
+    planName: name,
+  });
+
   const parsePrice = (s: string) => {
     const [num, ...curr] = s.split(" ");
     return { value: parseFloat(num), currency: curr.join(" ") };
   };
 
   const computeCustom = () => {
-    let sum = 0;
     const pagesFeature = features.find(
       (f): f is CustomFeature => typeof f !== "string" && f.name === "Pages"
     )!;
     const pageIdx = selections["Pages"];
-    sum = pagesFeature.options[pageIdx].price!;
+    const basePlanPrice = pagesFeature.options[pageIdx].price!;
+
+    let adjustedPlanPrice = basePlanPrice;
 
     features.forEach((f) => {
-      if (typeof f === "object" && f.name !== "Pages") {
+      if (
+        typeof f === "object" &&
+        ["SEO", "Backup", "Support"].includes(f.name)
+      ) {
+        const sel = selections[f.name];
+
+        if (pageIdx === 0) {
+          if (sel === 0) {
+          } else if (sel === 1) {
+            adjustedPlanPrice *= 1.05;
+          }
+        } else if (pageIdx === 1) {
+          if (sel === 0) {
+            adjustedPlanPrice *= 0.95;
+          } else if (sel === 1) {
+          }
+        }
+      }
+    });
+
+    let multiplier = 1;
+    features.forEach((f) => {
+      if (
+        typeof f === "object" &&
+        f.name !== "Pages" &&
+        !["SEO", "Backup", "Support"].includes(f.name)
+      ) {
         const sel = selections[f.name];
         const opt = f.options[sel];
         const pct = opt.priceAdjustmentPercent ?? 0;
@@ -70,25 +107,32 @@ const PricingCard: FC<PricingCardProps> = ({
         if (
           ["Design", "E-Commerce", "Integration", "Delivery"].includes(f.name)
         ) {
-          sum *= 1 + pct / 100;
-        } else if (
-          ["SEO", "Backup", "Support"].includes(f.name) &&
-          pageIdx === 0
-        ) {
-          sum *= 1 + pct / 100;
+          multiplier *= 1 + pct / 100;
         }
       }
     });
 
-    if (isAnnual) sum *= 10;
-    const { currency } = parsePrice(priceProp);
-    return `${sum.toFixed(2)} ${currency}`;
+    const finalPrice = adjustedPlanPrice * multiplier;
+    return `${finalPrice.toFixed(2)} USD`;
+  };
+
+  const computeCustomHostPrice = () => {
+    if (!hostPrice) return undefined;
+
+    const designFeature = features.find(
+      (f): f is CustomFeature => typeof f !== "string" && f.name === "Design"
+    );
+
+    if (designFeature && selections["Design"] === 1) {
+      const { value, currency } = parsePrice(hostPrice);
+      return `${(value * 2).toFixed(2)} ${currency}`;
+    }
+
+    return hostPrice;
   };
 
   const displayPrice = isCustom ? computeCustom() : priceProp;
-  const whatsappLink = `https://wa.me/0123456789012?text=${encodeURIComponent(
-    `Olá, quero contratar o plano ${name}.`
-  )}`;
+  const displayHostPrice = isCustom ? computeCustomHostPrice() : hostPrice;
 
   return (
     <div
@@ -139,7 +183,7 @@ const PricingCard: FC<PricingCardProps> = ({
         {displayPrice}
       </p>
 
-      {hostPrice && (
+      {displayHostPrice && (
         <p
           className={clsx(
             "text-body-medium",
@@ -148,12 +192,12 @@ const PricingCard: FC<PricingCardProps> = ({
               : "text-[var(--color-text-primary)]"
           )}
         >
-          + {hostPrice}/month hosting
+          + {displayHostPrice}/month hosting
         </p>
       )}
 
       <Button
-        text="Contratar"
+        text={cta}
         variant={variant === "popular" ? "default" : "subtle"}
         onClick={() => window.open(whatsappLink, "_blank")}
       />
@@ -186,20 +230,10 @@ const PricingCard: FC<PricingCardProps> = ({
                 options={
                   [
                     {
-                      label:
-                        feature.options[0].price != null
-                          ? `${
-                              feature.options[0].label
-                            } (${feature.options[0].price.toFixed(2)})`
-                          : `${feature.options[0].label} (+${feature.options[0].priceAdjustmentPercent}%)`,
+                      label: feature.options[0].label,
                     },
                     {
-                      label:
-                        feature.options[1].price != null
-                          ? `${
-                              feature.options[1].label
-                            } (${feature.options[1].price.toFixed(2)})`
-                          : `${feature.options[1].label} (+${feature.options[1].priceAdjustmentPercent}%)`,
+                      label: feature.options[1].label,
                     },
                   ] as [FeatureOption, FeatureOption]
                 }

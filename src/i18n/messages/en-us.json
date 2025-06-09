@@ -135,6 +135,7 @@
     "pricing": {
       "subheading": "Choose the right plan for your business",
       "heading": "Choose your plan",
+      "whatsappMessage": "Hello, I want to hire the {planName} plan.",
       "plans": {
         "basic": {
           "name": "Basic",
@@ -176,7 +177,7 @@
           "name": "Custom",
           "description": "Fully customizable—use the calculator to build exactly what you need.",
           "planPrice": "0.0 USD",
-          "hostPrice": "7.90 USD",
+          "hostPrice": "4.90 USD",
           "cta": "Choose Plan",
           "features": [
             {
