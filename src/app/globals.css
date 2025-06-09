@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0072FF;
+  --color-primary-03: #0072FF/3;
+  --color-primary-10: #0072FF/10;
+  --color-gradient: linear-gradient(90deg, #0072FF, #00C6FF);
+  --color-text-primary: #122E50;
+  --color-text-secondary: #122E50/60;
+  --color-surface: #FFFFFF;
+  --color-surface-dark: #111111;
+
+  --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+
+  --breakpoint-mobile: 576px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1280px;
+
+  --spacing-14: 56px;
+  --spacing-18: 72px;
+  --spacing-30: 120px;
+
+  --animate-slideIn: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+
+.container {
+  width: 100%;
+  max-width: 576px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 1024px;
+  }
+
+  .section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1440px;
+  }
+
+  .section {
+    padding-left: var(--spacing-30);
+    padding-right: var(--spacing-30);
+  }
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-14);
+  padding: var(--spacing-18) 1rem;
+}
+
+.text-body-large {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.text-body-medium {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.text-title-medium {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.text-title-large {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.text-display-medium {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 400;
+}
+
+.text-heading {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700;
+}
+
+.text-hero {
+  font-size: 72px;
+  line-height: 84px;
+  font-weight: 800;
+}
+
+.text-subhero {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.bg-primary-gradient {
+  background: var(--color-gradient);
+}
