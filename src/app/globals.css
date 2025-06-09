@@ -1,26 +1,31 @@
 @import "tailwindcss";
 
-@theme {
+:root {
   --color-primary: #0072FF;
-  --color-primary-03: #0072FF/3;
-  --color-primary-10: #0072FF/10;
-  --color-gradient: linear-gradient(90deg, #0072FF, #00C6FF);
+  --color-primary-ghost: #0072FF08;
+  --color-primary-soft: #0072FF1A;
+  --color-gradient: linear-gradient(90deg, var(--color-primary), #00C6FF);
   --color-text-primary: #122E50;
-  --color-text-secondary: #122E50/60;
-  --color-surface: #FFFFFF;
+  --color-text-secondary: #122E50CC;
+  --color-text-tertiary: #ffffff99;
+  --color-text-white: #ffffff;
+  --color-surface-light: #ffffff;
   --color-surface-dark: #111111;
 
   --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
-
-  --breakpoint-mobile: 576px;
-  --breakpoint-tablet: 768px;
-  --breakpoint-desktop: 1280px;
 
   --spacing-14: 56px;
   --spacing-18: 72px;
   --spacing-30: 120px;
 
   --animate-slideIn: slideIn 0.3s ease-out;
+}
+
+@theme {
+  --breakpoint-mobile: 576px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1280px;
+
 }
 
 @keyframes slideIn {
