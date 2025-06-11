@@ -18,25 +18,8 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   testimonial,
 }) => {
   return (
-    <div className="w-[250px] h-[350px] p-[16px] flex flex-col gap-[16px] border border-border rounded-[8px]">
-      <div className="flex items-center gap-[16px] w-full">
-        <Image
-          src={photo}
-          alt={`${name} - ${role}`}
-          width={48}
-          height={48}
-          className="rounded-full object-cover"
-        />
-        <div className="flex flex-col">
-          <p className="text-base font-medium text-text-secondary leading-[1.5]">
-            {name}
-          </p>
-          <p className="text-base font-extralight text-text-secondary leading-[1.5]">
-            {role}
-          </p>
-        </div>
-      </div>
-
+    <div className="w-full p-[16px] flex flex-col gap-6 bg-[var(--color-primary-ghost)] rounded-2xl">
+      {/* Stars */}
       <div className="flex gap-[4px] text-text-secondary">
         {[...Array(5)].map((_, index) => (
           <Star
@@ -52,10 +35,28 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
           />
         ))}
       </div>
-
+      {/* Testimonial */}
       <p className="text-base text-text-secondary leading-[1.5]">
         {testimonial}
       </p>
+      {/* Client */}
+      <div className="flex items-center gap-[16px] w-full">
+        <Image
+          src={photo}
+          alt={`${name} - ${role}`}
+          width={48}
+          height={48}
+          className="rounded-full object-cover"
+        />
+        <div className="flex flex-col">
+          <p className="text-base font-medium text-text-secondary leading-[1.5]">
+            {name}
+          </p>
+          <p className="text-sm font-extralight text-text-secondary leading-[1.5]">
+            {role}
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
