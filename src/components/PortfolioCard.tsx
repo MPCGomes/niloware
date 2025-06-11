@@ -24,7 +24,7 @@ const PortfolioCard: FC<PortfolioCardProps> = ({
       <Image
         width={300}
         height={300}
-        src={image}
+        src='/portfolio/project-01.svg'
         alt="error"
         className="absolute top-0 rotate-[-20deg]"
       />

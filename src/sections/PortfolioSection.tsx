@@ -44,7 +44,7 @@ const PortfolioSection: FC<PortfolioSectionProps> = ({
         link={portfolio ? `/${locale}/portfolio` : `/${locale}`}
       />
 
-      <div className="grid gap-5 grid-cols-1 place-items-center tablet:grid-cols-2 desktop:grid-cols-4 desktop:place-items-stretch">
+      <div className="grid place-items-center gap-5 grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 desktop:gap-0">
         {displayed.map((item, index) => {
           <div key={index} className="">
             <PortfolioCard {...item} />

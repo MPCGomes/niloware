@@ -23,7 +23,7 @@ const Header: FC<HeaderProps> = ({ locale }) => {
   return (
     <header className="bg-primary-gradient">
       <div className="container">
-        <div className="h-[80px] flex justify-between items-center px-[20px] md:px-[16px]">
+        <div className="h-[80px] flex justify-between items-center px-[20px] tablet:px-[16px]">
           <Logo size="md" />
 
           <nav className="hidden md:flex items-center gap-[24px]">
