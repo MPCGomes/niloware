@@ -20,7 +20,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   return (
     <div className="w-full p-[16px] flex flex-col gap-6 bg-[var(--color-primary-ghost)] rounded-2xl">
       {/* Stars */}
-      <div className="flex gap-[4px] text-text-secondary">
+      <div className="flex gap-[4px] text-[var(--color-text-secondary)]">
         {[...Array(5)].map((_, index) => (
           <Star
             key={index}
@@ -36,7 +36,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
         ))}
       </div>
       {/* Testimonial */}
-      <p className="text-base text-text-secondary leading-[1.5]">
+      <p className="text-base text-[var(--color-text-secondary)] leading-[1.5]">
         {testimonial}
       </p>
       {/* Client */}
@@ -49,10 +49,10 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
           className="rounded-full object-cover"
         />
         <div className="flex flex-col">
-          <p className="text-base font-medium text-text-secondary leading-[1.5]">
+          <p className="text-base font-medium text-[var(--color-text-primary)] leading-[1.5]">
             {name}
           </p>
-          <p className="text-sm font-extralight text-text-secondary leading-[1.5]">
+          <p className="text-sm font-extralight text-[var(--color-text-secondary)] leading-[1.5]">
             {role}
           </p>
         </div>

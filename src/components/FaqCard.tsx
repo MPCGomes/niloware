@@ -32,14 +32,16 @@ const FaqCard: FC<FaqCardProps> = ({ question, answer }) => {
         <span>{question}</span>
         <ExpandMore
           className={`transition-transform duration-300 ease-in-out ${
-            isOpen ? "rotate-180 text-primary" : "text-text-primary"
+            isOpen
+              ? "rotate-180 text-primary"
+              : "text-[var(--color-text-primary)]"
           }`}
         />
       </button>
 
       <div
         id="faq-content"
-        className={`overflow-hidden px-[24px] text-base leading-[1.5] text-text-primary transition-[max-height,padding] duration-300 ease-in-out ${
+        className={`overflow-hidden px-[24px] text-base leading-[1.5] text-[var(--color-text-primary)] transition-[max-height,padding] duration-300 ease-in-out ${
           isOpen ? "max-h-[200px] pb-[24px]" : "max-h-0 pb-0"
         }`}
         aria-hidden={!isOpen}

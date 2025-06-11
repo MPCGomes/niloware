@@ -22,7 +22,7 @@ const FeatureCard: FC<FeatureCardProps> = ({
       </div>
       <div className="flex flex-col gap-[10px] mt-[24px]">
         <p className="text-[1.125rem] font-semibold">{title}</p>
-        <p className="text-base leading-[1.5] text-text-secondary">
+        <p className="text-base leading-[1.5] text-[var(--color-text-secondary)]">
           {description}
         </p>
       </div>

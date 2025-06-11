@@ -26,8 +26,8 @@ const PricingToggle: FC<PricingToggleProps> = ({ onToggle }) => {
         className={clsx(
           baseOption,
           !isAnnual
-            ? "bg-primary-gradient text-text-light"
-            : "bg-background-card text-text-secondary",
+            ? "bg-primary-gradient text-[var(--color-text-white)]"
+            : "bg-background-card text-[var(--color-text-secondary)]",
           "rounded-l-[24px]"
         )}
         onClick={() => handleToggle(false)}
@@ -38,8 +38,8 @@ const PricingToggle: FC<PricingToggleProps> = ({ onToggle }) => {
         className={clsx(
           baseOption,
           isAnnual
-            ? "bg-primary-gradient text-text-light"
-            : "bg-background-card text-text-secondary",
+            ? "bg-primary-gradient text-[var(--color-text-white)]"
+            : "bg-background-card text-[var(--color-text-secondary)]",
           "rounded-r-[24px]"
         )}
         onClick={() => handleToggle(true)}
@@ -47,8 +47,10 @@ const PricingToggle: FC<PricingToggleProps> = ({ onToggle }) => {
         <span>Anual</span>
         <span
           className={clsx(
-            "font-normal",
-            isAnnual ? "text-text-light" : "text-primary"
+            "font-normal text-[12px]",
+            isAnnual
+              ? "text-[var(--color-text-white)]"
+              : "text-[var(--color-primary)]"
           )}
         >
           -20%

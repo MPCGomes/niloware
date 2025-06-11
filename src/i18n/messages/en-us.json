@@ -116,21 +116,21 @@
           "title": "Logum RH",
           "description": "Description",
           "projectNum": "01",
-          "image": "",
+          "image": "/portfolio/project-01.svg",
           "link": ""
         },
         {
           "title": "Top 10",
           "description": "Description",
           "projectNum": "02",
-          "image": "",
+          "image": "/portfolio/project-01.svg",
           "link": ""
         },
         {
           "title": "Propabanda",
           "description": "Description",
           "projectNum": "03",
-          "image": "",
+          "image": "/portfolio/project-01.svg",
           "link": ""
         }
       ]

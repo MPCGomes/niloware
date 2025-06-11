@@ -211,7 +211,7 @@ const PricingCard: FC<PricingCardProps> = ({
                 "flex items-center gap-[10px] text-body-medium",
                 variant === "popular"
                   ? "text-white"
-                  : "text-[var(--color-text-primary)]"
+                  : "text-[var(--color-text-secondary)]"
               )}
             >
               <CheckIcon
