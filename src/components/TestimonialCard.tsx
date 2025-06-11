@@ -52,7 +52,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
           <p className="text-base font-medium text-text-secondary leading-[1.5]">
             {name}
           </p>
-          <p className="text-base font-extralight text-text-secondary leading-[1.5]">
+          <p className="text-sm font-extralight text-text-secondary leading-[1.5]">
             {role}
           </p>
         </div>
