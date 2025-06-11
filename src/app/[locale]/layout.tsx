@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Locale } from "@/i18n/settings";
+import BackToTop from "@/components/BackToTop";
 
 interface LayoutProps {
   children: ReactNode;
@@ -21,6 +22,7 @@ export default async function LocaleLayout(props: LayoutProps) {
       <Header locale={locale} />
       {props.children}
       <Footer />
+      <BackToTop />
     </NextIntlClientProvider>
   );
 }
