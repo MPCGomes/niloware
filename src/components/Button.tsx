@@ -4,7 +4,7 @@ import clsx from "clsx";
 interface ButtonProps {
   text: ReactNode;
   icon?: ReactNode;
-  variant?: "default" | "subtle";
+  variant?: "default" | "subtle" | "full";
   onClick?: () => void;
 }
 
@@ -22,7 +22,9 @@ const Button: FC<ButtonProps> = ({
         variant === "default" &&
           "border-[var(--color-text-white)] text-[var(--color-text-white)]",
         variant === "subtle" &&
-          "border-gray-300 text-[var(--color-text-primary)]"
+          "border-gray-300 text-[var(--color-text-primary)]",
+        variant === "full" &&
+          "bg-white border-white text-[var(--color-primary)]"
       )}
     >
       {icon && <span className="flex items-center">{icon}</span>}
