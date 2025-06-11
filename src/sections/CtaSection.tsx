@@ -15,7 +15,7 @@ const CtaSection: FC<CtaSectionProps> = ({}) => {
   )}`;
 
   return (
-    <section className="bg-[var(--color-gradient)] p-[30px]">
+    <section className="bg-primary-gradient p-[30px]">
       <div className="container">
         <div className="flex flex-col items-center text-center gap-[32px] text-[var(--color-text-white)] text-base tablet:flex-row tablet:text-left tablet:justify-center desktop:gap-[64px]">
           <p>{t("text")}</p>
