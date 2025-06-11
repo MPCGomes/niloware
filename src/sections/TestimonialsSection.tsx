@@ -24,18 +24,23 @@ const TestimonialSection: FC<TestimonialSectionProps> = ({}) => {
 
   return (
     <section className="container section">
-      <SectionHeading subheading={subheading} heading={heading} />
-      <div className="grid grid-cols-1 mobile:grid-cols-2 desktop:grid-cols-3 gap-[24px]">
-        {items.map((item, idx) => (
-          <TestimonialCard
-            key={idx}
-            photo={item.photo}
-            name={item.name}
-            role={item.role}
-            rating={item.rating}
-            testimonial={item.testimonial}
-          />
-        ))}
+      <div className=" grid desktop:grid-cols-[1fr_2fr]">
+        <div className="flex flex-col gap-10">
+          <SectionHeading variant="columnStart" subheading={subheading} heading={heading} />
+          buttons
+        </div>
+        <div className="grid grid-cols-1">
+          {items.map((item, idx) => (
+            <TestimonialCard
+              key={idx}
+              photo={item.photo}
+              name={item.name}
+              role={item.role}
+              rating={item.rating}
+              testimonial={item.testimonial}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
