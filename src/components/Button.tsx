@@ -18,9 +18,11 @@ const Button: FC<ButtonProps> = ({
     <button
       onClick={onClick}
       className={clsx(
-        "px-[32px] py-[12px] text-white rounded-[24px] border-2 cursor-pointer flex items-center justify-center gap-[8px] font-medium bg-transparent",
-        variant === "default" && "border-text-light text-text-light",
-        variant === "subtle" && "border-border text-text-primary"
+        "px-[32px] py-[12px] rounded-[24px] border-2 cursor-pointer flex items-center justify-center gap-[8px] font-medium bg-transparent",
+        variant === "default" &&
+          "border-[var(--color-text-white)] text-[var(--color-text-white)]",
+        variant === "subtle" &&
+          "border-gray-300 text-[var(--color-text-primary)]"
       )}
     >
       {icon && <span className="flex items-center">{icon}</span>}
