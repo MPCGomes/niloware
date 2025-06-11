@@ -140,7 +140,7 @@ const PricingCard: FC<PricingCardProps> = ({
         "w-full p-[24px] rounded-[8px] flex flex-col gap-[24px] transition-all",
         variant === "popular"
           ? "bg-primary-gradient text-white"
-          : "bg-[var(--color-primary-03)] text-[var(--color-text-primary)]"
+          : "bg-[var(--color-primary-ghost)] text-[var(--color-text-primary)]"
       )}
     >
       <div className="flex justify-between items-center gap-[8px]">
