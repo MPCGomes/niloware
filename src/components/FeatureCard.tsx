@@ -16,7 +16,7 @@ const FeatureCard: FC<FeatureCardProps> = ({
   color,
 }) => {
   return (
-    <div className="p-[32px_24px] rounded-[20px] bg-[var(--color-primary-ghost)] flex flex-col w-full h-full transition-[background,transform] duration-300 ease-in-out hover:bg-[var(--color-primary-soft)] hover:scale-[1.02]">
+    <div className="p-[32px_24px] rounded-[20px] bg-[var(--color-primary-ghost)] flex flex-col w-full h-full hover:bg-[var(--color-primary-soft)] hover:scale-[1.02] transition-all duration-300 ease-in-out">
       <div className="w-12 h-12" style={{ color }}>
         {icon}
       </div>
