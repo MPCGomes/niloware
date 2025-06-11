@@ -18,7 +18,7 @@ const Button: FC<ButtonProps> = ({
     <button
       onClick={onClick}
       className={clsx(
-        "px-[32px] py-[12px] rounded-[24px] border-2 cursor-pointer flex items-center justify-center gap-[8px] font-medium bg-transparent",
+        "px-[24px] py-[10px] rounded-[24px] border-2 cursor-pointer flex items-center justify-center gap-[8px] font-medium bg-transparent",
         variant === "default" &&
           "border-[var(--color-text-white)] text-[var(--color-text-white)]",
         variant === "subtle" &&
