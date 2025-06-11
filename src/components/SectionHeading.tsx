@@ -5,7 +5,7 @@ import { OpenInNew } from "@mui/icons-material";
 interface SectionHeadingProps {
   subheading: string;
   heading: string;
-  variant?: "column" | "row";
+  variant?: "column" | "row" | "columnStart";
   link?: string;
 }
 
@@ -16,11 +16,23 @@ const SectionHeading: FC<SectionHeadingProps> = ({
   link,
 }) => {
   const base = "flex w-full items-center text-title-large";
-  const column = "flex-col justify-center text-center sm:text-center";
+
+  const column = "flex-col justify-center text-center";
+  const columnStart =
+    "flex-col justify-center text-center desktop:items-start desktop:text-left";
   const row = "flex-row justify-between items-center text-left";
 
   return (
-    <div className={clsx(base, variant === "row" ? row : column)}>
+    <div
+      className={clsx(
+        base,
+        variant === "row"
+          ? row
+          : variant === "columnStart"
+          ? columnStart
+          : column
+      )}
+    >
       {variant === "row" && link ? (
         <>
           <p className="text-heading leading-[1.4] text-[var(--color-text-[var(--color-primary)])]">
