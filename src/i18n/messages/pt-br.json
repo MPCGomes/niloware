@@ -113,21 +113,31 @@
       },
       "items": [
         {
-          "title": "LogumRH",
-          "tags": ["Website", "HR"],
-          "imageBackground": "",
+          "title": "Logum RH",
+          "description": "Description",
+          "projectNum": "01",
+          "image": "/portfolio/project-01.svg",
           "link": ""
         },
         {
           "title": "Top 10",
-          "tags": ["Website", "Sports"],
-          "imageBackground": "",
+          "description": "Description",
+          "projectNum": "02",
+          "image": "/portfolio/project-01.svg",
           "link": ""
         },
         {
-          "title": "Probanda",
-          "tags": ["Application", "Marketing"],
-          "imageBackground": "",
+          "title": "Propabanda",
+          "description": "Description",
+          "projectNum": "03",
+          "image": "/portfolio/project-01.svg",
+          "link": ""
+        },
+        {
+          "title": "Propabanda",
+          "description": "Description",
+          "projectNum": "03",
+          "image": "/portfolio/project-01.svg",
           "link": ""
         }
       ]
