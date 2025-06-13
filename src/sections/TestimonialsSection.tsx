@@ -26,32 +26,18 @@ const TestimonialSection: FC<TestimonialSectionProps> = ({}) => {
     testimonial: string;
   }[];
 
-  // Carousel responsive
   const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 1440 },
-      items: 1,
-    },
-    desktop: {
-      breakpoint: { max: 1440, min: 1024 },
-      items: 1,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 768 },
-      items: 1,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
+    superLargeDesktop: { breakpoint: { max: 4000, min: 1440 }, items: 1 },
+    desktop: { breakpoint: { max: 1440, min: 1024 }, items: 1 },
+    tablet: { breakpoint: { max: 1024, min: 768 }, items: 1 },
+    mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
   };
 
-  // Link next prev carousel buttons
-  const carouselRef = useRef<any>(null);
+  const carouselRef = useRef<InstanceType<typeof Carousel> | null>(null);
 
   return (
     <section className="container section">
-      <div className=" grid gap-[56px] desktop:grid-cols-[1fr_2fr] desktop:items-center">
+      <div className="grid gap-[56px] desktop:grid-cols-[1fr_2fr] desktop:items-center">
         <div className="flex flex-col gap-10">
           <SectionHeading
             variant="columnStart"
@@ -60,13 +46,13 @@ const TestimonialSection: FC<TestimonialSectionProps> = ({}) => {
           />
           <div className="flex gap-5 justify-center desktop:justify-start">
             <button
-              onClick={() => carouselRef.current?.previous()}
+              onClick={() => carouselRef.current?.previous(1)}
               className="bg-[var(--color-primary-ghost)] text-[var(--color-primary)] rounded-full p-2 transition hover:bg-[var(--color-primary-soft)] cursor-pointer"
             >
               <NavigateBeforeIcon />
             </button>
             <button
-              onClick={() => carouselRef.current?.next()}
+              onClick={() => carouselRef.current?.next(1)}
               className="bg-[var(--color-primary-ghost)] text-[var(--color-primary)] rounded-full p-2 transition hover:bg-[var(--color-primary-soft)] cursor-pointer"
             >
               <NavigateNextIcon />
@@ -75,11 +61,11 @@ const TestimonialSection: FC<TestimonialSectionProps> = ({}) => {
         </div>
         <Carousel
           ref={carouselRef}
-          swipeable={true}
-          draggable={true}
-          ssr={true}
-          infinite={true}
-          renderDotsOutside={true}
+          swipeable
+          draggable
+          ssr
+          infinite
+          renderDotsOutside
           autoPlay={false}
           arrows={false}
           dotListClass="custom-dot-list-style"

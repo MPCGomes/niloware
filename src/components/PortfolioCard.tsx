@@ -5,7 +5,6 @@ interface PortfolioCardProps {
   title: ReactNode;
   description: string;
   projectNum: string;
-  image: string;
   link: string;
 }
 
@@ -13,7 +12,6 @@ const PortfolioCard: FC<PortfolioCardProps> = ({
   title,
   description,
   projectNum,
-  image,
   link,
 }) => {
   return (

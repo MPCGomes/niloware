@@ -7,7 +7,6 @@ import Button from "./Button";
 import { Check as CheckIcon } from "@mui/icons-material";
 import SwitchOption from "./SwitchOption";
 import { useWhatsappLink } from "@/hooks/useWhatsappLink";
-import { useTranslations } from "next-intl";
 
 interface FeatureOption {
   label: string;
@@ -29,7 +28,6 @@ interface PricingCardProps {
   hostPrice?: string;
   features: Feature[];
   variant?: "default" | "popular";
-  isAnnual?: boolean;
   isCustom?: boolean;
   cta: string;
 }
@@ -41,7 +39,6 @@ const PricingCard: FC<PricingCardProps> = ({
   hostPrice,
   features,
   variant = "default",
-  isAnnual = false,
   isCustom = false,
   cta,
 }) => {
@@ -51,8 +48,6 @@ const PricingCard: FC<PricingCardProps> = ({
       return acc;
     }, {} as Record<string, 0 | 1>)
   );
-
-  const t = useTranslations("homepage.pricing");
 
   const whatsappLink = useWhatsappLink("homepage.pricing", "whatsappMessage", {
     planName: name,

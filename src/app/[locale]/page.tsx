@@ -6,10 +6,8 @@ import TestimonialsSection from "@/sections/TestimonialsSection";
 import FaqSection from "@/sections/FaqSection";
 import CtaSection from "@/sections/CtaSection";
 import Script from "next/script";
-import { getMessages } from "next-intl/server";
-import { languages } from "@/i18n/settings";
 import type { Metadata } from "next";
-import type { AbstractIntlMessages } from "next-intl";
+import { languages } from "@/i18n/settings";
 
 interface Seo {
   title: string;
@@ -22,8 +20,14 @@ interface Seo {
     images: { url: string; width?: number; height?: number }[];
   };
   alternateLocales: { hrefLang: string; href: string }[];
-  jsonLd: any[];
+  jsonLd: unknown[];
 }
+
+type Messages = {
+  homepage: { seo: Seo };
+};
+
+export const dynamic = "force-static";
 
 export function generateStaticParams() {
   return languages.map((locale) => ({ locale }));
@@ -35,13 +39,12 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const messages = (await getMessages({ locale })) as AbstractIntlMessages;
-  const seo = (messages.homepage as any).seo as Seo;
-
+  const messages = (await import(`@/i18n/messages/${locale}.json`))
+    .default as Messages;
+  const seo = messages.homepage.seo;
   const languagesMap = Object.fromEntries(
     seo.alternateLocales.map(({ hrefLang, href }) => [hrefLang, href])
   );
-
   return {
     title: seo.title,
     description: seo.description,
@@ -64,20 +67,19 @@ export default async function HomePage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const messages = (await getMessages({ locale })) as AbstractIntlMessages;
-  const seo = (messages.homepage as any).seo as Seo;
+  const messages = (await import(`@/i18n/messages/${locale}.json`))
+    .default as Messages;
+  const seo = messages.homepage.seo;
   const jsonLd = seo.jsonLd;
-
   return (
     <>
-      <HeroSection locale={locale} />
+      <HeroSection />
       <FeaturesSection locale={locale} />
       <PortfolioSection locale={locale} portfolio />
-      <PricingSection locale={locale} />
+      <PricingSection />
       <TestimonialsSection locale={locale} />
       <FaqSection locale={locale} />
       <CtaSection locale={locale} />
-
       <Script
         id="homepage-jsonld"
         type="application/ld+json"

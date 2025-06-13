@@ -6,11 +6,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useWhatsappLink } from "@/hooks/useWhatsappLink";
 
-interface HeroSectionProps {
-  locale: string;
-}
-
-const HeroSection: FC<HeroSectionProps> = ({ locale }) => {
+const HeroSection: FC = () => {
   const t = useTranslations("homepage.hero");
   const whatsappLink = useWhatsappLink("homepage.hero", "whatsappText");
 
