@@ -44,7 +44,9 @@ const PricingCard: FC<PricingCardProps> = ({
 }) => {
   const [selections, setSelections] = useState<Record<string, 0 | 1>>(() =>
     features.reduce((acc, f) => {
-      if (typeof f !== "string") acc[f.name] = 0;
+      if (typeof f !== "string" && f.options && Array.isArray(f.options)) {
+        acc[f.name] = 0;
+      }
       return acc;
     }, {} as Record<string, 0 | 1>)
   );
@@ -61,15 +63,33 @@ const PricingCard: FC<PricingCardProps> = ({
   const computeCustom = () => {
     const pagesFeature = features.find(
       (f): f is CustomFeature => typeof f !== "string" && f.name === "Pages"
-    )!;
-    const pageIdx = selections["Pages"];
-    const basePlanPrice = pagesFeature.options[pageIdx].price!;
+    );
 
+    if (
+      !pagesFeature ||
+      !pagesFeature.options ||
+      !Array.isArray(pagesFeature.options)
+    ) {
+      console.error("Pages feature not found or invalid in custom plan");
+      return priceProp;
+    }
+
+    const pageIdx = selections["Pages"];
+    const selectedOption = pagesFeature.options[pageIdx];
+
+    if (!selectedOption || typeof selectedOption.price !== "number") {
+      console.error("Invalid price for Pages feature option");
+      return priceProp;
+    }
+
+    const basePlanPrice = selectedOption.price;
     let adjustedPlanPrice = basePlanPrice;
 
     features.forEach((f) => {
       if (
         typeof f === "object" &&
+        f.options &&
+        Array.isArray(f.options) &&
         ["SEO", "Backup", "Support"].includes(f.name)
       ) {
         const sel = selections[f.name];
@@ -92,17 +112,22 @@ const PricingCard: FC<PricingCardProps> = ({
     features.forEach((f) => {
       if (
         typeof f === "object" &&
+        f.options &&
+        Array.isArray(f.options) &&
         f.name !== "Pages" &&
         !["SEO", "Backup", "Support"].includes(f.name)
       ) {
         const sel = selections[f.name];
         const opt = f.options[sel];
-        const pct = opt.priceAdjustmentPercent ?? 0;
 
-        if (
-          ["Design", "E-Commerce", "Integration", "Delivery"].includes(f.name)
-        ) {
-          multiplier *= 1 + pct / 100;
+        if (opt) {
+          const pct = opt.priceAdjustmentPercent ?? 0;
+
+          if (
+            ["Design", "E-Commerce", "Integration", "Delivery"].includes(f.name)
+          ) {
+            multiplier *= 1 + pct / 100;
+          }
         }
       }
     });
@@ -118,7 +143,12 @@ const PricingCard: FC<PricingCardProps> = ({
       (f): f is CustomFeature => typeof f !== "string" && f.name === "Design"
     );
 
-    if (designFeature && selections["Design"] === 1) {
+    if (
+      designFeature &&
+      designFeature.options &&
+      Array.isArray(designFeature.options) &&
+      selections["Design"] === 1
+    ) {
       const { value, currency } = parsePrice(hostPrice);
       return `${(value * 2).toFixed(2)} ${currency}`;
     }
@@ -219,7 +249,7 @@ const PricingCard: FC<PricingCardProps> = ({
               />
               {feature}
             </li>
-          ) : (
+          ) : feature.options && Array.isArray(feature.options) ? (
             <li key={idx}>
               <SwitchOption
                 options={
@@ -237,7 +267,7 @@ const PricingCard: FC<PricingCardProps> = ({
                 }
               />
             </li>
-          )
+          ) : null
         )}
       </ul>
     </div>

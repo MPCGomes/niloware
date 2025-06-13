@@ -28,6 +28,7 @@ type Messages = {
 };
 
 export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return languages.map((locale) => ({ locale }));
@@ -37,6 +38,7 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }): Promise<Metadata> {
   const { locale } = await params;
   const messages = (await import(`@/i18n/messages/${locale}.json`))
@@ -65,17 +67,17 @@ export default async function HomePage({
   params,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { locale } = await params;
   const messages = (await import(`@/i18n/messages/${locale}.json`))
     .default as Messages;
-  const seo = messages.homepage.seo;
-  const jsonLd = seo.jsonLd;
+  const jsonLd = messages.homepage.seo.jsonLd;
   return (
     <>
       <HeroSection />
       <FeaturesSection locale={locale} />
-      <PortfolioSection locale={locale} portfolio />
+      <PortfolioSection locale={locale} portfolio={true} />
       <PricingSection />
       <TestimonialsSection locale={locale} />
       <FaqSection locale={locale} />
