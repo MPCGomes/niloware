@@ -2,27 +2,27 @@
   "common": {
     "header": {
       "nav": {
-        "home": "Home",
-        "portfolio": "Portfolio"
+        "home": "Início",
+        "portfolio": "Portfólio"
       },
       "contact": {
         "phone": "+12 34 5 6789 0123",
-        "whatsappText": "Hello, I'm interested in your services!"
+        "whatsappText": "Olá, estou interessado em seus serviços!"
       }
     },
     "footer": {
-      "copyright": "™ & © 2024 Niloware. All rights reserved."
+      "copyright": "™ & © 2024 Niloware. Todos os direitos reservados."
     }
   },
   "homepage": {
     "seo": {
-      "title": "Website That Brings You Clients | Niloware",
-      "description": "Your business deserves more visibility, trust, and results. We build professional websites that help you grow. Get a free quote now.",
-      "canonical": "https://www.niloware.com/en-us/",
+      "title": "Site que Atrai Clientes | Niloware",
+      "description": "Seu negócio merece mais visibilidade, confiança e resultados. Construímos sites profissionais que ajudam você a crescer. Peça um orçamento grátis agora.",
+      "canonical": "https://www.niloware.com/pt-br/",
       "openGraph": {
-        "url": "https://www.niloware.com/en-us/",
-        "title": "Website That Brings You Clients | Niloware",
-        "description": "Your business deserves more visibility, trust, and results. We build professional websites that help you grow. Get a free quote now.",
+        "url": "https://www.niloware.com/pt-br/",
+        "title": "Site que Atrai Clientes | Niloware",
+        "description": "Seu negócio merece mais visibilidade, confiança e resultados. Construímos sites profissionais que ajudam você a crescer. Peça um orçamento grátis agora.",
         "images": [
           {
             "url": "https://www.niloware.com/og-image.jpg",
@@ -62,80 +62,80 @@
           "@type": "WebSite",
           "name": "Niloware",
           "url": "https://www.niloware.com",
-          "inLanguage": "en-US"
+          "inLanguage": "pt-BR"
         }
       ]
     },
     "features": {
-      "subheading": "Everything your business needs to grow online",
-      "heading": "Why Choose Niloware?",
+      "subheading": "Tudo que seu negócio precisa para crescer online",
+      "heading": "Por que escolher a Niloware?",
       "features": [
         {
-          "title": "Responsive Design",
-          "description": "Websites that adapt seamlessly to desktops, tablets, and mobile phones."
+          "title": "Design Responsivo",
+          "description": "Sites que se adaptam perfeitamente a desktops, tablets e celulares."
         },
         {
-          "title": "Google Visibility",
-          "description": "Structured to help your business show up on Google and reach customers."
+          "title": "Visibilidade no Google",
+          "description": "Estruturados para ajudar seu negócio a aparecer no Google e alcançar clientes."
         },
         {
-          "title": "Easy Personalization",
-          "description": "Edit text, images, and videos anytime—no technical skills required."
+          "title": "Fácil Personalização",
+          "description": "Edite textos, imagens e vídeos a qualquer momento — sem necessidade de habilidades técnicas."
         },
         {
-          "title": "Flexible Solutions",
-          "description": "Landing pages, online stores, and more—tailored to your business needs."
+          "title": "Soluções Flexíveis",
+          "description": "Landing pages, lojas online e mais — adaptadas às necessidades do seu negócio."
         },
         {
-          "title": "Business Integrations",
-          "description": "Connect payments, newsletters, CRM tools, and more—streamline daily tasks."
+          "title": "Integrações Empresariais",
+          "description": "Conecte pagamentos, newsletters, ferramentas de CRM e mais — otimize tarefas diárias."
         },
         {
-          "title": "Ongoing Support",
-          "description": "Dedicated support team for technical help, troubleshooting, and guidance."
+          "title": "Suporte Contínuo",
+          "description": "Equipe de suporte dedicada para ajuda técnica, solução de problemas e orientação."
         }
       ]
     },
     "hero": {
-      "heading": "Win More Customers With a Professional Website",
-      "subheading": "Credibility sells. Turn first-time visitors into loyal clients with a site designed to impress and convert.",
-      "cta": "Request a Quote",
-      "whatsappText": "Hello, I'm interested in your services!"
+      "heading": "Conquiste Mais Clientes com um Site Profissional",
+      "subheading": "Credibilidade vende. Transforme visitantes em clientes fiéis com um site projetado para impressionar e converter.",
+      "cta": "Solicitar Orçamento",
+      "whatsappText": "Olá, estou interessado em seus serviços!"
     },
     "portfolio": {
       "preview": {
-        "heading": "Real Clients, Real Results",
-        "subheading": "Explore the work"
+        "heading": "Clientes Reais, Resultados Reais",
+        "subheading": "Explore o trabalho"
       },
       "page": {
-        "heading": "Portfolio",
-        "subheading": "Back"
+        "heading": "Portfólio",
+        "subheading": "Voltar"
       },
       "items": [
         {
           "title": "Logum RH",
-          "description": "Description",
+          "description": "Descrição",
           "projectNum": "01",
           "image": "/portfolio/project-01.svg",
           "link": ""
         },
         {
           "title": "Top 10",
-          "description": "Description",
+          "description": "Descrição",
           "projectNum": "02",
           "image": "/portfolio/project-01.svg",
           "link": ""
         },
         {
           "title": "Propabanda",
-          "description": "Description",
+          "description": "Descrição",
           "projectNum": "03",
           "image": "/portfolio/project-01.svg",
           "link": ""
         },
         {
           "title": "Propabanda",
-          "description": "Description",
+          "description": "Descrição",
           "projectNum": "03",
           "image": "/portfolio/project-01.svg",
           "link": ""
@@ -143,206 +143,212 @@
       ]
     },
     "pricing": {
-      "subheading": "Choose the right plan for your business",
-      "heading": "Choose your plan",
-      "whatsappMessage": "Hello, I want to hire the {planName} plan.",
+      "subheading": "Escolha o plano certo para o seu negócio",
+      "heading": "Escolha seu plano",
+      "whatsappMessage": "Olá, quero contratar o plano {planName}.",
       "plans": {
         "basic": {
-          "name": "Basic",
-          "description": "For simple websites with everything you need to start—fast, affordable, and easy to manage.",
-          "planPrice": "99.90 USD",
-          "hostPrice": "4.90 USD",
-          "cta": "Choose Plan",
+          "name": "Básico",
+          "description": "Para sites simples com tudo que você precisa para começar — rápido, acessível e fácil de gerenciar.",
+          "planPrice": "549,45 BRL",
+          "hostPrice": "26,95 BRL",
+          "cta": "Escolher Plano",
           "features": [
             "Landing Page",
-            "Pre-Built Design",
-            "Responsive",
-            "Basic SEO",
+            "Design Pré-construído",
+            "Responsivo",
+            "SEO Básico",
             "SSL",
-            "Privacy Protection",
-            "DDoS Protection",
-            "Monthly Backup",
-            "Standard Support"
+            "Proteção de Privacidade",
+            "Proteção DDoS",
+            "Backup Mensal",
+            "Suporte Padrão"
           ]
         },
         "professional": {
-          "name": "Professional",
-          "description": "Best for businesses that want more content, better visibility, and faster support when needed.",
-          "planPrice": "199.80 USD",
-          "hostPrice": "4.90 USD",
-          "cta": "Choose Plan",
+          "name": "Profissional",
+          "description": "Ideal para negócios que querem mais conteúdo, melhor visibilidade e suporte mais rápido quando necessário.",
+          "planPrice": "1.098,90 BRL",
+          "hostPrice": "26,95 BRL",
+          "cta": "Escolher Plano",
           "features": [
-            "1-10 Pages",
-            "Pre-Built Design",
-            "Responsive",
-            "Advanced SEO",
+            "1-10 Páginas",
+            "Design Pré-construído",
+            "Responsivo",
+            "SEO Avançado",
             "SSL",
-            "Privacy Protection",
-            "DDoS Protection",
-            "Weekly Backup",
-            "Priority Support"
+            "Proteção de Privacidade",
+            "Proteção DDoS",
+            "Backup Semanal",
+            "Suporte Prioritário"
           ]
         },
         "custom": {
-          "name": "Custom",
-          "description": "Fully customizable—use the calculator to build exactly what you need.",
-          "planPrice": "0.0 USD",
-          "hostPrice": "7.90 USD",
-          "cta": "Choose Plan",
+          "name": "Personalizado",
+          "description": "Totalmente personalizável — use o calculador para construir exatamente o que você precisa.",
+          "planPrice": "0,00 BRL",
+          "hostPrice": "43,45 BRL",
+          "cta": "Escolher Plano",
           "features": [
             {
-              "name": "Pages",
+              "name": "Páginas",
               "options": [
-                { "label": "Landing Page", "price": 99.9 },
-                { "label": "1-10 Pages", "price": 199.8 }
+                { "label": "Landing Page", "price": 549.45 },
+                { "label": "1-10 Páginas", "price": 1098.9 }
               ]
             },
             {
               "name": "Design",
               "options": [
-                { "label": "Pre-Built Design", "priceAdjustmentPercent": 0 },
-                { "label": "Custom Design", "priceAdjustmentPercent": 50 }
+                {
+                  "label": "Design Pré-construído",
+                  "priceAdjustmentPercent": 0
+                },
+                {
+                  "label": "Design Personalizado",
+                  "priceAdjustmentPercent": 50
+                }
               ]
             },
-            "Responsive",
+            "Responsivo",
             {
               "name": "SEO",
               "options": [
-                { "label": "Basic SEO", "priceAdjustmentPercent": 0 },
-                { "label": "Advanced SEO", "priceAdjustmentPercent": 5 }
+                { "label": "SEO Básico", "priceAdjustmentPercent": 0 },
+                { "label": "SEO Avançado", "priceAdjustmentPercent": 5 }
               ]
             },
             "SSL",
-            "Privacy Protection",
-            "DDoS Protection",
+            "Proteção de Privacidade",
+            "Proteção DDoS",
             {
               "name": "Backup",
               "options": [
-                { "label": "Monthly Backup", "priceAdjustmentPercent": 0 },
-                { "label": "Weekly Backup", "priceAdjustmentPercent": 5 }
+                { "label": "Backup Mensal", "priceAdjustmentPercent": 0 },
+                { "label": "Backup Semanal", "priceAdjustmentPercent": 5 }
               ]
             },
             {
-              "name": "Support",
+              "name": "Suporte",
               "options": [
-                { "label": "Standard Support", "priceAdjustmentPercent": 0 },
-                { "label": "Priority Support", "priceAdjustmentPercent": 5 }
+                { "label": "Suporte Padrão", "priceAdjustmentPercent": 0 },
+                { "label": "Suporte Prioritário", "priceAdjustmentPercent": 5 }
               ]
             },
             {
               "name": "E-Commerce",
               "options": [
-                { "label": "No E-Commerce", "priceAdjustmentPercent": 0 },
-                { "label": "E-Commerce", "priceAdjustmentPercent": 50 }
+                { "label": "Sem E-Commerce", "priceAdjustmentPercent": 0 },
+                { "label": "Com E-Commerce", "priceAdjustmentPercent": 50 }
               ]
             },
             {
-              "name": "Integration",
+              "name": "Integração",
               "options": [
-                { "label": "No Integration", "priceAdjustmentPercent": 0 },
-                { "label": "Integration", "priceAdjustmentPercent": 5 }
+                { "label": "Sem Integração", "priceAdjustmentPercent": 0 },
+                { "label": "Com Integração", "priceAdjustmentPercent": 5 }
               ]
             },
             {
-              "name": "Delivery",
+              "name": "Entrega",
               "options": [
-                { "label": "Regular Delivery", "priceAdjustmentPercent": 0 },
-                { "label": "Express Delivery", "priceAdjustmentPercent": 20 }
+                { "label": "Entrega Regular", "priceAdjustmentPercent": 0 },
+                { "label": "Entrega Expressa", "priceAdjustmentPercent": 20 }
               ]
             }
           ]
         }
       },
       "tooltips": {
-        "responsive": "Adapts automatically to desktop, tablet, and mobile.",
-        "seo": "Helps more people find your business on Google.",
-        "ssl": "Keeps your visitors’ information safe and secure.",
-        "privacy": "Protects your customers’ data and respects their privacy.",
-        "ddos": "Blocks attacks that could crash your website."
+        "responsive": "Adapta-se automaticamente a desktop, tablet e celular.",
+        "seo": "Ajuda mais pessoas a encontrar seu negócio no Google.",
+        "ssl": "Mantém as informações dos seus visitantes seguras e protegidas.",
+        "privacy": "Protege os dados dos seus clientes e respeita sua privacidade.",
+        "ddos": "Bloqueia ataques que poderiam derrubar seu site."
       }
     },
     "testimonials": {
-      "subheading": "How We Help Businesses Grow",
-      "heading": "What Our Clients Say",
+      "subheading": "Como Ajudamos Negócios a Crescer",
+      "heading": "O que Nossos Clientes Dizem",
       "items": [
         {
           "photo": "/testimonial-avatars/default-avatar.png",
           "name": "John Due",
-          "role": "Role",
+          "role": "Cargo",
           "rating": 5,
-          "testimonial": "Testimonial."
+          "testimonial": "Testemunho."
         }
       ]
     },
     "faq": {
-      "subheading": "Still need help? We’re here for you.",
-      "heading": "Frequently Asked Questions",
+      "subheading": "Ainda precisa de ajuda? Estamos aqui para você.",
+      "heading": "Perguntas Frequentes",
       "faqs": [
         {
-          "question": "Why does my business need a website?",
-          "answer": "A website makes your business easier to find online, adds credibility, and helps attract more customers."
+          "question": "Por que meu negócio precisa de um site?",
+          "answer": "Um site torna seu negócio mais fácil de encontrar online, adiciona credibilidade e ajuda a atrair mais clientes."
         },
         {
-          "question": "What is the average turnaround time?",
-          "answer": "Basic websites are delivered in up to five business days, Professional websites in up to ten, and custom projects in up to twenty."
+          "question": "Qual é o prazo médio de entrega?",
+          "answer": "Sites básicos são entregues em até cinco dias úteis, profissionais em até dez e projetos personalizados em até vinte."
         },
         {
-          "question": "Will my site work on phones and tablets?",
-          "answer": "Yes. All our websites adjust automatically to look great on desktops, tablets, and smartphones."
+          "question": "Meu site funcionará em celulares e tablets?",
+          "answer": "Sim. Todos os nossos sites se ajustam automaticamente para ficarem ótimos em desktops, tablets e smartphones."
         },
         {
-          "question": "Can I host the site with another provider?",
-          "answer": "Yes. We provide all necessary files for you to host elsewhere. You won’t be charged for hosting or support in that case, but our support only applies to sites hosted with us."
+          "question": "Posso hospedar o site com outro provedor?",
+          "answer": "Sim. Fornecemos todos os arquivos necessários para você hospedar onde quiser. Não haverá cobrança de hosting ou suporte nesse caso, mas nosso suporte só se aplica a sites hospedados conosco."
         },
         {
-          "question": "What payment methods do you accept?",
-          "answer": "We accept credit and debit cards and PayPal (worldwide), as well as Pix, bank transfer, and bank slip (Brazil only)."
+          "question": "Quais métodos de pagamento vocês aceitam?",
+          "answer": "Aceitamos cartões de crédito e débito e PayPal (mundialmente), além de Pix, transferência bancária e boleto (apenas Brasil)."
         },
         {
-          "question": "How do I request a quote?",
-          "answer": "You can click any “Choose Plan” or “Request a Quote” button, or simply tap the floating WhatsApp icon to chat with us directly."
+          "question": "Como solicito um orçamento?",
+          "answer": "Você pode clicar em qualquer botão “Escolher Plano” ou “Solicitar Orçamento”, ou tocar no ícone do WhatsApp para conversar conosco diretamente."
         },
         {
-          "question": "What types of sites do you build?",
-          "answer": "We create blogs, landing pages, online stores, and specialized websites for areas such as healthcare, legal, veterinary, food service, and others."
+          "question": "Que tipos de sites vocês criam?",
+          "answer": "Criamos blogs, landing pages, lojas online e sites especializados em áreas como saúde, jurídico, veterinário, alimentação e outras."
         },
         {
-          "question": "What do I need to provide?",
-          "answer": "At a minimum, we’ll need your business name, contact details, and logo. If you have any text, images, or videos you'd like to include, you're welcome to send those as well."
+          "question": "O que preciso fornecer?",
+          "answer": "No mínimo, precisaremos do nome do seu negócio, dados de contato e logo. Se tiver textos, imagens ou vídeos que queira incluir, fique à vontade para enviar também."
         },
         {
-          "question": "Will my site appear on Google?",
-          "answer": "Yes. We set up every site so it can appear on search engines like Google, Bing, and Yahoo."
+          "question": "Meu site aparecerá no Google?",
+          "answer": "Sim. Configuramos cada site para que possa aparecer em buscadores como Google, Bing e Yahoo."
         },
         {
-          "question": "What are the monthly costs after delivery?",
-          "answer": "If you choose to host with us, we offer hosting and support for 5.90 USD per month or 56 USD per year (a 20% discount). There are no monthly fees if you don’t host the site with us."
+          "question": "Quais são os custos mensais após a entrega?",
+          "answer": "Se você optar por hospedar conosco, oferecemos hosting e suporte por 32,45 BRL por mês ou 308,00 BRL por ano (20% de desconto). Não há taxas mensais se não hospedar conosco."
         },
         {
-          "question": "Is my data and investment secure?",
-          "answer": "Yes. We use a digital contract to clearly outline responsibilities, deadlines, ownership, and guarantees—protecting both sides."
+          "question": "Meus dados e investimento estão seguros?",
+          "answer": "Sim. Usamos um contrato digital para definir claramente responsabilidades, prazos, propriedade e garantias — protegendo ambas as partes."
         },
         {
-          "question": "Can I update the site myself later?",
-          "answer": "Yes. All our packages include a simple control panel so you can easily update text, images, and other content on your own."
+          "question": "Posso atualizar o site eu mesmo depois?",
+          "answer": "Sim. Todos os nossos pacotes incluem um painel de controle simples para que você possa atualizar texto, imagens e outros conteúdos por conta própria."
         }
       ]
     },
     "cta": {
-      "text": "Your business deserves to grow—ready to make it happen?",
-      "button": "Request a Quote",
-      "whatsappText": "Hello, I'm interested in your services!"
+      "text": "Seu negócio merece crescer — pronto para fazer acontecer?",
+      "button": "Solicitar Orçamento",
+      "whatsappText": "Olá, estou interessado em seus serviços!"
     }
   },
   "portfolio": {
     "seo": {
-      "title": "Professional Websites Portfolio | Niloware",
-      "description": "Explore Niloware’s portfolio of professional websites that drive real results. Get inspired and request your free quote today.",
-      "canonical": "https://www.niloware.com/en-us/portfolio/",
+      "title": "Portfólio de Sites Profissionais | Niloware",
+      "description": "Explore o portfólio da Niloware de sites profissionais que geram resultados reais. Inspire-se e peça seu orçamento grátis hoje.",
+      "canonical": "https://www.niloware.com/pt-br/portfolio/",
       "openGraph": {
-        "url": "https://www.niloware.com/en-us/portfolio/",
-        "title": "Professional Websites Portfolio | Niloware",
-        "description": "Explore Niloware’s portfolio of professional websites that drive real results. Get inspired and request your free quote today.",
+        "url": "https://www.niloware.com/pt-br/portfolio/",
+        "title": "Portfólio de Sites Profissionais | Niloware",
+        "description": "Explore o portfólio da Niloware de sites profissionais que geram resultados reais. Inspire-se e peça seu orçamento grátis hoje.",
         "images": [
           {
             "url": "https://www.niloware.com/portfolio-og-image.jpg",
@@ -382,7 +388,7 @@
           "@type": "WebSite",
           "name": "Niloware",
           "url": "https://www.niloware.com",
-          "inLanguage": "en-US"
+          "inLanguage": "pt-BR"
         }
       ]
     }
