@@ -44,7 +44,9 @@ const PricingCard: FC<PricingCardProps> = ({
 }) => {
   const [selections, setSelections] = useState<Record<string, 0 | 1>>(() =>
     features.reduce((acc, f) => {
-      if (typeof f !== "string") acc[f.name] = 0;
+      if (typeof f !== "string" && f.options && Array.isArray(f.options)) {
+        acc[f.name] = 0;
+      }
       return acc;
     }, {} as Record<string, 0 | 1>)
   );
@@ -54,34 +56,86 @@ const PricingCard: FC<PricingCardProps> = ({
   });
 
   const parsePrice = (s: string) => {
-    const [num, ...curr] = s.split(" ");
-    return { value: parseFloat(num), currency: curr.join(" ") };
+    // Handle multiple formats: "1234.56 USD", "R$ 1.234,56", "0,00 BRL"
+    if (s.includes("R$")) {
+      // Brazilian format with R$: "R$ 1.234,56"
+      const numPart = s.replace("R$", "").trim();
+      // Convert Brazilian format (1.234,56) to US format (1234.56)
+      const normalizedNum = numPart.replace(/\./g, "").replace(",", ".");
+      return { value: parseFloat(normalizedNum), currency: "R$" };
+    } else if (s.includes("BRL")) {
+      // Brazilian format with BRL: "1.234,56 BRL" or "0,00 BRL"
+      const parts = s.split(" ");
+      const numPart = parts[0];
+      // Convert Brazilian format (1.234,56) to US format (1234.56)
+      const normalizedNum = numPart.replace(/\./g, "").replace(",", ".");
+      return { value: parseFloat(normalizedNum), currency: "BRL" };
+    } else {
+      // US format: "1234.56 USD"
+      const [num, ...curr] = s.split(" ");
+      return { value: parseFloat(num), currency: curr.join(" ") };
+    }
   };
 
   const computeCustom = () => {
+    console.log("Available features:", features.map(f => typeof f === 'string' ? f : f.name));
+    console.log("Current selections:", selections);
+    
     const pagesFeature = features.find(
-      (f): f is CustomFeature => typeof f !== "string" && f.name === "Pages"
-    )!;
-    const pageIdx = selections["Pages"];
-    const basePlanPrice = pagesFeature.options[pageIdx].price!;
+      (f): f is CustomFeature => typeof f !== "string" && (f.name === "Pages" || f.name === "Páginas")
+    );
 
+    if (!pagesFeature) {
+      console.error("Pages feature not found. Available custom features:", 
+        features.filter(f => typeof f !== "string").map(f => f.name)
+      );
+      return priceProp;
+    }
+
+    if (!pagesFeature.options || !Array.isArray(pagesFeature.options)) {
+      console.error("Pages feature options are invalid:", pagesFeature.options);
+      return priceProp;
+    }
+
+    const pageIdx = selections[pagesFeature.name];
+    if (pageIdx === undefined) {
+      console.error("No selection found for Pages feature");
+      return priceProp;
+    }
+
+    const selectedOption = pagesFeature.options[pageIdx];
+    console.log("Selected Pages option:", selectedOption);
+    
+    if (!selectedOption || typeof selectedOption.price !== 'number') {
+      console.error("Invalid price for Pages feature option:", selectedOption);
+      return priceProp;
+    }
+
+    const basePlanPrice = selectedOption.price;
     let adjustedPlanPrice = basePlanPrice;
+    
+    console.log("Base plan price:", basePlanPrice);
 
     features.forEach((f) => {
       if (
         typeof f === "object" &&
+        f.options &&
+        Array.isArray(f.options) &&
         ["SEO", "Backup", "Support"].includes(f.name)
       ) {
         const sel = selections[f.name];
+        console.log(`Processing ${f.name} with selection:`, sel);
 
         if (pageIdx === 0) {
           if (sel === 0) {
           } else if (sel === 1) {
             adjustedPlanPrice *= 1.05;
+            console.log(`Applied 5% increase for ${f.name}, new price:`, adjustedPlanPrice);
           }
         } else if (pageIdx === 1) {
           if (sel === 0) {
             adjustedPlanPrice *= 0.95;
+            console.log(`Applied 5% decrease for ${f.name}, new price:`, adjustedPlanPrice);
           } else if (sel === 1) {
           }
         }
@@ -92,23 +146,42 @@ const PricingCard: FC<PricingCardProps> = ({
     features.forEach((f) => {
       if (
         typeof f === "object" &&
+        f.options &&
+        Array.isArray(f.options) &&
         f.name !== "Pages" &&
+        f.name !== "Páginas" &&
         !["SEO", "Backup", "Support"].includes(f.name)
       ) {
         const sel = selections[f.name];
         const opt = f.options[sel];
-        const pct = opt.priceAdjustmentPercent ?? 0;
+        
+        if (opt) {
+          const pct = opt.priceAdjustmentPercent ?? 0;
+          console.log(`Processing ${f.name} with ${pct}% adjustment`);
 
-        if (
-          ["Design", "E-Commerce", "Integration", "Delivery"].includes(f.name)
-        ) {
-          multiplier *= 1 + pct / 100;
+          if (
+            ["Design", "E-Commerce", "Integration", "Delivery"].includes(f.name)
+          ) {
+            multiplier *= 1 + pct / 100;
+            console.log(`Applied ${pct}% multiplier for ${f.name}, new multiplier:`, multiplier);
+          }
         }
       }
     });
 
     const finalPrice = adjustedPlanPrice * multiplier;
-    return `${finalPrice.toFixed(2)} USD`;
+    console.log("Final calculated price:", finalPrice);
+    
+    if (priceProp.includes("BRL") || priceProp.includes("R$")) {
+      return `${finalPrice.toLocaleString('pt-BR', { 
+        style: 'currency',
+        currency: 'BRL',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      })}`;
+    } else {
+      return `${finalPrice.toFixed(2)} USD`;
+    }
   };
 
   const computeCustomHostPrice = () => {
@@ -118,15 +191,30 @@ const PricingCard: FC<PricingCardProps> = ({
       (f): f is CustomFeature => typeof f !== "string" && f.name === "Design"
     );
 
-    if (designFeature && selections["Design"] === 1) {
+    if (designFeature && designFeature.options && Array.isArray(designFeature.options) && selections["Design"] === 1) {
       const { value, currency } = parsePrice(hostPrice);
-      return `${(value * 2).toFixed(2)} ${currency}`;
+      const doubledValue = value * 2;
+      
+      if (currency === "R$" || currency === "BRL") {
+        return `${doubledValue.toLocaleString('pt-BR', { 
+          style: 'currency',
+          currency: 'BRL',
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        })}`;
+      } else {
+        return `${doubledValue.toFixed(2)} ${currency}`;
+      }
     }
 
     return hostPrice;
   };
 
-  const displayPrice = isCustom ? computeCustom() : priceProp;
+  // Only compute custom pricing if isCustom is true AND we have valid custom features
+  const displayPrice = isCustom && features.some(f => typeof f !== "string" && (f.name === "Pages" || f.name === "Páginas")) 
+    ? computeCustom() 
+    : priceProp;
+  
   const displayHostPrice = isCustom ? computeCustomHostPrice() : hostPrice;
 
   return (
@@ -219,7 +307,7 @@ const PricingCard: FC<PricingCardProps> = ({
               />
               {feature}
             </li>
-          ) : (
+          ) : feature.options && Array.isArray(feature.options) ? (
             <li key={idx}>
               <SwitchOption
                 options={
@@ -237,7 +325,7 @@ const PricingCard: FC<PricingCardProps> = ({
                 }
               />
             </li>
-          )
+          ) : null
         )}
       </ul>
     </div>

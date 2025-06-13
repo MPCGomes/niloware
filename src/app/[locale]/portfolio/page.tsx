@@ -22,6 +22,7 @@ type Messages = {
 };
 
 export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return languages.map((locale) => ({ locale }));
@@ -31,6 +32,7 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }): Promise<Metadata> {
   const { locale } = await params;
   const messages = (await import(`@/i18n/messages/${locale}.json`))
@@ -59,6 +61,7 @@ export default async function PortfolioPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { locale } = await params;
   const messages = (await import(`@/i18n/messages/${locale}.json`))
