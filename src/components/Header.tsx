@@ -23,19 +23,19 @@ const Header: FC<HeaderProps> = ({ locale }) => {
   return (
     <header className="bg-primary-gradient">
       <div className="container">
-        <div className="h-[80px] px-[16px] flex justify-between items-center lg:px-[120px]">
+        <div className="h-[80px] flex justify-between items-center px-[20px] tablet:px-[16px]">
           <Logo size="md" />
 
           <nav className="hidden md:flex items-center gap-[24px]">
             <Link
               href={`/${locale}`}
-              className="text-md text-text-light no-underline hover:opacity-80 transition-opacity"
+              className="text-md text-[var(--color-text-white)] no-underline "
             >
               {t("nav.home")}
             </Link>
             <Link
               href={`/${locale}/portfolio`}
-              className="text-md text-text-light no-underline hover:opacity-80 transition-opacity"
+              className="text-md text-[var(--color-text-white)] no-underline"
             >
               {t("nav.portfolio")}
             </Link>
@@ -47,10 +47,11 @@ const Header: FC<HeaderProps> = ({ locale }) => {
             />
           </nav>
 
+          {/* Hamburguer menu */}
           <div className="flex items-center gap-[8px] md:hidden">
             <LocaleSwitch currentLocale={locale} />
             <button
-              className="p-[8px] hover:bg-[rgba(255,255,255,0.1)] rounded transition-colors"
+              className="p-[8px] text-white hover:bg-[rgba(255,255,255,0.1)] rounded transition-colors"
               onClick={() => setIsMenuOpen(true)}
             >
               <Menu fontSize="large" />
@@ -59,19 +60,21 @@ const Header: FC<HeaderProps> = ({ locale }) => {
         </div>
       </div>
 
+      {/* Open menu mobile */}
       {isMenuOpen && (
         <div className="fixed inset-0 bg-[#1f1f1f] p-[20px] flex flex-col gap-[32px] z-[1000] animate-slideIn">
           <div className="flex justify-between items-center">
             <Logo size="md" />
+            {/* Close button */}
             <button
-              className="p-[8px] hover:bg-[rgba(0,0,0,0.1)] rounded transition-colors"
+              className="p-[8px] hover:bg-[rgba(0,0,0,0.1)] text-white rounded transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               <Close fontSize="large" />
             </button>
           </div>
 
-          <nav className="flex flex-col gap-[24px] text-left">
+          <nav className="flex flex-col text-white gap-[24px] text-left">
             <Link
               href={`/${locale}`}
               className="text-md text-background no-underline hover:opacity-80 transition-opacity"

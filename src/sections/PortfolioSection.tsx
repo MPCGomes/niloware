@@ -23,8 +23,9 @@ const PortfolioSection: FC<PortfolioSectionProps> = ({
 
   const rawItems = t.raw("items") as {
     title: string;
-    tags: string[];
-    imageBackground: string;
+    description: string;
+    projectNum: string;
+    image: string;
     link: string;
   }[];
 
@@ -43,28 +44,11 @@ const PortfolioSection: FC<PortfolioSectionProps> = ({
         link={portfolio ? `/${locale}/portfolio` : `/${locale}`}
       />
 
-      <div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-[24px]">
+      <div className="grid place-items-center gap-5 grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 desktop:gap-0">
         {displayed.map((item, index) => {
-          if (portfolio) {
-            if (index === 0) {
-              return (
-                <div
-                  key={index}
-                  className="tablet:col-span-2 desktop:col-span-3 desktop:h-[380px] h-auto"
-                >
-                  <PortfolioCard {...item} />
-                </div>
-              );
-            }
-
-            if (index === 3) {
-              return (
-                <div key={index} className="block tablet:hidden desktop:block">
-                  <PortfolioCard {...item} />
-                </div>
-              );
-            }
-          }
+          <div key={index} className="">
+            <PortfolioCard {...item} />
+          </div>;
 
           return <PortfolioCard key={index} {...item} />;
         })}

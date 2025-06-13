@@ -35,11 +35,7 @@ interface PlansData {
   custom: Plan;
 }
 
-interface PricingSectionProps {
-  locale: string;
-}
-
-const PricingSection: FC<PricingSectionProps> = ({ locale }) => {
+const PricingSection: FC = () => {
   const t = useTranslations("homepage.pricing");
   const heading = t("heading");
   const subheading = t("subheading");
@@ -86,7 +82,6 @@ const PricingSection: FC<PricingSectionProps> = ({ locale }) => {
               hostPrice={displayHost}
               features={plan.features}
               variant={variant}
-              isAnnual={isAnnual}
               isCustom={key === "custom"}
               cta={plan.cta}
             />

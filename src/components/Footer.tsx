@@ -9,7 +9,7 @@ const Footer: FC = () => {
   const t = useTranslations("common.footer");
 
   return (
-    <footer className="bg-[#111111] text-text-secondary">
+    <footer className="bg-[#111111] text-[var(--color-text-secondary)]">
       <div className="container">
         <div className="flex flex-col items-center text-center gap-[16px] px-[16px] py-[50px] lg:flex-row lg:justify-between lg:text-left lg:gap-0 lg:px-[120px]">
           <div className="flex flex-col items-center lg:items-start">
