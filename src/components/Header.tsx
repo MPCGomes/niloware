@@ -26,16 +26,16 @@ const Header: FC<HeaderProps> = ({ locale }) => {
         <div className="h-[80px] flex justify-between items-center px-[20px] tablet:px-[16px]">
           <Logo size="md" />
 
-          <nav className="hidden md:flex items-center gap-[24px]">
+          <nav className="hidden md:flex items-center gap-[8px]">
             <Link
               href={`/${locale}`}
-              className="text-md text-[var(--color-text-white)] no-underline "
+              className="py-2 px-4 text-md text-[var(--color-text-white)] no-underline hover:bg-[rgba(255,255,255,0.1)] rounded-full transition-all duration-300 ease-in-out"
             >
               {t("nav.home")}
             </Link>
             <Link
               href={`/${locale}/portfolio`}
-              className="text-md text-[var(--color-text-white)] no-underline"
+              className="py-2 px-4 text-md text-[var(--color-text-white)] no-underline hover:bg-[rgba(255,255,255,0.1)] rounded-full transition-all duration-300 ease-in-out"
             >
               {t("nav.portfolio")}
             </Link>
@@ -67,10 +67,10 @@ const Header: FC<HeaderProps> = ({ locale }) => {
             <Logo size="md" />
             {/* Close button */}
             <button
-              className="p-[8px] hover:bg-[rgba(0,0,0,0.1)] text-white rounded transition-colors"
+              className="p-[8px] hover:bg-[rgba(0,0,0,0.1)] rounded-full text-white rounded transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              <Close fontSize="large" />
+              <Close fontSize="medium" />
             </button>
           </div>
 
