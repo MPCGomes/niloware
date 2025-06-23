@@ -55,7 +55,7 @@ const LocaleSwitch: FC<LocaleSwitchProps> = ({ currentLocale }) => {
     <div className="relative inline-block" ref={containerRef}>
       <button
         onClick={toggleDropdown}
-        className="bg-transparent border-none rounded-full p-[8px] cursor-pointer flex items-center justify-center transition-all duration-200 hover:bg-[rgba(255,255,255,0.1)]"
+        className="bg-transparent border-none rounded-full p-[8px] cursor-pointer flex items-center justify-center transition-all duration-300 ease-in-out hover:bg-[rgba(255,255,255,0.1)]"
         aria-label="Switch language"
       >
         <LanguageIcon fontSize="medium" style={{ color: "#fff" }} />
@@ -74,7 +74,7 @@ const LocaleSwitch: FC<LocaleSwitchProps> = ({ currentLocale }) => {
                   setOpen(false);
                 }
               }}
-              className={`w-full text-left block px-[16px] py-[8px] border-none bg-transparent cursor-pointer whitespace-nowrap transition-all duration-200 text-[#122e50] hover:bg-[rgba(0,0,0,0.05)] ${
+              className={`w-full text-left block px-[16px] py-[8px] border-none bg-transparent cursor-pointer whitespace-nowrap transition-all duration-200 ease-in-out text-[#122e50] hover:bg-[var(--color-primary-soft)] ${
                 locale.code === currentLocale ? "font-bold text-primary" : ""
               }`}
             >
