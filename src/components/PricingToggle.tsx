@@ -18,7 +18,7 @@ const PricingToggle: FC<PricingToggleProps> = ({ onToggle }) => {
   };
 
   const baseOption =
-    "flex-1 text-center px-[24px] py-[8px] text-sm leading-[1.4] cursor-pointer flex items-center justify-center flex-wrap gap-[4px] min-h-[40px] transition-colors duration-300";
+    "flex-1 text-center px-[24px] py-[8px] text-sm leading-[1.4] cursor-pointer flex items-center justify-center flex-wrap gap-[4px] min-h-[40px] transition-all duration-300";
 
   return (
     <div className="inline-flex w-[240px] rounded-[24px] overflow-hidden">
@@ -27,7 +27,7 @@ const PricingToggle: FC<PricingToggleProps> = ({ onToggle }) => {
           baseOption,
           !isAnnual
             ? "bg-primary-gradient text-[var(--color-text-white)]"
-            : "bg-background-card text-[var(--color-text-secondary)]",
+            : "bg-background-card text-[var(--color-text-secondary)] hover:bg-[var(--color-primary-ghost)]",
           "rounded-l-[24px]"
         )}
         onClick={() => handleToggle(false)}
@@ -40,7 +40,7 @@ const PricingToggle: FC<PricingToggleProps> = ({ onToggle }) => {
           isAnnual
             ? "bg-primary-gradient text-[var(--color-text-white)]"
             : "bg-background-card text-[var(--color-text-secondary)]",
-          "rounded-r-[24px]"
+          "rounded-r-[24px] hover:bg-[var(--color-primary-ghost)]"
         )}
         onClick={() => handleToggle(true)}
       >
