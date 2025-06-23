@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Locale } from "@/i18n/settings";
 import BackToTop from "@/components/BackToTop";
+import WhatsApp from "@/components/WhatsApp";
 
 interface LayoutProps {
   children: ReactNode;
@@ -23,6 +24,7 @@ export default async function LocaleLayout(props: LayoutProps) {
       {props.children}
       <Footer />
       <BackToTop />
+      <WhatsApp />
     </NextIntlClientProvider>
   );
 }
