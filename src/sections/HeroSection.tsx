@@ -24,11 +24,12 @@ const HeroSection: FC = () => {
         {/* Buttons */}
         <div className="flex gap-5">
           <Button
-            variant="full"
+            variant="full-dark"
             text={<span className="text-base">{t("cta")}</span>}
             onClick={() => window.open(whatsappLink, "_blank")}
           />
           <Button
+            variant="outline-dark"
             text={<span className="text-base">{t("cta")}</span>}
             onClick={() => window.open(whatsappLink, "_blank")}
           />

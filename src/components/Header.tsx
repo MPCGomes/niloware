@@ -41,6 +41,7 @@ const Header: FC<HeaderProps> = ({ locale }) => {
             </Link>
             <LocaleSwitch currentLocale={locale} />
             <Button
+            variant="outline-dark"
               text={t("contact.phone")}
               icon={<WhatsApp fontSize="small" />}
               onClick={() => window.open(whatsappLink, "_blank")}
@@ -51,7 +52,7 @@ const Header: FC<HeaderProps> = ({ locale }) => {
           <div className="flex items-center gap-[8px] md:hidden">
             <LocaleSwitch currentLocale={locale} />
             <button
-              className="p-[8px] text-white hover:bg-[rgba(255,255,255,0.1)] rounded transition-colors"
+              className="p-[8px] text-[var(--color-text-primary)] hover:bg-[rgba(255,255,255,0.1)] rounded transition-colors"
               onClick={() => setIsMenuOpen(true)}
             >
               <Menu fontSize="large" />
@@ -66,7 +67,7 @@ const Header: FC<HeaderProps> = ({ locale }) => {
           <div className="flex justify-end ">
             {/* Close button */}
             <button
-              className="p-[8px] hover:bg-[rgba(0,0,0,0.1)] rounded-full text-white rounded transition-colors"
+              className="p-[8px] hover:bg-[rgba(0,0,0,0.1)] rounded-full text-white transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               <Close fontSize="medium" />
