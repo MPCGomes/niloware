@@ -7,6 +7,7 @@ import Button from "./Button";
 import { Check as CheckIcon } from "@mui/icons-material";
 import SwitchOption from "./SwitchOption";
 import { useWhatsappLink } from "@/hooks/useWhatsappLink";
+import Checkbox from "@mui/material/Checkbox";
 
 interface FeatureOption {
   label: string;
@@ -289,7 +290,6 @@ const PricingCard: FC<PricingCardProps> = ({
       >
         {displayPrice}
       </p>
-
       {displayHostPrice && (
         <p
           className={clsx(
@@ -305,7 +305,7 @@ const PricingCard: FC<PricingCardProps> = ({
 
       <Button
         text={cta}
-        variant={variant === "popular" ? "default" : "subtle"}
+        variant={variant === "popular" ? "default" : "outline-dark"}
         onClick={() => window.open(whatsappLink, "_blank")}
       />
 
