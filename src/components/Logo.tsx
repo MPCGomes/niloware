@@ -15,7 +15,7 @@ const Logo: FC<LogoProps> = ({ size, variant = "light" }) => {
     xxl: "text-4xl",
   };
   const variantClasses = {
-    light: "text-[var(--color-text-white)]",
+    light: "text-[var(--color-text-primary)]",
     dark: "text-[var(--color-text-tertiary)]",
   };
 
