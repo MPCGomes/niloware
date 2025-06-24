@@ -29,13 +29,13 @@ const Header: FC<HeaderProps> = ({ locale }) => {
           <nav className="hidden md:flex items-center gap-[8px]">
             <Link
               href={`/${locale}`}
-              className="py-2 px-4 text-md text-[var(--color-text-primary)] no-underline hover:bg-[rgba(255,255,255,0.1)] rounded-full transition-all duration-300 ease-in-out"
+              className="py-2 px-4 text-md text-[var(--color-text-primary)] no-underline hover:bg-[rgba(255,255,255,0.3)] rounded-full transition-all duration-300 ease-in-out"
             >
               {t("nav.home")}
             </Link>
             <Link
               href={`/${locale}/portfolio`}
-              className="py-2 px-4 text-md text-[var(--color-text-primary)] no-underline hover:bg-[rgba(255,255,255,0.1)] rounded-full transition-all duration-300 ease-in-out"
+              className="py-2 px-4 text-md text-[var(--color-text-primary)] no-underline hover:bg-[rgba(255,255,255,0.3)] rounded-full transition-all duration-300 ease-in-out"
             >
               {t("nav.portfolio")}
             </Link>
