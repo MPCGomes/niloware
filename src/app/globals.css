@@ -137,3 +137,10 @@ body {
 .bg-primary-gradient {
   background: var(--color-gradient);
 }
+
+.bg-hero{
+  background-image: url('/hero-bg.png');
+  background-repeat: norepeat;
+  background-position: bottom;
+  background-size: cover;
+}
