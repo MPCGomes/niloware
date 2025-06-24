@@ -21,21 +21,21 @@ const Header: FC<HeaderProps> = ({ locale }) => {
   )}`;
 
   return (
-    <header className="bg-primary-gradient">
-      <div className="container">
-        <div className="h-[80px] flex justify-between items-center px-[20px] tablet:px-[16px]">
+    <header className="bg-none">
+      <div className="container relative">
+        <div className="absolute h-[80px] w-full flex justify-between items-center px-[20px] tablet:px-[16px]">
           <Logo size="md" />
 
           <nav className="hidden md:flex items-center gap-[8px]">
             <Link
               href={`/${locale}`}
-              className="py-2 px-4 text-md text-[var(--color-text-white)] no-underline hover:bg-[rgba(255,255,255,0.1)] rounded-full transition-all duration-300 ease-in-out"
+              className="py-2 px-4 text-md text-[var(--color-text-primary)] no-underline hover:bg-[rgba(255,255,255,0.1)] rounded-full transition-all duration-300 ease-in-out"
             >
               {t("nav.home")}
             </Link>
             <Link
               href={`/${locale}/portfolio`}
-              className="py-2 px-4 text-md text-[var(--color-text-white)] no-underline hover:bg-[rgba(255,255,255,0.1)] rounded-full transition-all duration-300 ease-in-out"
+              className="py-2 px-4 text-md text-[var(--color-text-primary)] no-underline hover:bg-[rgba(255,255,255,0.1)] rounded-full transition-all duration-300 ease-in-out"
             >
               {t("nav.portfolio")}
             </Link>
@@ -63,8 +63,7 @@ const Header: FC<HeaderProps> = ({ locale }) => {
       {/* Open menu mobile */}
       {isMenuOpen && (
         <div className="fixed inset-0 bg-[#1f1f1f] p-[20px] flex flex-col gap-[32px] z-[1000] animate-slideIn">
-          <div className="flex justify-between items-center">
-            <Logo size="md" />
+          <div className="flex justify-end ">
             {/* Close button */}
             <button
               className="p-[8px] hover:bg-[rgba(0,0,0,0.1)] rounded-full text-white rounded transition-colors"
