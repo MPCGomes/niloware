@@ -55,10 +55,10 @@ const LocaleSwitch: FC<LocaleSwitchProps> = ({ currentLocale }) => {
     <div className="relative inline-block" ref={containerRef}>
       <button
         onClick={toggleDropdown}
-        className="bg-transparent border-none rounded-full p-[8px] cursor-pointer flex items-center justify-center transition-all duration-300 ease-in-out hover:bg-[rgba(255,255,255,0.1)]"
+        className="bg-transparent border-none rounded-full p-[8px] cursor-pointer flex items-center justify-center transition-all duration-300 ease-in-out hover:bg-[rgba(255,255,255,0.3)]"
         aria-label="Switch language"
       >
-        <LanguageIcon fontSize="medium" style={{ color: "#fff" }} />
+        <LanguageIcon fontSize="medium" style={{ color: "#122E50" }} />
       </button>
 
       {open && (
