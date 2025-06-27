@@ -139,6 +139,11 @@
       "subheading": "Choose the right plan for your business",
       "heading": "Choose your plan",
       "whatsappMessage": "Hello, I want to hire the {planName} plan.",
+      "hostingSupport": {
+        "unchecked": "No hosting + no support",
+        "checkedMonthly": "Hosting + Support ({price}/mo)",
+        "checkedAnnual": "Hosting + Support ({price}/yr)"
+      },
       "plans": {
         "basic": {
           "name": "Basic",
@@ -184,6 +189,7 @@
           "cta": "Choose Plan",
           "features": [
             {
+              "id": "pages",
               "name": "Pages",
               "options": [
                 { "label": "Landing Page", "price": 99.9 },
@@ -191,6 +197,7 @@
               ]
             },
             {
+              "id": "design",
               "name": "Design",
               "options": [
                 { "label": "Pre-Built Design", "priceAdjustmentPercent": 0 },
@@ -199,6 +206,7 @@
             },
             "Responsive",
             {
+              "id": "seo",
               "name": "SEO",
               "options": [
                 { "label": "Basic SEO", "priceAdjustmentPercent": 0 },
@@ -209,6 +217,7 @@
             "Privacy Protection",
             "DDoS Protection",
             {
+              "id": "backup",
               "name": "Backup",
               "options": [
                 { "label": "Monthly Backup", "priceAdjustmentPercent": 0 },
@@ -216,6 +225,7 @@
               ]
             },
             {
+              "id": "support",
               "name": "Support",
               "options": [
                 { "label": "Standard Support", "priceAdjustmentPercent": 0 },
@@ -223,6 +233,7 @@
               ]
             },
             {
+              "id": "ecommerce",
               "name": "E-Commerce",
               "options": [
                 { "label": "No E-Commerce", "priceAdjustmentPercent": 0 },
@@ -230,6 +241,7 @@
               ]
             },
             {
+              "id": "integration",
               "name": "Integration",
               "options": [
                 { "label": "No Integration", "priceAdjustmentPercent": 0 },
@@ -237,6 +249,7 @@
               ]
             },
             {
+              "id": "delivery",
               "name": "Delivery",
               "options": [
                 { "label": "Regular Delivery", "priceAdjustmentPercent": 0 },

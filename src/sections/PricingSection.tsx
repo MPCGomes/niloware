@@ -14,6 +14,15 @@ interface FeatureOption {
 }
 
 interface CustomFeature {
+  id:
+    | "pages"
+    | "design"
+    | "seo"
+    | "backup"
+    | "support"
+    | "ecommerce"
+    | "integration"
+    | "delivery";
   name: string;
   options: [FeatureOption, FeatureOption];
 }
@@ -42,16 +51,6 @@ const PricingSection: FC = () => {
   const plansData = t.raw("plans") as PlansData;
   const [isAnnual, setIsAnnual] = useState(false);
 
-  const parsePrice = (s: string) => {
-    const [n, ...c] = s.split(" ");
-    return { value: parseFloat(n), currency: c.join(" ") };
-  };
-
-  const formatAnnual = (s: string) => {
-    const { value, currency } = parsePrice(s);
-    return `${(value * 10).toFixed(2)} ${currency}`;
-  };
-
   const planOrder: { key: keyof PlansData; variant: "default" | "popular" }[] =
     [
       { key: "professional", variant: "default" },
@@ -62,27 +61,25 @@ const PricingSection: FC = () => {
   return (
     <section className="section container">
       <SectionHeading subheading={subheading} heading={heading} />
+
       <div className="flex justify-center">
         <PricingToggle onToggle={setIsAnnual} />
       </div>
+
       <div className="flex flex-col items-start gap-[32px] desktop:flex-row">
         {planOrder.map(({ key, variant }) => {
           const plan = plansData[key];
-          const displayPrice = plan.planPrice;
-          const hostMonthly = plan.hostPrice;
-          const hostAnnual = formatAnnual(plan.hostPrice);
-          const displayHost = isAnnual ? hostAnnual : hostMonthly;
-
           return (
             <PricingCard
               key={key}
               name={plan.name}
               description={plan.description}
-              price={displayPrice}
-              hostPrice={displayHost}
+              price={plan.planPrice} // unchanged on annual toggle
+              hostPrice={plan.hostPrice} // raw, no suffix
               features={plan.features}
               variant={variant}
               isCustom={key === "custom"}
+              isAnnual={isAnnual} // drives suffix choice
               cta={plan.cta}
             />
           );
