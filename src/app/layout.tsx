@@ -1,5 +1,6 @@
-import "./globals.css";
+import { notFound } from "next/navigation";
 import { Roboto } from "next/font/google";
+import "./globals.css";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -9,14 +10,17 @@ const roboto = Roboto({
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { locale?: string };
 }) {
+  const locale = params.locale || "pt-br";
+  if (!["pt-br", "en-us", "es-es"].includes(locale)) return notFound();
+
   return (
-    <html suppressHydrationWarning>
-      <body className={roboto.className} suppressHydrationWarning>
-        {children}
-      </body>
+    <html lang={locale}>
+      <body className={roboto.className}>{children}</body>
     </html>
   );
 }

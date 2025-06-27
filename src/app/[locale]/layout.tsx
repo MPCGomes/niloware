@@ -22,7 +22,7 @@ export default async function LocaleLayout(props: LayoutProps) {
     <NextIntlClientProvider locale={locale} messages={messages}>
       <Header locale={locale} />
       {props.children}
-      <Footer />
+      <Footer locale={""} />
       <BackToTop />
       <WhatsApp />
     </NextIntlClientProvider>
