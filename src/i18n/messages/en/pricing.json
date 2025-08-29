@@ -1,0 +1,58 @@
+{
+  "heading": "Choose your plan",
+  "subheading": "Choose the right plan for your business",
+  "period": {
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "short": {
+      "monthly": "mo",
+      "annual": "yr"
+    }
+  },
+  "hostingSupport": "Hosting + Support ({price}/{period})",
+  "whatsappMessage": "Hello, I want to hire the {planName} plan.",
+  "whatsappSelectedOptionsLabel": "Selected options",
+  "plans": {
+    "basic": {
+      "name": "Basic",
+      "description": "For simple websites with everything you need to start—fast, affordable and easy to manage."
+    },
+    "professional": {
+      "name": "Professional",
+      "description": "Best for businesses that want more content, better visibility, and faster support when needed."
+    },
+    "custom": {
+      "name": "Custom",
+      "description": "Fully customizable—use the calculator to build exactly what you need."
+    }
+  },
+  "features": {
+    "landingPage": "Landing Page",
+    "multiPage": "Multi-Page",
+    "preBuiltDesign": "Pre-Built Design",
+    "customDesign": "Custom Design",
+    "responsive": "Responsive",
+    "basicSeo": "Basic SEO",
+    "advancedSeo": "Advanced SEO",
+    "ssl": "SSL",
+    "lgpd": "LGPD",
+    "ddos": "DDoS Protection",
+    "monthlyBackup": "Monthly Backup",
+    "weeklyBackup": "Weekly Backup",
+    "standardSupport": "Standard Support",
+    "prioritySupport": "Priority Support",
+    "noneEcommerce": "No E-Commerce",
+    "ecommerce": "E-Commerce",
+    "noneIntegration": "No Integration",
+    "integration": "Integration",
+    "regularDelivery": "Regular Delivery",
+    "expressDelivery": "Express Delivery"
+  },
+  "tooltips": {
+    "responsive": "Adapts automatically to desktop, tablet, and mobile.",
+    "seo": "Improves your chances of appearing on Google.",
+    "ssl": "Encrypts data between your site and visitors for security.",
+    "lgpd": "Brazil’s data protection rules (similar to GDPR).",
+    "ddos": "Helps prevent attacks that could take your site offline."
+  }
+}

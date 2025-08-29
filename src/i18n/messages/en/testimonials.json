@@ -1,0 +1,48 @@
+{
+  "heading": "What Our Clients Say",
+  "subheading": "How We Help Businesses Grow",
+  "items": [
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "John Doe",
+      "role": "Owner of Logum RH",
+      "rating": 5,
+      "quote": "Testimonial."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "John Doe",
+      "role": "Owner of Litoral Pisos",
+      "rating": 5,
+      "quote": "Testimonial."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "John Doe",
+      "role": "Owner of Gesso Andrade",
+      "rating": 5,
+      "quote": "Testimonial."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "John Doe",
+      "role": "Owner of Marmoraria Stone",
+      "rating": 5,
+      "quote": "Testimonial."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "John Doe",
+      "role": "Owner of Pousada Lilabella",
+      "rating": 5,
+      "quote": "Testimonial."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "John Doe",
+      "role": "Owner of Clínica Ápice",
+      "rating": 5,
+      "quote": "Testimonial."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "preview": {
+    "heading": "Portfolio",
+    "cta": "View All"
+  },
+  "page": {
+    "heading": "Portfolio",
+    "back": "Back"
+  },
+  "items": [
+    {
+      "image": "/portfolio/logumrh.webp",
+      "name": "Logum RH",
+      "tags": ["Platform", "Human Resources"]
+    },
+    {
+      "image": "/portfolio/litoral-pisos.webp",
+      "name": "Litoral Pisos",
+      "tags": ["Landing Page", "Construction"]
+    },
+    {
+      "image": "/portfolio/gesso-andrade.webp",
+      "name": "Gesso Andrade",
+      "tags": ["Landing Page", "Construction"]
+    },
+    {
+      "image": "/portfolio/marmoraria-stone.webp",
+      "name": "Marmoraria Stone",
+      "tags": ["Landing Page", "Construction"]
+    },
+    {
+      "image": "/portfolio/pousada-lilabella.webp",
+      "name": "Pousada Lilabella",
+      "tags": ["Landing Page", "Hospitality"]
+    },
+    {
+      "image": "/portfolio/clinica-apice.webp",
+      "name": "Clínica Ápice",
+      "tags": ["Landing Page", "Healthcare"]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "eyebrow": "Website Agency",
+    "heading": "Win More Customers With a Professional Website",
+    "subheading": "Credibility sells. Turn first-time visitors into loyal clients with a site designed to impress and convert."
+  },
+  "features": {
+    "subheading": "Everything your business needs to grow online",
+    "heading": "Why Choose Niloware?",
+    "items": [
+      {
+        "title": "Responsive Design",
+        "description": "Websites that adapt seamlessly to desktops, tablets, and mobile phones."
+      },
+      {
+        "title": "Google Visibility",
+        "description": "Structured to help your business show up on Google and reach customers."
+      },
+      {
+        "title": "Easy Personalization",
+        "description": "Edit text, images, and videos anytime—no technical skills required."
+      },
+      {
+        "title": "Flexible Solutions",
+        "description": "Landing pages, online stores, and more—tailored to your business needs."
+      },
+      {
+        "title": "Business Integrations",
+        "description": "Connect payments, newsletters, CRM tools, and more—streamline daily tasks."
+      },
+      {
+        "title": "Ongoing Support",
+        "description": "Dedicated support team for technical help, troubleshooting, and guidance."
+      }
+    ]
+  },
+  "cta": {
+    "text": "Your business deserves to grow—ready to make it happen?"
+  }
+}
