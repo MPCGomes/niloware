@@ -1,4 +1,3 @@
-import { Container } from "@mui/material";
 import React from "react";
 import PortfolioCard from "./PortfolioCard";
 import { SectionHeadingWithPortfolioLink } from "../ui/SectionHeading";
@@ -36,24 +35,19 @@ const projects = [
 
 const PortfolioSection = () => {
   return (
-    <section>
-      <Container>
-        <SectionHeadingWithPortfolioLink
-          subheading={"teste"}
-          heading={"teste"}
-        />
-        <div className="grid lg:grid-cols-2 gap-10">
-          {projects.map((project, index) => (
-            <PortfolioCard
-              key={index}
-              numProject={project.numProject}
-              title={project.title}
-              description={project.description}
-              imageSrc={project.imageSrc}
-            />
-          ))}
-        </div>
-      </Container>
+    <section className="container mx-auto px-5 flex flex-col gap-[56px] py-[56px]">
+      <SectionHeadingWithPortfolioLink subheading={"teste"} heading={"teste"} />
+      <div className="grid lg:grid-cols-2 gap-10">
+        {projects.map((project, index) => (
+          <PortfolioCard
+            key={index}
+            numProject={project.numProject}
+            title={project.title}
+            description={project.description}
+            imageSrc={project.imageSrc}
+          />
+        ))}
+      </div>
     </section>
   );
 };
