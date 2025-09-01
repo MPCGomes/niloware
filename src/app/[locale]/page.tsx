@@ -1,3 +1,4 @@
+import FaqSection from "@/components/Faq/FaqSection";
 import FeaturesSection from "@/components/Features/FeaturesSection";
 import HeroSection from "@/components/Hero/HeroSection";
 import PortfolioSection from "@/components/Portfolio/PortfolioSection";
@@ -25,6 +26,7 @@ export default async function Home({
       <FeaturesSection />
       <PortfolioSection />
       <TestimonialSection />
+      <FaqSection />
     </main>
   );
 }
