@@ -1,101 +1,65 @@
 import type { FC } from "react";
-import clsx from "clsx";
-import { OpenInNew } from "@mui/icons-material";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { OpenInNew } from "@mui/icons-material";
+import { SmallGradientIcon } from "@/components/ui/GradientIcon";
 
-interface BaseSectionHeadingProps {
+interface SectionHeadingProps {
   subheading: string;
   heading: string;
-  alignment?: "center" | "left";
 }
 
-interface SectionHeadingLinkProps extends BaseSectionHeadingProps {
-  linkType: "portfolio" | "home";
-}
+const gradientTextStyle = {
+  background: "linear-gradient(90deg, #0072FF 0%, #00C6FF 100%)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  backgroundClip: "text",
+};
 
-const SectionHeading: FC<BaseSectionHeadingProps> = ({
-  subheading,
-  heading,
-  alignment = "center",
-}) => {
-  const isCenter = alignment === "center";
-
-  return (
-    <div
-      className={clsx(
-        "flex w-full flex-col",
-        isCenter
-          ? "items-center justify-center text-center"
-          : "items-start justify-center text-left desktop:items-start desktop:text-left"
-      )}
+const SectionHeading: FC<SectionHeadingProps> = ({ subheading, heading }) => (
+  <div className="flex w-full flex-col items-center justify-center text-center">
+    <p
+      className="text-[22px] leading-[28px] font-normal tracking-[0px] uppercase"
+      style={gradientTextStyle}
     >
-      <p
-        className="text-[22px] leading-[28px] font-normal tracking-[0px] bg-gradient-to-r from-[#0072FF] to-[#00C6FF] bg-clip-text text-transparent"
-        style={{
-          background: "linear-gradient(90deg, #0072FF 0%, #00C6FF 100%)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text",
-        }}
-      >
-        {subheading}
-      </p>
-
-      <h2 className="text-[40px] leading-[48px] font-bold tracking-[0px] text-[var(--color-text-primary)]">
-        {heading}
-      </h2>
-    </div>
-  );
-};
-
-const SectionHeadingWithLink: FC<SectionHeadingLinkProps> = ({
-  subheading,
-  heading,
-  linkType,
-}) => {
-  const locale = useLocale();
-  const linkHref =
-    linkType === "portfolio" ? `/${locale}/portfolio` : `/${locale}`;
-
-  return (
-    <div className="flex w-full flex-row items-center justify-between">
-      <h2 className="text-[40px] leading-[48px] font-bold tracking-[0px] text-[var(--color-text-primary)]">
-        {heading}
-      </h2>
-
-      <Link
-        href={linkHref}
-        className="flex items-center gap-1 text-[var(--color-primary)] no-underline hover:underline"
-      >
-        <span
-          className="text-[22px] leading-[28px] font-normal tracking-[0px]"
-          style={{
-            background: "linear-gradient(90deg, #0072FF 0%, #00C6FF 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-          }}
-        >
-          {subheading}
-        </span>
-        <OpenInNew fontSize="small" className="text-[var(--color-primary)]" />
-      </Link>
-    </div>
-  );
-};
-
-const SectionHeadingWithPortfolioLink: FC<BaseSectionHeadingProps> = (
-  props
-) => <SectionHeadingWithLink {...props} linkType="portfolio" />;
-
-const SectionHeadingWithHomeLink: FC<BaseSectionHeadingProps> = (props) => (
-  <SectionHeadingWithLink {...props} linkType="home" />
+      {subheading}
+    </p>
+    <h2 className="text-[40px] leading-[48px] font-bold tracking-[0px] text-[var(--color-text-primary)]">
+      {heading}
+    </h2>
+  </div>
 );
 
-export default SectionHeading;
-export {
-  SectionHeadingWithLink,
-  SectionHeadingWithPortfolioLink,
-  SectionHeadingWithHomeLink,
+const SectionHeadingWithLink: FC<SectionHeadingProps & { href: string }> = ({
+  subheading,
+  heading,
+  href,
+}) => (
+  <div className="flex w-full flex-row items-center justify-between">
+    <h2 className="text-[40px] leading-[48px] font-bold tracking-[0px] text-[var(--color-text-primary)]">
+      {heading}
+    </h2>
+    <Link href={href} className="flex items-center gap-1">
+      <span
+        className="text-[22px] leading-[28px] font-normal tracking-[0px] uppercase"
+        style={gradientTextStyle}
+      >
+        {subheading}
+      </span>
+      <SmallGradientIcon icon={<OpenInNew fontSize="small" />} />
+    </Link>
+  </div>
+);
+
+const SectionHeadingWithPortfolioLink: FC<SectionHeadingProps> = (props) => {
+  const locale = useLocale();
+  return <SectionHeadingWithLink {...props} href={`/${locale}/portfolio`} />;
 };
+
+const SectionHeadingWithHomeLink: FC<SectionHeadingProps> = (props) => {
+  const locale = useLocale();
+  return <SectionHeadingWithLink {...props} href={`/${locale}`} />;
+};
+
+export default SectionHeading;
+export { SectionHeadingWithPortfolioLink, SectionHeadingWithHomeLink };

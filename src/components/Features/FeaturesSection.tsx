@@ -1,7 +1,6 @@
 "use client";
 
 import FeatureCard from "@/components/Features/FeatureCard";
-import SectionHeading from "@/components/ui/SectionHeading";
 import GradientIcon from "@/components/ui/GradientIcon";
 import Container from "@/components/ui/Container";
 import { useTranslations } from "next-intl";
@@ -13,6 +12,7 @@ import {
   Share as ShareIcon,
   HeadsetMic as HeadsetMicIcon,
 } from "@mui/icons-material";
+import SectionHeading from "../ui/SectionHeading";
 
 type FeatureItem = { title: string; description: string };
 
@@ -29,9 +29,7 @@ export default function FeaturesSection() {
     <AppsIcon key="i4" />,
     <ShareIcon key="i5" />,
     <HeadsetMicIcon key="i6" />,
-  ].map((el, i) => (
-    <GradientIcon key={`g${i}`} icon={el} className="w-12 h-12" />
-  ));
+  ].map((el, i) => <GradientIcon key={`g${i}`} icon={el} />);
 
   return (
     <section className="bg-background-alt">
