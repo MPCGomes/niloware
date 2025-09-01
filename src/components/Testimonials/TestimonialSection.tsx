@@ -54,13 +54,13 @@ const TestimonialSection: FC<TestimonialSectionProps> = ({}) => {
           <div className="flex gap-5 justify-center lg:justify-start">
             <button
               onClick={() => carouselRef.current?.previous(1)}
-              className="bg-[#0072FF04] rounded-full p-2 transition cursor-pointer border border-[#0072FF08]"
+              className="bg-[#000629] rounded-full p-2 transition cursor-pointer border border-[#000F3A] hover:bg-[#000A31] hover:border-[#00174B]"
             >
               <NavigateBeforeIcon />
             </button>
             <button
               onClick={() => carouselRef.current?.next(1)}
-              className="bg-[#0072FF04] rounded-full p-2 transition cursor-pointer border border-[#0072FF08]"
+              className="bg-[#000629] rounded-full p-2 transition cursor-pointer border border-[#000F3A] hover:bg-[#000A31] hover:border-[#00174B]"
             >
               <NavigateNextIcon />
             </button>
