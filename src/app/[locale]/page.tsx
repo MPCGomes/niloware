@@ -1,4 +1,5 @@
 import FeaturesSection from "@/components/Features/FeaturesSection";
+import PortfolioSection from "@/components/Portfolio/PortfolioSection";
 import { languages } from "@/i18n/settings";
 
 export function generateStaticParams() {
@@ -17,6 +18,7 @@ export default async function Home({
   return (
     <main>
       <FeaturesSection />
+      <PortfolioSection />
     </main>
   );
 }
