@@ -1,3 +1,4 @@
+import CtaSection from "@/components/Cta/CtaSection";
 import FaqSection from "@/components/Faq/FaqSection";
 import FeaturesSection from "@/components/Features/FeaturesSection";
 import HeroSection from "@/components/Hero/HeroSection";
@@ -27,6 +28,7 @@ export default async function Home({
       <PortfolioSection />
       <TestimonialSection />
       <FaqSection />
+      <CtaSection />
     </main>
   );
 }
