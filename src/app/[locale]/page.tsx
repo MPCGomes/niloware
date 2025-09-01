@@ -4,6 +4,7 @@ import FeaturesSection from "@/components/Features/FeaturesSection";
 import HeroSection from "@/components/Hero/HeroSection";
 import PortfolioSection from "@/components/Portfolio/PortfolioSection";
 import TestimonialSection from "@/components/Testimonials/TestimonialSection";
+import Footer from "@/components/ui/Footer";
 import Header from "@/components/ui/Header";
 import { languages } from "@/i18n/settings";
 
@@ -29,6 +30,7 @@ export default async function Home({
       <TestimonialSection />
       <FaqSection />
       <CtaSection />
+      <Footer />
     </main>
   );
 }
