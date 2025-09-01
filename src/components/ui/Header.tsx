@@ -12,7 +12,7 @@ const Header: FC<HeaderProps> = ({ locale }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#00012080] border-b border-b-white">
+    <header className="absolute top-0 w-full z-10 bg-[#000120c0] border-b border-b-white/80">
       <div className="mx-auto container">
         <div className="h-[80px] flex justify-between items-center px-[20px] tablet:px-[16px]">
           <p className="uppercase font-bold text-xl">Niloware</p>
