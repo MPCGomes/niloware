@@ -26,20 +26,20 @@ export default function PortfolioCard({
         className="object-cover blur-[1px]"
       />
 
-      {/* Camada azul escura */}
+      {/* Tint */}
       <div className="absolute inset-0 bg-[#00012080] z-10" />
 
-      {/* Thumbnail central */}
+      {/* Thumbnail */}
       <div className="z-20 w-[345px] h-[253px] relative">
         <Image
           src={imageSrc}
           alt="Imagem principal"
           fill
-          className="object-cover rounded-md shadow-lg"
+          className="object-cover"
         />
       </div>
 
-      {/* Informações do projeto */}
+      {/* Project Info */}
       <div className="flex items-center gap-2 absolute bottom-2 left-6 z-20">
         <p
           className="text-[4rem] font-medium"
