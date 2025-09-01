@@ -21,7 +21,7 @@ export default function PortfolioCard({
       {/* Background image */}
       <Image
         src={imageSrc}
-        alt="Imagem de fundo"
+        alt="error"
         fill
         className="object-cover blur-[1px]"
       />
@@ -31,12 +31,7 @@ export default function PortfolioCard({
 
       {/* Thumbnail */}
       <div className="z-20 w-[345px] h-[253px] relative">
-        <Image
-          src={imageSrc}
-          alt="Imagem principal"
-          fill
-          className="object-cover"
-        />
+        <Image src={imageSrc} alt="error" fill className="object-cover" />
       </div>
 
       {/* Project Info */}
