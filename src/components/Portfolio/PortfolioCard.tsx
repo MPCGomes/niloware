@@ -17,13 +17,13 @@ export default function PortfolioCard({
   description,
 }: Properties) {
   return (
-    <div className="relative h-[300px] w-full flex items-center justify-center px-6 border border-[#0072FF08] overflow-hidden rounded-lg">
+    <div className="relative h-[300px] w-full flex items-center justify-center px-6 border border-[#000F3A] overflow-hidden rounded-lg">
       {/* Background image */}
       <Image
         src={imageSrc}
         alt="error"
         fill
-        className="object-cover blur-[1px]"
+        className="object-cover blur-[1px]" 
       />
 
       {/* Tint */}
