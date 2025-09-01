@@ -41,7 +41,7 @@ const Footer: FC = () => {
       {/* Links + Copyright */}
       <div className="flex flex-col gap-6 items-center lg:items-end lg:gap-4">
         {/* Links */}
-        <div className="flex gap-4">
+        <div className="flex gap-4 font-medium">
           <Link href={"/"}>Home</Link>
           <Link href={"/"}>Portfolio</Link>
         </div>
