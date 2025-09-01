@@ -1,30 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background-main: 0 1 32;
-  --background-alt: 0 1 48;
-
+  --bg-main: 0 1 32;
+  --bg-alt: 0 1 48;
   --primary: 0 114 255;
-  --gradient-primary-start: 0 114 255;
-  --gradient-primary-end: 0 198 255;
-
+  --primary-end: 0 198 255;
   --text: 255 255 255;
 }
 
 @theme inline {
-  --color-background: rgb(var(--background-main) / <alpha-value>);
-  --color-background-alt: rgb(var(--background-alt) / <alpha-value>);
-  --color-primary: rgb(var(--primary) / <alpha-value>);
-  --color-foreground: rgb(var(--text) / <alpha-value>);
-
-  --bg-gradient-primary: linear-gradient(to right,
-      rgb(var(--gradient-primary-start)),
-      rgb(var(--gradient-primary-end)));
-
+  --color-background: rgb(var(--bg-main)/<alpha-value>);
+  --color-background-alt: rgb(var(--bg-alt)/<alpha-value>);
+  --color-primary: rgb(var(--primary)/<alpha-value>);
+  --color-foreground: rgb(var(--text)/<alpha-value>);
   --font-sans: var(--font-roboto);
 }
 
+@utility bg-primary-4 {
+  background-color: rgb(var(--primary) / 0.04);
+}
+
+@utility border-primary-8 {
+  border-color: rgb(var(--primary) / 0.08);
+}
+
 body {
-  background: rgb(var(--background-main));
+  background-color: rgb(var(--bg-main));
   color: rgb(var(--text));
+  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
 }
