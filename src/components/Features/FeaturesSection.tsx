@@ -35,7 +35,7 @@ export default function FeaturesSection() {
 
   return (
     <section className="bg-background-alt">
-      <Container className="py-[56px] space-y-[56px]">
+      <Container>
         <SectionHeading subheading={subheading} heading={heading} />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
           {items.slice(0, 6).map((item, index) => (

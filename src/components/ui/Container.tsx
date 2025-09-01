@@ -1,26 +1,20 @@
 import { ReactNode } from "react";
-import clsx from "clsx";
 
 type ContainerProps = {
   children: ReactNode;
-  className?: string;
-  bleed?: boolean;
 };
 
-export default function Container({
-  children,
-  className,
-  bleed,
-}: ContainerProps) {
+const Container = ({ children }: ContainerProps) => {
   return (
-    <div
-      className={clsx(
-        "mx-auto w-full max-w-[1440px]",
-        bleed ? "px-0" : "px-[20px] tablet:px-[60px] desktop:px-[120px]",
-        className
-      )}
-    >
+    <div className="mx-auto w-full max-w-[1440px] px-[20px] tablet:px-[60px] desktop:px-[120px] py-[56px] space-y-[56px]">
       {children}
     </div>
   );
-}
+};
+
+const CarouselContainer = ({ children }: ContainerProps) => {
+  return <div className="h-[100px]">{children}</div>;
+};
+
+export default Container;
+export { CarouselContainer };
