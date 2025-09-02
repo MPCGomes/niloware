@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "features": "Características",
+    "portfolio": "Portafolio",
+    "plans": "Planes",
+    "testimonials": "Testimonios",
+    "faq": "FAQ"
+  },
+  "footer": {
+    "copyright": "™ & © 2024 Niloware. Todos los derechos reservados."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "heading": "Elige tu plan",
+  "subheading": "Elige el plan ideal para tu negocio",
+  "period": {
+    "monthly": "Mensual",
+    "annual": "Anual",
+    "short": {
+      "monthly": "mes",
+      "annual": "año"
+    }
+  },
+  "hostingSupport": "Hosting + Soporte ({price}/{period})",
+  "whatsappMessage": "Hola, quiero contratar el plan {planName}.",
+  "whatsappSelectedOptionsLabel": "Opciones seleccionadas",
+  "plans": {
+    "basic": {
+      "name": "Básico",
+      "description": "Para sitios simples con todo lo necesario para empezar — rápido, accesible y fácil de gestionar."
+    },
+    "professional": {
+      "name": "Profesional",
+      "description": "Ideal para negocios que quieren más contenido, mejor visibilidad y soporte más rápido cuando lo necesiten."
+    },
+    "custom": {
+      "name": "Personalizado",
+      "description": "Totalmente personalizable — usa la calculadora para crear exactamente lo que necesitas."
+    }
+  },
+  "features": {
+    "landingPage": "Landing Page",
+    "multiPage": "Multi-Páginas",
+    "preBuiltDesign": "Diseño Predefinido",
+    "customDesign": "Diseño Personalizado",
+    "responsive": "Responsivo",
+    "basicSeo": "SEO Básico",
+    "advancedSeo": "SEO Avanzado",
+    "ssl": "SSL",
+    "lgpd": "LGPD",
+    "ddos": "Protección DDoS",
+    "monthlyBackup": "Copia de Seguridad Mensual",
+    "weeklyBackup": "Copia de Seguridad Semanal",
+    "standardSupport": "Soporte Estándar",
+    "prioritySupport": "Soporte Prioritario",
+    "noneEcommerce": "Sin E-Commerce",
+    "ecommerce": "E-Commerce",
+    "noneIntegration": "Sin Integración",
+    "integration": "Integración",
+    "regularDelivery": "Entrega Regular",
+    "expressDelivery": "Entrega Exprés"
+  },
+  "tooltips": {
+    "responsive": "Se adapta automáticamente a computadora, tableta y móvil.",
+    "seo": "Mejora tus posibilidades de aparecer en Google.",
+    "ssl": "Cifra los datos entre tu sitio y los visitantes para mayor seguridad.",
+    "lgpd": "Reglas de protección de datos en Brasil (similar al GDPR).",
+    "ddos": "Ayuda a evitar ataques que podrían dejar tu sitio fuera de línea."
+  }
+}

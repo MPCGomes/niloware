@@ -1,0 +1,48 @@
+{
+  "heading": "Lo que Dicen Nuestros Clientes",
+  "subheading": "Cómo Ayudamos a las Empresas a Crecer",
+  "items": [
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "Juan Pérez",
+      "role": "Propietario de Logum RH",
+      "rating": 5,
+      "quote": "Testimonio."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "Juan Pérez",
+      "role": "Propietario de Litoral Pisos",
+      "rating": 5,
+      "quote": "Testimonio."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "Juan Pérez",
+      "role": "Propietario de Gesso Andrade",
+      "rating": 5,
+      "quote": "Testimonio."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "Juan Pérez",
+      "role": "Propietario de Marmoraria Stone",
+      "rating": 5,
+      "quote": "Testimonio."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "Juan Pérez",
+      "role": "Propietario de Pousada Lilabella",
+      "rating": 5,
+      "quote": "Testimonio."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "Juan Pérez",
+      "role": "Propietario de Clínica Ápice",
+      "rating": 5,
+      "quote": "Testimonio."
+    }
+  ]
+}
