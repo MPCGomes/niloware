@@ -1,73 +1,37 @@
 "use client";
 
 import type { FC } from "react";
-import FaqCard from "./FaqCard";
+import { useTranslations } from "next-intl";
+import Container from "@/components/ui/Container";
 import SectionHeading from "../ui/SectionHeading";
+import FaqCard from "./FaqCard";
 
-const faqs = [
-  {
-    question: "Pergunta",
-    answer: "Resposta...",
-  },
-  {
-    question: "Pergunta",
-    answer: "Resposta...",
-  },
-  {
-    question: "Pergunta",
-    answer: "Resposta...",
-  },
-  {
-    question: "Pergunta",
-    answer: "Resposta...",
-  },
-  {
-    question: "Pergunta",
-    answer: "Resposta...",
-  },
-  {
-    question: "Pergunta",
-    answer: "Resposta...",
-  },
-  {
-    question: "Pergunta",
-    answer: "Resposta...",
-  },
-  {
-    question: "Pergunta",
-    answer: "Resposta...",
-  },
-  {
-    question: "Pergunta",
-    answer: "Resposta...",
-  },
-  {
-    question: "Pergunta",
-    answer: "Resposta...",
-  },
-  {
-    question: "Pergunta",
-    answer: "Resposta...",
-  },
-  {
-    question: "Pergunta",
-    answer: "Resposta...",
-  },
-];
+type FaqItem = { question: string; answer: string };
 
 interface FaqSectionProps {
   locale: string;
 }
 
-const FaqSection: FC<FaqSectionProps> = ({}) => {
+const FaqSection: FC<FaqSectionProps> = () => {
+  const t = useTranslations("faq");
+  const subheading = t("subheading");
+  const heading = t("heading");
+  const items = t.raw("items") as FaqItem[];
+
   return (
-    <section className="container mx-auto px-5 flex flex-col gap-[56px] py-[56px]">
-      <SectionHeading subheading={"subheading"} heading={"heading"} />
-      <div className="grid grid-cols-1 w-full gap-[24px] items-start gap-x-[30px] lg:grid-cols-2">
-        {faqs.map((faq, index) => (
-          <FaqCard key={index} question={faq.question} answer={faq.answer} />
-        ))}
-      </div>
+    <section>
+      <Container>
+        <SectionHeading subheading={subheading} heading={heading} />
+        <div className="grid grid-cols-1 w-full gap-[24px] items-start gap-x-[30px] lg:grid-cols-2">
+          {items.map((faq, index) => (
+            <FaqCard
+              key={`${faq.question}-${index}`}
+              question={faq.question}
+              answer={faq.answer}
+            />
+          ))}
+        </div>
+      </Container>
     </section>
   );
 };
