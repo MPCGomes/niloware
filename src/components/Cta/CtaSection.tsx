@@ -1,20 +1,27 @@
 "use client";
 
 import type { FC } from "react";
+import Container from "@/components/ui/Container";
+import { useTranslations } from "next-intl";
+import { CTAOutlineButton } from "@/components/ui/CTAButton";
 
 interface CtaSectionProps {
   locale: string;
 }
 
-const CtaSection: FC<CtaSectionProps> = ({}) => {
+const CtaSection: FC<CtaSectionProps> = () => {
+  const tHome = useTranslations("home.cta");
+  const text = tHome("text");
+  const ctaLabel = tHome("button");
+
   return (
     <section className="bg-[#000130] p-[30px]">
-      <div className="container mx-auto">
-        <div className="flex flex-col items-center text-center gap-8 text-[var(--color-text-white)] text-base md:flex-row md:text-left md:justify-center lg:gap-16">
-          <p className="text-2xl">Your business deserves to grow—ready to make it happen?</p>
-          Button
+      <Container>
+        <div className="flex flex-col items-center text-center gap-8 text-base md:flex-row md:text-left md:justify-center lg:gap-16">
+          <p className="text-2xl">{text}</p>
+          <CTAOutlineButton label={ctaLabel} />
         </div>
-      </div>
+      </Container>
     </section>
   );
 };
