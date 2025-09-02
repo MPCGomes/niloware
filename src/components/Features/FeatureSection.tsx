@@ -14,13 +14,13 @@ import {
 } from "@mui/icons-material";
 import SectionHeading from "../ui/SectionHeading";
 
-type FeatureItem = { title: string; description: string };
+type Feature = { title: string; description: string };
 
-export default function FeaturesSection() {
+export default function FeatureSection() {
   const t = useTranslations("home.features");
   const heading = t("heading");
   const subheading = t("subheading");
-  const items = t.raw("items") as FeatureItem[];
+  const items = t.raw("items") as Feature[];
 
   const icons = [
     <DevicesIcon key="i1" />,
