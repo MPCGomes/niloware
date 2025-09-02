@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "eyebrow": "Agência de Sites",
+    "heading": "Ganhe Mais Clientes com um Site Profissional",
+    "subheading": "Credibilidade vende. Transforme visitantes em clientes fiéis com um site feito para impressionar e converter."
+  },
+  "features": {
+    "subheading": "Tudo que sua empresa precisa para crescer online",
+    "heading": "Por que escolher a Niloware?",
+    "items": [
+      {
+        "title": "Design Responsivo",
+        "description": "Sites que se adaptam automaticamente a desktops, tablets e celulares."
+      },
+      {
+        "title": "Visibilidade no Google",
+        "description": "Estruturados para ajudar sua empresa a aparecer no Google e alcançar clientes."
+      },
+      {
+        "title": "Fácil Personalização",
+        "description": "Edite textos, imagens e vídeos quando quiser — sem precisar de conhecimentos técnicos."
+      },
+      {
+        "title": "Soluções Flexíveis",
+        "description": "Landing pages, lojas virtuais e mais — adaptados às necessidades do seu negócio."
+      },
+      {
+        "title": "Integrações Empresariais",
+        "description": "Conecte pagamentos, newsletters, CRM e mais — otimize suas tarefas diárias."
+      },
+      {
+        "title": "Suporte Contínuo",
+        "description": "Equipe dedicada para suporte técnico, resolução de problemas e orientações."
+      }
+    ]
+  },
+  "cta": {
+    "text": "Sua empresa merece crescer — pronto para fazer acontecer?"
+  }
+}

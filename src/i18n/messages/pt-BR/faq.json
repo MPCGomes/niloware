@@ -1,0 +1,54 @@
+{
+  "subheading": "Ainda precisa de ajuda? Estamos aqui por você.",
+  "heading": "Perguntas Frequentes",
+  "items": [
+    {
+      "question": "Por que minha empresa precisa de um site?",
+      "answer": "Um site torna sua empresa mais fácil de ser encontrada online, aumenta a credibilidade e ajuda a atrair mais clientes."
+    },
+    {
+      "question": "Qual é o prazo médio de entrega?",
+      "answer": "Sites básicos são entregues em até cinco dias úteis, profissionais em até dez e personalizados em até vinte."
+    },
+    {
+      "question": "Meu site vai funcionar em computadores, tablets e celulares?",
+      "answer": "Sim. Todos os nossos sites se ajustam automaticamente para ficar bem em computadores, tablets e smartphones."
+    },
+    {
+      "question": "Posso hospedar o site com outro provedor?",
+      "answer": "Sim. Fornecemos todos os arquivos para você hospedar onde quiser. Nesse caso, você não será cobrado por nossa hospedagem ou suporte, e não oferecemos suporte técnico contínuo para sites hospedados fora da nossa plataforma."
+    },
+    {
+      "question": "Quais formas de pagamento vocês aceitam?",
+      "answer": "Aceitamos cartões de crédito, débito e PayPal no mundo todo. No Brasil, também aceitamos Pix, transferência bancária e boleto."
+    },
+    {
+      "question": "Como solicito um orçamento?",
+      "answer": "Clique em qualquer botão “Escolher Plano” ou “Solicitar Orçamento” no site."
+    },
+    {
+      "question": "Que tipos de sites vocês desenvolvem?",
+      "answer": "Criamos blogs, landing pages, lojas virtuais e sites especializados em áreas como saúde, jurídico, veterinária, alimentação e outros."
+    },
+    {
+      "question": "O que eu preciso fornecer?",
+      "answer": "No mínimo, precisaremos do nome da sua empresa, dados de contato e logotipo, além de qualquer texto, imagem ou vídeo que queira incluir."
+    },
+    {
+      "question": "Meu site vai aparecer no Google?",
+      "answer": "Sim. Configuramos todos os sites para aparecer em mecanismos de busca como Google, Bing e Yahoo."
+    },
+    {
+      "question": "Quais são os custos mensais após a entrega?",
+      "answer": "Se você optar por hospedar conosco, oferecemos hospedagem e suporte por R$ 4,90 ao mês ou R$ 49,00 ao ano (2 meses grátis). Não há custos mensais se não hospedar conosco."
+    },
+    {
+      "question": "Meus dados e meu investimento estão seguros?",
+      "answer": "Sim. Utilizamos contrato digital para definir responsabilidades, prazos, propriedade e garantias — protegendo ambos os lados."
+    },
+    {
+      "question": "Posso atualizar o site sozinho depois?",
+      "answer": "Sim. Todos os pacotes incluem um painel simples para que você possa atualizar textos, imagens e outros conteúdos sem precisar de conhecimentos técnicos."
+    }
+  ]
+}

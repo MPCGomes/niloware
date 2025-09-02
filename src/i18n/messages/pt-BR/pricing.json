@@ -1,0 +1,58 @@
+{
+  "heading": "Escolha seu plano",
+  "subheading": "Escolha o plano ideal para o seu negócio",
+  "period": {
+    "monthly": "Mensal",
+    "annual": "Anual",
+    "short": {
+      "monthly": "mês",
+      "annual": "ano"
+    }
+  },
+  "hostingSupport": "Hospedagem + Suporte ({price}/{period})",
+  "whatsappMessage": "Olá, quero contratar o plano {planName}.",
+  "whatsappSelectedOptionsLabel": "Opções selecionadas",
+  "plans": {
+    "basic": {
+      "name": "Básico",
+      "description": "Para sites simples com tudo o que você precisa para começar — rápido, acessível e fácil de gerenciar."
+    },
+    "professional": {
+      "name": "Profissional",
+      "description": "Ideal para empresas que querem mais conteúdo, melhor visibilidade e suporte mais rápido quando necessário."
+    },
+    "custom": {
+      "name": "Personalizado",
+      "description": "Totalmente personalizável — use a calculadora para montar exatamente o que você precisa."
+    }
+  },
+  "features": {
+    "landingPage": "Landing Page",
+    "multiPage": "Multi-Páginas",
+    "preBuiltDesign": "Design Pré-Pronto",
+    "customDesign": "Design Personalizado",
+    "responsive": "Responsivo",
+    "basicSeo": "SEO Básico",
+    "advancedSeo": "SEO Avançado",
+    "ssl": "SSL",
+    "lgpd": "LGPD",
+    "ddos": "Proteção DDoS",
+    "monthlyBackup": "Backup Mensal",
+    "weeklyBackup": "Backup Semanal",
+    "standardSupport": "Suporte Padrão",
+    "prioritySupport": "Suporte Prioritário",
+    "noneEcommerce": "Sem E-Commerce",
+    "ecommerce": "E-Commerce",
+    "noneIntegration": "Sem Integração",
+    "integration": "Integração",
+    "regularDelivery": "Entrega Regular",
+    "expressDelivery": "Entrega Expressa"
+  },
+  "tooltips": {
+    "responsive": "Adapta-se automaticamente a desktop, tablet e celular.",
+    "seo": "Melhora suas chances de aparecer no Google.",
+    "ssl": "Criptografa dados entre seu site e visitantes para mais segurança.",
+    "lgpd": "Regras de proteção de dados do Brasil (similar ao GDPR).",
+    "ddos": "Ajuda a evitar ataques que poderiam deixar seu site offline."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "heading": "O que Nossos Clientes Dizem",
+  "subheading": "Como Ajudamos Empresas a Crescer",
+  "items": [
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "João Silva",
+      "role": "Proprietário da Logum RH",
+      "rating": 5,
+      "quote": "Depoimento."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "João Silva",
+      "role": "Proprietário da Litoral Pisos",
+      "rating": 5,
+      "quote": "Depoimento."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "João Silva",
+      "role": "Proprietário da Gesso Andrade",
+      "rating": 5,
+      "quote": "Depoimento."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "João Silva",
+      "role": "Proprietário da Marmoraria Stone",
+      "rating": 5,
+      "quote": "Depoimento."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "João Silva",
+      "role": "Proprietário da Pousada Lilabella",
+      "rating": 5,
+      "quote": "Depoimento."
+    },
+    {
+      "photo": "/testimonial-avatars/default-avatar.png",
+      "name": "João Silva",
+      "role": "Proprietário da Clínica Ápice",
+      "rating": 5,
+      "quote": "Depoimento."
+    }
+  ]
+}
